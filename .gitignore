@@ -1,13 +1,33 @@
-# Compiled Object files
+# General
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
+
+# Generated Code
+generated/
+
+# C++
 *.slo
 *.lo
 *.o
-
-# Compiled Dynamic libraries
 *.so
 *.dylib
-
-# Compiled Static libraries
 *.lai
 *.la
 *.a
+
+# Java
+*.class
+*.jar
+
+# Maven
+.classpath
+.project
+.settings/
+target/
+
+# Python
+*.pyc
+__pycache__/
