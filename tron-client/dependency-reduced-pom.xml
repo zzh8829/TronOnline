@@ -29,7 +29,6 @@
                   <arg />
                 </exec>
               </tasks>
-              <sourceRoot>${proto.gendir}</sourceRoot>
             </configuration>
           </execution>
         </executions>
@@ -61,14 +60,6 @@
           <target>1.7</target>
         </configuration>
       </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <version>1.2.1</version>
-        <configuration>
-          <mainClass>ca.zihao.tronol.client.Main</mainClass>
-        </configuration>
-      </plugin>
     </plugins>
   </build>
   <dependencies>
@@ -80,7 +71,6 @@
     </dependency>
   </dependencies>
   <properties>
-    <proto.gendir>${project.basedir}/src/generated</proto.gendir>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 </project>

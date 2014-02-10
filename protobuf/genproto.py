@@ -9,7 +9,7 @@ def main():
 		gen_path = "../tron-client/src/main/java"
 		opt_out = "--java_out=" + gen_path
 	elif language == "cpp":
-		gen_path = "../../tron-server-qt/generated"
+		gen_path = "../tron-server/src"
 		opt_out = "--cpp_out=" + gen_path
 	else:
 		print("Unknown Language")
