@@ -36,13 +36,12 @@ message RoomCommand {
 		LIST = 2;
 		ENTER = 3;
 		LEAVE = 4;
-		START = 5;
 	}
 
 	required CommandType type = 1;
 	optional int32 id = 2;
 	optional string name = 3;
-	optional int32 bestof = 4;
+	optional int32 wins = 4;
 }
 
 message RoomResponse {
@@ -52,16 +51,11 @@ message RoomResponse {
 	}
 
 	message RoomInfo {
-		enum RoomStatus {
-			OPEN = 0;
-			FULL = 1;
-			GAME = 2;
-		}
 
 		required int32 id = 1;
 		required string name = 2;
-		required string host = 3;
-		required RoomStatus status = 4;
+		optional string host = 3;
+		optional string status = 4;
 	}
 
 	required ResponseType type = 1;
@@ -71,34 +65,62 @@ message RoomResponse {
 
 message GameCommand {
 	enum CommandType {
-		READY = 0;
-		CHANGE_DIR = 1;
-	}
-
-	enum DIR {
-		UP = 0;
-		RIGHT = 1;
-		DOWN = 2;
-		LEFT = 3;
+		ROOM = 0;
+		GAME = 1;
+		START = 2;
+		QUIT = 3;
 	}
 
 	required CommandType type = 1;
-	optional DIR dir = 2;
+	optional int32 tick = 2;
+	repeated int32 dir = 3;
 }
 
 message GameResponse {
 	enum ResponseType {
 		SUCCESS = 0;
-		START = 1;
-		SET_MAP = 2;
-		ROUNDEND = 3;
-		GAMEEND = 4;
-		DISCONNECT = 5;
+		ERROR = 1;
+		ROOM = 2;
+		GAME = 3;
+		OVER = 4;
+	}
+
+	message GameSet {
+		required int32 x = 1;
+		required int32 y = 2;
+		required int32 v = 3;
 	}
 
 	required ResponseType type = 1;
-	optional int32 row = 2;
-	optional int32 col = 3;
-	optional int32 val = 4;
+	repeated GameSet set_at = 2;
+	repeated string users = 3;
+	optional int32 tick = 4;
 	optional string winner = 5;
 }
+
+message Command {
+	enum CommandType {
+		ACCOUNT = 0;
+		ROOM = 1;
+		GAME = 2;
+	}
+	
+	required CommandType type = 1;
+	optional AccountCommand account = 2;
+	optional RoomCommand room = 3;
+	optional GameCommand game = 4;
+}
+
+message Response {
+	enum ResponseType {
+		ACCOUNT = 0;
+		ROOM = 1;
+		GAME = 2;
+	}
+
+	required ResponseType type = 1;
+	optional AccountResponse account = 2;
+	optional RoomResponse room = 3;
+	optional GameResponse game = 4;
+}
+

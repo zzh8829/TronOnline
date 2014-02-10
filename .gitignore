@@ -5,8 +5,10 @@
 *.swp
 *.out
 
-# Generated Code
+# Files
 generated/
+bin/
+.idea/
 
 # C++
 *.slo
