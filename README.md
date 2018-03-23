@@ -17,6 +17,13 @@ protobuf
 
 Compile
 -------
+Protobuf:
+```bash
+cd protobuf
+python genproto.py cpp
+python genproto.py java
+```
+
 Client:
 ```bash
 cd tron-client
@@ -27,4 +34,20 @@ Server:
 ```bash
 cd tron-server
 make
+```
+
+Database
+--------
+```bash
+sqlite3 tron-server/bin/tron.db < tron-server/db.sql
+```
+
+Dependency
+----------
+for mac
+```bash
+python
+maven
+boost
+protobuf
 ```

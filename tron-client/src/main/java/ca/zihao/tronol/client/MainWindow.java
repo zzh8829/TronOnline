@@ -45,7 +45,7 @@ public class MainWindow extends JFrame {
 
         setVisible(true);
 
-        if(!Main.client.connect("tronol.zihao.ca",10001)) {
+        if(!Main.client.connect("localhost", 10001)) {
             JOptionPane.showMessageDialog(null,"Unable to connect to server","Error",JOptionPane.ERROR_MESSAGE);
             System.exit(1);
         }

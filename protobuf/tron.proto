@@ -1,3 +1,5 @@
+syntax = "proto2";
+
 package tronol.protobuf;
 
 option java_package = "ca.zihao.tronol.protobuf";
@@ -60,7 +62,7 @@ message RoomResponse {
 
 	required ResponseType type = 1;
 	optional int32 id = 2;
-	repeated RoomInfo room = 3; 
+	repeated RoomInfo room = 3;
 }
 
 message GameCommand {
@@ -104,7 +106,7 @@ message Command {
 		ROOM = 1;
 		GAME = 2;
 	}
-	
+
 	required CommandType type = 1;
 	optional AccountCommand account = 2;
 	optional RoomCommand room = 3;

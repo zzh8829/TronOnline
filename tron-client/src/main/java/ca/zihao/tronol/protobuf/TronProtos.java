@@ -6,12 +6,18 @@ package ca.zihao.tronol.protobuf;
 public final class TronProtos {
   private TronProtos() {}
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
+      com.google.protobuf.ExtensionRegistryLite registry) {
   }
-  public interface AccountCommandOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
 
-    // required .tronol.protobuf.AccountCommand.CommandType type = 1;
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
+  }
+  public interface AccountCommandOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:tronol.protobuf.AccountCommand)
+      com.google.protobuf.MessageOrBuilder {
+
     /**
      * <code>required .tronol.protobuf.AccountCommand.CommandType type = 1;</code>
      */
@@ -21,7 +27,6 @@ public final class TronProtos {
      */
     ca.zihao.tronol.protobuf.TronProtos.AccountCommand.CommandType getType();
 
-    // required string username = 2;
     /**
      * <code>required string username = 2;</code>
      */
@@ -36,7 +41,6 @@ public final class TronProtos {
     com.google.protobuf.ByteString
         getUsernameBytes();
 
-    // optional string password = 3;
     /**
      * <code>optional string password = 3;</code>
      */
@@ -51,7 +55,6 @@ public final class TronProtos {
     com.google.protobuf.ByteString
         getPasswordBytes();
 
-    // optional string nickname = 4;
     /**
      * <code>optional string nickname = 4;</code>
      */
@@ -66,7 +69,6 @@ public final class TronProtos {
     com.google.protobuf.ByteString
         getNicknameBytes();
 
-    // optional string token = 5;
     /**
      * <code>optional string token = 5;</code>
      */
@@ -84,36 +86,36 @@ public final class TronProtos {
   /**
    * Protobuf type {@code tronol.protobuf.AccountCommand}
    */
-  public static final class AccountCommand extends
-      com.google.protobuf.GeneratedMessage
-      implements AccountCommandOrBuilder {
+  public  static final class AccountCommand extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:tronol.protobuf.AccountCommand)
+      AccountCommandOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use AccountCommand.newBuilder() to construct.
-    private AccountCommand(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    private AccountCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
-      this.unknownFields = builder.getUnknownFields();
     }
-    private AccountCommand(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
-    private static final AccountCommand defaultInstance;
-    public static AccountCommand getDefaultInstance() {
-      return defaultInstance;
-    }
-
-    public AccountCommand getDefaultInstanceForType() {
-      return defaultInstance;
+    private AccountCommand() {
+      type_ = 0;
+      username_ = "";
+      password_ = "";
+      nickname_ = "";
+      token_ = "";
     }
 
-    private final com.google.protobuf.UnknownFieldSet unknownFields;
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
+    getUnknownFields() {
       return this.unknownFields;
     }
     private AccountCommand(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -126,8 +128,8 @@ public final class TronProtos {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -139,28 +141,32 @@ public final class TronProtos {
                 unknownFields.mergeVarintField(1, rawValue);
               } else {
                 bitField0_ |= 0x00000001;
-                type_ = value;
+                type_ = rawValue;
               }
               break;
             }
             case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              username_ = input.readBytes();
+              username_ = bs;
               break;
             }
             case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000004;
-              password_ = input.readBytes();
+              password_ = bs;
               break;
             }
             case 34: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000008;
-              nickname_ = input.readBytes();
+              nickname_ = bs;
               break;
             }
             case 42: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000010;
-              token_ = input.readBytes();
+              token_ = bs;
               break;
             }
           }
@@ -169,7 +175,7 @@ public final class TronProtos {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
+            e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -180,26 +186,11 @@ public final class TronProtos {
       return ca.zihao.tronol.protobuf.TronProtos.internal_static_tronol_protobuf_AccountCommand_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return ca.zihao.tronol.protobuf.TronProtos.internal_static_tronol_protobuf_AccountCommand_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               ca.zihao.tronol.protobuf.TronProtos.AccountCommand.class, ca.zihao.tronol.protobuf.TronProtos.AccountCommand.Builder.class);
-    }
-
-    public static com.google.protobuf.Parser<AccountCommand> PARSER =
-        new com.google.protobuf.AbstractParser<AccountCommand>() {
-      public AccountCommand parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AccountCommand(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<AccountCommand> getParserForType() {
-      return PARSER;
     }
 
     /**
@@ -210,15 +201,15 @@ public final class TronProtos {
       /**
        * <code>REGISTER = 0;</code>
        */
-      REGISTER(0, 0),
+      REGISTER(0),
       /**
        * <code>LOGIN = 1;</code>
        */
-      LOGIN(1, 1),
+      LOGIN(1),
       /**
        * <code>EDIT = 2;</code>
        */
-      EDIT(2, 2),
+      EDIT(2),
       ;
 
       /**
@@ -235,9 +226,19 @@ public final class TronProtos {
       public static final int EDIT_VALUE = 2;
 
 
-      public final int getNumber() { return value; }
+      public final int getNumber() {
+        return value;
+      }
 
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
       public static CommandType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static CommandType forNumber(int value) {
         switch (value) {
           case 0: return REGISTER;
           case 1: return LOGIN;
@@ -250,17 +251,17 @@ public final class TronProtos {
           internalGetValueMap() {
         return internalValueMap;
       }
-      private static com.google.protobuf.Internal.EnumLiteMap<CommandType>
-          internalValueMap =
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          CommandType> internalValueMap =
             new com.google.protobuf.Internal.EnumLiteMap<CommandType>() {
               public CommandType findValueByNumber(int number) {
-                return CommandType.valueOf(number);
+                return CommandType.forNumber(number);
               }
             };
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor
           getValueDescriptor() {
-        return getDescriptor().getValues().get(index);
+        return getDescriptor().getValues().get(ordinal());
       }
       public final com.google.protobuf.Descriptors.EnumDescriptor
           getDescriptorForType() {
@@ -282,11 +283,9 @@ public final class TronProtos {
         return VALUES[desc.getIndex()];
       }
 
-      private final int index;
       private final int value;
 
-      private CommandType(int index, int value) {
-        this.index = index;
+      private CommandType(int value) {
         this.value = value;
       }
 
@@ -294,9 +293,8 @@ public final class TronProtos {
     }
 
     private int bitField0_;
-    // required .tronol.protobuf.AccountCommand.CommandType type = 1;
     public static final int TYPE_FIELD_NUMBER = 1;
-    private ca.zihao.tronol.protobuf.TronProtos.AccountCommand.CommandType type_;
+    private int type_;
     /**
      * <code>required .tronol.protobuf.AccountCommand.CommandType type = 1;</code>
      */
@@ -307,12 +305,12 @@ public final class TronProtos {
      * <code>required .tronol.protobuf.AccountCommand.CommandType type = 1;</code>
      */
     public ca.zihao.tronol.protobuf.TronProtos.AccountCommand.CommandType getType() {
-      return type_;
+      ca.zihao.tronol.protobuf.TronProtos.AccountCommand.CommandType result = ca.zihao.tronol.protobuf.TronProtos.AccountCommand.CommandType.valueOf(type_);
+      return result == null ? ca.zihao.tronol.protobuf.TronProtos.AccountCommand.CommandType.REGISTER : result;
     }
 
-    // required string username = 2;
     public static final int USERNAME_FIELD_NUMBER = 2;
-    private java.lang.Object username_;
+    private volatile java.lang.Object username_;
     /**
      * <code>required string username = 2;</code>
      */
@@ -353,9 +351,8 @@ public final class TronProtos {
       }
     }
 
-    // optional string password = 3;
     public static final int PASSWORD_FIELD_NUMBER = 3;
-    private java.lang.Object password_;
+    private volatile java.lang.Object password_;
     /**
      * <code>optional string password = 3;</code>
      */
@@ -396,9 +393,8 @@ public final class TronProtos {
       }
     }
 
-    // optional string nickname = 4;
     public static final int NICKNAME_FIELD_NUMBER = 4;
-    private java.lang.Object nickname_;
+    private volatile java.lang.Object nickname_;
     /**
      * <code>optional string nickname = 4;</code>
      */
@@ -439,9 +435,8 @@ public final class TronProtos {
       }
     }
 
-    // optional string token = 5;
     public static final int TOKEN_FIELD_NUMBER = 5;
-    private java.lang.Object token_;
+    private volatile java.lang.Object token_;
     /**
      * <code>optional string token = 5;</code>
      */
@@ -482,17 +477,11 @@ public final class TronProtos {
       }
     }
 
-    private void initFields() {
-      type_ = ca.zihao.tronol.protobuf.TronProtos.AccountCommand.CommandType.REGISTER;
-      username_ = "";
-      password_ = "";
-      nickname_ = "";
-      token_ = "";
-    }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasType()) {
         memoizedIsInitialized = 0;
@@ -508,63 +497,132 @@ public final class TronProtos {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeEnum(1, type_.getNumber());
+        output.writeEnum(1, type_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getUsernameBytes());
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, username_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBytes(3, getPasswordBytes());
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, password_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeBytes(4, getNicknameBytes());
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, nickname_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        output.writeBytes(5, getTokenBytes());
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, token_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
-    private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, type_.getNumber());
+          .computeEnumSize(1, type_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getUsernameBytes());
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, username_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, getPasswordBytes());
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, password_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, getNicknameBytes());
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, nickname_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(5, getTokenBytes());
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, token_);
       }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof ca.zihao.tronol.protobuf.TronProtos.AccountCommand)) {
+        return super.equals(obj);
+      }
+      ca.zihao.tronol.protobuf.TronProtos.AccountCommand other = (ca.zihao.tronol.protobuf.TronProtos.AccountCommand) obj;
+
+      boolean result = true;
+      result = result && (hasType() == other.hasType());
+      if (hasType()) {
+        result = result && type_ == other.type_;
+      }
+      result = result && (hasUsername() == other.hasUsername());
+      if (hasUsername()) {
+        result = result && getUsername()
+            .equals(other.getUsername());
+      }
+      result = result && (hasPassword() == other.hasPassword());
+      if (hasPassword()) {
+        result = result && getPassword()
+            .equals(other.getPassword());
+      }
+      result = result && (hasNickname() == other.hasNickname());
+      if (hasNickname()) {
+        result = result && getNickname()
+            .equals(other.getNickname());
+      }
+      result = result && (hasToken() == other.hasToken());
+      if (hasToken()) {
+        result = result && getToken()
+            .equals(other.getToken());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasType()) {
+        hash = (37 * hash) + TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + type_;
+      }
+      if (hasUsername()) {
+        hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+        hash = (53 * hash) + getUsername().hashCode();
+      }
+      if (hasPassword()) {
+        hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
+        hash = (53 * hash) + getPassword().hashCode();
+      }
+      if (hasNickname()) {
+        hash = (37 * hash) + NICKNAME_FIELD_NUMBER;
+        hash = (53 * hash) + getNickname().hashCode();
+      }
+      if (hasToken()) {
+        hash = (37 * hash) + TOKEN_FIELD_NUMBER;
+        hash = (53 * hash) + getToken().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static ca.zihao.tronol.protobuf.TronProtos.AccountCommand parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ca.zihao.tronol.protobuf.TronProtos.AccountCommand parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static ca.zihao.tronol.protobuf.TronProtos.AccountCommand parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -588,46 +646,57 @@ public final class TronProtos {
     }
     public static ca.zihao.tronol.protobuf.TronProtos.AccountCommand parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static ca.zihao.tronol.protobuf.TronProtos.AccountCommand parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static ca.zihao.tronol.protobuf.TronProtos.AccountCommand parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static ca.zihao.tronol.protobuf.TronProtos.AccountCommand parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static ca.zihao.tronol.protobuf.TronProtos.AccountCommand parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static ca.zihao.tronol.protobuf.TronProtos.AccountCommand parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(ca.zihao.tronol.protobuf.TronProtos.AccountCommand prototype) {
-      return newBuilder().mergeFrom(prototype);
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
     }
-    public Builder toBuilder() { return newBuilder(this); }
+    public static Builder newBuilder(ca.zihao.tronol.protobuf.TronProtos.AccountCommand prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -635,14 +704,15 @@ public final class TronProtos {
      * Protobuf type {@code tronol.protobuf.AccountCommand}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements ca.zihao.tronol.protobuf.TronProtos.AccountCommandOrBuilder {
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:tronol.protobuf.AccountCommand)
+        ca.zihao.tronol.protobuf.TronProtos.AccountCommandOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return ca.zihao.tronol.protobuf.TronProtos.internal_static_tronol_protobuf_AccountCommand_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return ca.zihao.tronol.protobuf.TronProtos.internal_static_tronol_protobuf_AccountCommand_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
@@ -655,21 +725,18 @@ public final class TronProtos {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
         }
       }
-      private static Builder create() {
-        return new Builder();
-      }
-
       public Builder clear() {
         super.clear();
-        type_ = ca.zihao.tronol.protobuf.TronProtos.AccountCommand.CommandType.REGISTER;
+        type_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
         username_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -680,10 +747,6 @@ public final class TronProtos {
         token_ = "";
         bitField0_ = (bitField0_ & ~0x00000010);
         return this;
-      }
-
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
       }
 
       public com.google.protobuf.Descriptors.Descriptor
@@ -732,6 +795,32 @@ public final class TronProtos {
         return result;
       }
 
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ca.zihao.tronol.protobuf.TronProtos.AccountCommand) {
           return mergeFrom((ca.zihao.tronol.protobuf.TronProtos.AccountCommand)other);
@@ -766,17 +855,16 @@ public final class TronProtos {
           token_ = other.token_;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
         return this;
       }
 
       public final boolean isInitialized() {
         if (!hasType()) {
-          
           return false;
         }
         if (!hasUsername()) {
-          
           return false;
         }
         return true;
@@ -791,7 +879,7 @@ public final class TronProtos {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           parsedMessage = (ca.zihao.tronol.protobuf.TronProtos.AccountCommand) e.getUnfinishedMessage();
-          throw e;
+          throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
@@ -801,8 +889,7 @@ public final class TronProtos {
       }
       private int bitField0_;
 
-      // required .tronol.protobuf.AccountCommand.CommandType type = 1;
-      private ca.zihao.tronol.protobuf.TronProtos.AccountCommand.CommandType type_ = ca.zihao.tronol.protobuf.TronProtos.AccountCommand.CommandType.REGISTER;
+      private int type_ = 0;
       /**
        * <code>required .tronol.protobuf.AccountCommand.CommandType type = 1;</code>
        */
@@ -813,7 +900,8 @@ public final class TronProtos {
        * <code>required .tronol.protobuf.AccountCommand.CommandType type = 1;</code>
        */
       public ca.zihao.tronol.protobuf.TronProtos.AccountCommand.CommandType getType() {
-        return type_;
+        ca.zihao.tronol.protobuf.TronProtos.AccountCommand.CommandType result = ca.zihao.tronol.protobuf.TronProtos.AccountCommand.CommandType.valueOf(type_);
+        return result == null ? ca.zihao.tronol.protobuf.TronProtos.AccountCommand.CommandType.REGISTER : result;
       }
       /**
        * <code>required .tronol.protobuf.AccountCommand.CommandType type = 1;</code>
@@ -823,7 +911,7 @@ public final class TronProtos {
           throw new NullPointerException();
         }
         bitField0_ |= 0x00000001;
-        type_ = value;
+        type_ = value.getNumber();
         onChanged();
         return this;
       }
@@ -832,12 +920,11 @@ public final class TronProtos {
        */
       public Builder clearType() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        type_ = ca.zihao.tronol.protobuf.TronProtos.AccountCommand.CommandType.REGISTER;
+        type_ = 0;
         onChanged();
         return this;
       }
 
-      // required string username = 2;
       private java.lang.Object username_ = "";
       /**
        * <code>required string username = 2;</code>
@@ -851,9 +938,12 @@ public final class TronProtos {
       public java.lang.String getUsername() {
         java.lang.Object ref = username_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          username_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            username_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -911,7 +1001,6 @@ public final class TronProtos {
         return this;
       }
 
-      // optional string password = 3;
       private java.lang.Object password_ = "";
       /**
        * <code>optional string password = 3;</code>
@@ -925,9 +1014,12 @@ public final class TronProtos {
       public java.lang.String getPassword() {
         java.lang.Object ref = password_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          password_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            password_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -985,7 +1077,6 @@ public final class TronProtos {
         return this;
       }
 
-      // optional string nickname = 4;
       private java.lang.Object nickname_ = "";
       /**
        * <code>optional string nickname = 4;</code>
@@ -999,9 +1090,12 @@ public final class TronProtos {
       public java.lang.String getNickname() {
         java.lang.Object ref = nickname_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          nickname_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            nickname_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -1059,7 +1153,6 @@ public final class TronProtos {
         return this;
       }
 
-      // optional string token = 5;
       private java.lang.Object token_ = "";
       /**
        * <code>optional string token = 5;</code>
@@ -1073,9 +1166,12 @@ public final class TronProtos {
       public java.lang.String getToken() {
         java.lang.Object ref = token_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          token_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            token_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -1132,22 +1228,59 @@ public final class TronProtos {
         onChanged();
         return this;
       }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
 
       // @@protoc_insertion_point(builder_scope:tronol.protobuf.AccountCommand)
     }
 
+    // @@protoc_insertion_point(class_scope:tronol.protobuf.AccountCommand)
+    private static final ca.zihao.tronol.protobuf.TronProtos.AccountCommand DEFAULT_INSTANCE;
     static {
-      defaultInstance = new AccountCommand(true);
-      defaultInstance.initFields();
+      DEFAULT_INSTANCE = new ca.zihao.tronol.protobuf.TronProtos.AccountCommand();
     }
 
-    // @@protoc_insertion_point(class_scope:tronol.protobuf.AccountCommand)
+    public static ca.zihao.tronol.protobuf.TronProtos.AccountCommand getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<AccountCommand>
+        PARSER = new com.google.protobuf.AbstractParser<AccountCommand>() {
+      public AccountCommand parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new AccountCommand(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<AccountCommand> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AccountCommand> getParserForType() {
+      return PARSER;
+    }
+
+    public ca.zihao.tronol.protobuf.TronProtos.AccountCommand getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
-  public interface AccountResponseOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface AccountResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:tronol.protobuf.AccountResponse)
+      com.google.protobuf.MessageOrBuilder {
 
-    // required .tronol.protobuf.AccountResponse.ResponseType type = 1;
     /**
      * <code>required .tronol.protobuf.AccountResponse.ResponseType type = 1;</code>
      */
@@ -1157,7 +1290,6 @@ public final class TronProtos {
      */
     ca.zihao.tronol.protobuf.TronProtos.AccountResponse.ResponseType getType();
 
-    // optional string token = 2;
     /**
      * <code>optional string token = 2;</code>
      */
@@ -1175,36 +1307,33 @@ public final class TronProtos {
   /**
    * Protobuf type {@code tronol.protobuf.AccountResponse}
    */
-  public static final class AccountResponse extends
-      com.google.protobuf.GeneratedMessage
-      implements AccountResponseOrBuilder {
+  public  static final class AccountResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:tronol.protobuf.AccountResponse)
+      AccountResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use AccountResponse.newBuilder() to construct.
-    private AccountResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    private AccountResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
-      this.unknownFields = builder.getUnknownFields();
     }
-    private AccountResponse(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
-    private static final AccountResponse defaultInstance;
-    public static AccountResponse getDefaultInstance() {
-      return defaultInstance;
+    private AccountResponse() {
+      type_ = 0;
+      token_ = "";
     }
 
-    public AccountResponse getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-
-    private final com.google.protobuf.UnknownFieldSet unknownFields;
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
+    getUnknownFields() {
       return this.unknownFields;
     }
     private AccountResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -1217,8 +1346,8 @@ public final class TronProtos {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -1230,13 +1359,14 @@ public final class TronProtos {
                 unknownFields.mergeVarintField(1, rawValue);
               } else {
                 bitField0_ |= 0x00000001;
-                type_ = value;
+                type_ = rawValue;
               }
               break;
             }
             case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000002;
-              token_ = input.readBytes();
+              token_ = bs;
               break;
             }
           }
@@ -1245,7 +1375,7 @@ public final class TronProtos {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
+            e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -1256,26 +1386,11 @@ public final class TronProtos {
       return ca.zihao.tronol.protobuf.TronProtos.internal_static_tronol_protobuf_AccountResponse_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return ca.zihao.tronol.protobuf.TronProtos.internal_static_tronol_protobuf_AccountResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               ca.zihao.tronol.protobuf.TronProtos.AccountResponse.class, ca.zihao.tronol.protobuf.TronProtos.AccountResponse.Builder.class);
-    }
-
-    public static com.google.protobuf.Parser<AccountResponse> PARSER =
-        new com.google.protobuf.AbstractParser<AccountResponse>() {
-      public AccountResponse parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AccountResponse(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<AccountResponse> getParserForType() {
-      return PARSER;
     }
 
     /**
@@ -1286,19 +1401,19 @@ public final class TronProtos {
       /**
        * <code>SUCCESS = 0;</code>
        */
-      SUCCESS(0, 0),
+      SUCCESS(0),
       /**
        * <code>INVALID_USERNAME = 1;</code>
        */
-      INVALID_USERNAME(1, 1),
+      INVALID_USERNAME(1),
       /**
        * <code>INVALID_PASSWORD = 2;</code>
        */
-      INVALID_PASSWORD(2, 2),
+      INVALID_PASSWORD(2),
       /**
        * <code>INVALID_TOKEN = 3;</code>
        */
-      INVALID_TOKEN(3, 3),
+      INVALID_TOKEN(3),
       ;
 
       /**
@@ -1319,9 +1434,19 @@ public final class TronProtos {
       public static final int INVALID_TOKEN_VALUE = 3;
 
 
-      public final int getNumber() { return value; }
+      public final int getNumber() {
+        return value;
+      }
 
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
       public static ResponseType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ResponseType forNumber(int value) {
         switch (value) {
           case 0: return SUCCESS;
           case 1: return INVALID_USERNAME;
@@ -1335,17 +1460,17 @@ public final class TronProtos {
           internalGetValueMap() {
         return internalValueMap;
       }
-      private static com.google.protobuf.Internal.EnumLiteMap<ResponseType>
-          internalValueMap =
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          ResponseType> internalValueMap =
             new com.google.protobuf.Internal.EnumLiteMap<ResponseType>() {
               public ResponseType findValueByNumber(int number) {
-                return ResponseType.valueOf(number);
+                return ResponseType.forNumber(number);
               }
             };
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor
           getValueDescriptor() {
-        return getDescriptor().getValues().get(index);
+        return getDescriptor().getValues().get(ordinal());
       }
       public final com.google.protobuf.Descriptors.EnumDescriptor
           getDescriptorForType() {
@@ -1367,11 +1492,9 @@ public final class TronProtos {
         return VALUES[desc.getIndex()];
       }
 
-      private final int index;
       private final int value;
 
-      private ResponseType(int index, int value) {
-        this.index = index;
+      private ResponseType(int value) {
         this.value = value;
       }
 
@@ -1379,9 +1502,8 @@ public final class TronProtos {
     }
 
     private int bitField0_;
-    // required .tronol.protobuf.AccountResponse.ResponseType type = 1;
     public static final int TYPE_FIELD_NUMBER = 1;
-    private ca.zihao.tronol.protobuf.TronProtos.AccountResponse.ResponseType type_;
+    private int type_;
     /**
      * <code>required .tronol.protobuf.AccountResponse.ResponseType type = 1;</code>
      */
@@ -1392,12 +1514,12 @@ public final class TronProtos {
      * <code>required .tronol.protobuf.AccountResponse.ResponseType type = 1;</code>
      */
     public ca.zihao.tronol.protobuf.TronProtos.AccountResponse.ResponseType getType() {
-      return type_;
+      ca.zihao.tronol.protobuf.TronProtos.AccountResponse.ResponseType result = ca.zihao.tronol.protobuf.TronProtos.AccountResponse.ResponseType.valueOf(type_);
+      return result == null ? ca.zihao.tronol.protobuf.TronProtos.AccountResponse.ResponseType.SUCCESS : result;
     }
 
-    // optional string token = 2;
     public static final int TOKEN_FIELD_NUMBER = 2;
-    private java.lang.Object token_;
+    private volatile java.lang.Object token_;
     /**
      * <code>optional string token = 2;</code>
      */
@@ -1438,14 +1560,11 @@ public final class TronProtos {
       }
     }
 
-    private void initFields() {
-      type_ = ca.zihao.tronol.protobuf.TronProtos.AccountResponse.ResponseType.SUCCESS;
-      token_ = "";
-    }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasType()) {
         memoizedIsInitialized = 0;
@@ -1457,42 +1576,87 @@ public final class TronProtos {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeEnum(1, type_.getNumber());
+        output.writeEnum(1, type_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeBytes(2, getTokenBytes());
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, token_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
-    private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, type_.getNumber());
+          .computeEnumSize(1, type_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(2, getTokenBytes());
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, token_);
       }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof ca.zihao.tronol.protobuf.TronProtos.AccountResponse)) {
+        return super.equals(obj);
+      }
+      ca.zihao.tronol.protobuf.TronProtos.AccountResponse other = (ca.zihao.tronol.protobuf.TronProtos.AccountResponse) obj;
+
+      boolean result = true;
+      result = result && (hasType() == other.hasType());
+      if (hasType()) {
+        result = result && type_ == other.type_;
+      }
+      result = result && (hasToken() == other.hasToken());
+      if (hasToken()) {
+        result = result && getToken()
+            .equals(other.getToken());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasType()) {
+        hash = (37 * hash) + TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + type_;
+      }
+      if (hasToken()) {
+        hash = (37 * hash) + TOKEN_FIELD_NUMBER;
+        hash = (53 * hash) + getToken().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static ca.zihao.tronol.protobuf.TronProtos.AccountResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ca.zihao.tronol.protobuf.TronProtos.AccountResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static ca.zihao.tronol.protobuf.TronProtos.AccountResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1516,46 +1680,57 @@ public final class TronProtos {
     }
     public static ca.zihao.tronol.protobuf.TronProtos.AccountResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static ca.zihao.tronol.protobuf.TronProtos.AccountResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static ca.zihao.tronol.protobuf.TronProtos.AccountResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static ca.zihao.tronol.protobuf.TronProtos.AccountResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static ca.zihao.tronol.protobuf.TronProtos.AccountResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static ca.zihao.tronol.protobuf.TronProtos.AccountResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(ca.zihao.tronol.protobuf.TronProtos.AccountResponse prototype) {
-      return newBuilder().mergeFrom(prototype);
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
     }
-    public Builder toBuilder() { return newBuilder(this); }
+    public static Builder newBuilder(ca.zihao.tronol.protobuf.TronProtos.AccountResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -1563,14 +1738,15 @@ public final class TronProtos {
      * Protobuf type {@code tronol.protobuf.AccountResponse}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements ca.zihao.tronol.protobuf.TronProtos.AccountResponseOrBuilder {
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:tronol.protobuf.AccountResponse)
+        ca.zihao.tronol.protobuf.TronProtos.AccountResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return ca.zihao.tronol.protobuf.TronProtos.internal_static_tronol_protobuf_AccountResponse_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return ca.zihao.tronol.protobuf.TronProtos.internal_static_tronol_protobuf_AccountResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
@@ -1583,29 +1759,22 @@ public final class TronProtos {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
         }
       }
-      private static Builder create() {
-        return new Builder();
-      }
-
       public Builder clear() {
         super.clear();
-        type_ = ca.zihao.tronol.protobuf.TronProtos.AccountResponse.ResponseType.SUCCESS;
+        type_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
         token_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
         return this;
-      }
-
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
       }
 
       public com.google.protobuf.Descriptors.Descriptor
@@ -1642,6 +1811,32 @@ public final class TronProtos {
         return result;
       }
 
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ca.zihao.tronol.protobuf.TronProtos.AccountResponse) {
           return mergeFrom((ca.zihao.tronol.protobuf.TronProtos.AccountResponse)other);
@@ -1661,13 +1856,13 @@ public final class TronProtos {
           token_ = other.token_;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
         return this;
       }
 
       public final boolean isInitialized() {
         if (!hasType()) {
-          
           return false;
         }
         return true;
@@ -1682,7 +1877,7 @@ public final class TronProtos {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           parsedMessage = (ca.zihao.tronol.protobuf.TronProtos.AccountResponse) e.getUnfinishedMessage();
-          throw e;
+          throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
@@ -1692,8 +1887,7 @@ public final class TronProtos {
       }
       private int bitField0_;
 
-      // required .tronol.protobuf.AccountResponse.ResponseType type = 1;
-      private ca.zihao.tronol.protobuf.TronProtos.AccountResponse.ResponseType type_ = ca.zihao.tronol.protobuf.TronProtos.AccountResponse.ResponseType.SUCCESS;
+      private int type_ = 0;
       /**
        * <code>required .tronol.protobuf.AccountResponse.ResponseType type = 1;</code>
        */
@@ -1704,7 +1898,8 @@ public final class TronProtos {
        * <code>required .tronol.protobuf.AccountResponse.ResponseType type = 1;</code>
        */
       public ca.zihao.tronol.protobuf.TronProtos.AccountResponse.ResponseType getType() {
-        return type_;
+        ca.zihao.tronol.protobuf.TronProtos.AccountResponse.ResponseType result = ca.zihao.tronol.protobuf.TronProtos.AccountResponse.ResponseType.valueOf(type_);
+        return result == null ? ca.zihao.tronol.protobuf.TronProtos.AccountResponse.ResponseType.SUCCESS : result;
       }
       /**
        * <code>required .tronol.protobuf.AccountResponse.ResponseType type = 1;</code>
@@ -1714,7 +1909,7 @@ public final class TronProtos {
           throw new NullPointerException();
         }
         bitField0_ |= 0x00000001;
-        type_ = value;
+        type_ = value.getNumber();
         onChanged();
         return this;
       }
@@ -1723,12 +1918,11 @@ public final class TronProtos {
        */
       public Builder clearType() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        type_ = ca.zihao.tronol.protobuf.TronProtos.AccountResponse.ResponseType.SUCCESS;
+        type_ = 0;
         onChanged();
         return this;
       }
 
-      // optional string token = 2;
       private java.lang.Object token_ = "";
       /**
        * <code>optional string token = 2;</code>
@@ -1742,9 +1936,12 @@ public final class TronProtos {
       public java.lang.String getToken() {
         java.lang.Object ref = token_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          token_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            token_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -1801,22 +1998,59 @@ public final class TronProtos {
         onChanged();
         return this;
       }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
 
       // @@protoc_insertion_point(builder_scope:tronol.protobuf.AccountResponse)
     }
 
+    // @@protoc_insertion_point(class_scope:tronol.protobuf.AccountResponse)
+    private static final ca.zihao.tronol.protobuf.TronProtos.AccountResponse DEFAULT_INSTANCE;
     static {
-      defaultInstance = new AccountResponse(true);
-      defaultInstance.initFields();
+      DEFAULT_INSTANCE = new ca.zihao.tronol.protobuf.TronProtos.AccountResponse();
     }
 
-    // @@protoc_insertion_point(class_scope:tronol.protobuf.AccountResponse)
+    public static ca.zihao.tronol.protobuf.TronProtos.AccountResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<AccountResponse>
+        PARSER = new com.google.protobuf.AbstractParser<AccountResponse>() {
+      public AccountResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new AccountResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<AccountResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AccountResponse> getParserForType() {
+      return PARSER;
+    }
+
+    public ca.zihao.tronol.protobuf.TronProtos.AccountResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
-  public interface RoomCommandOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface RoomCommandOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:tronol.protobuf.RoomCommand)
+      com.google.protobuf.MessageOrBuilder {
 
-    // required .tronol.protobuf.RoomCommand.CommandType type = 1;
     /**
      * <code>required .tronol.protobuf.RoomCommand.CommandType type = 1;</code>
      */
@@ -1826,7 +2060,6 @@ public final class TronProtos {
      */
     ca.zihao.tronol.protobuf.TronProtos.RoomCommand.CommandType getType();
 
-    // optional int32 id = 2;
     /**
      * <code>optional int32 id = 2;</code>
      */
@@ -1836,7 +2069,6 @@ public final class TronProtos {
      */
     int getId();
 
-    // optional string name = 3;
     /**
      * <code>optional string name = 3;</code>
      */
@@ -1851,7 +2083,6 @@ public final class TronProtos {
     com.google.protobuf.ByteString
         getNameBytes();
 
-    // optional int32 wins = 4;
     /**
      * <code>optional int32 wins = 4;</code>
      */
@@ -1864,36 +2095,35 @@ public final class TronProtos {
   /**
    * Protobuf type {@code tronol.protobuf.RoomCommand}
    */
-  public static final class RoomCommand extends
-      com.google.protobuf.GeneratedMessage
-      implements RoomCommandOrBuilder {
+  public  static final class RoomCommand extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:tronol.protobuf.RoomCommand)
+      RoomCommandOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use RoomCommand.newBuilder() to construct.
-    private RoomCommand(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    private RoomCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
-      this.unknownFields = builder.getUnknownFields();
     }
-    private RoomCommand(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
-    private static final RoomCommand defaultInstance;
-    public static RoomCommand getDefaultInstance() {
-      return defaultInstance;
-    }
-
-    public RoomCommand getDefaultInstanceForType() {
-      return defaultInstance;
+    private RoomCommand() {
+      type_ = 0;
+      id_ = 0;
+      name_ = "";
+      wins_ = 0;
     }
 
-    private final com.google.protobuf.UnknownFieldSet unknownFields;
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
+    getUnknownFields() {
       return this.unknownFields;
     }
     private RoomCommand(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -1906,8 +2136,8 @@ public final class TronProtos {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -1919,7 +2149,7 @@ public final class TronProtos {
                 unknownFields.mergeVarintField(1, rawValue);
               } else {
                 bitField0_ |= 0x00000001;
-                type_ = value;
+                type_ = rawValue;
               }
               break;
             }
@@ -1929,8 +2159,9 @@ public final class TronProtos {
               break;
             }
             case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000004;
-              name_ = input.readBytes();
+              name_ = bs;
               break;
             }
             case 32: {
@@ -1944,7 +2175,7 @@ public final class TronProtos {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
+            e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -1955,26 +2186,11 @@ public final class TronProtos {
       return ca.zihao.tronol.protobuf.TronProtos.internal_static_tronol_protobuf_RoomCommand_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return ca.zihao.tronol.protobuf.TronProtos.internal_static_tronol_protobuf_RoomCommand_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               ca.zihao.tronol.protobuf.TronProtos.RoomCommand.class, ca.zihao.tronol.protobuf.TronProtos.RoomCommand.Builder.class);
-    }
-
-    public static com.google.protobuf.Parser<RoomCommand> PARSER =
-        new com.google.protobuf.AbstractParser<RoomCommand>() {
-      public RoomCommand parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new RoomCommand(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<RoomCommand> getParserForType() {
-      return PARSER;
     }
 
     /**
@@ -1985,23 +2201,23 @@ public final class TronProtos {
       /**
        * <code>CREATE = 0;</code>
        */
-      CREATE(0, 0),
+      CREATE(0),
       /**
        * <code>EDIT = 1;</code>
        */
-      EDIT(1, 1),
+      EDIT(1),
       /**
        * <code>LIST = 2;</code>
        */
-      LIST(2, 2),
+      LIST(2),
       /**
        * <code>ENTER = 3;</code>
        */
-      ENTER(3, 3),
+      ENTER(3),
       /**
        * <code>LEAVE = 4;</code>
        */
-      LEAVE(4, 4),
+      LEAVE(4),
       ;
 
       /**
@@ -2026,9 +2242,19 @@ public final class TronProtos {
       public static final int LEAVE_VALUE = 4;
 
 
-      public final int getNumber() { return value; }
+      public final int getNumber() {
+        return value;
+      }
 
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
       public static CommandType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static CommandType forNumber(int value) {
         switch (value) {
           case 0: return CREATE;
           case 1: return EDIT;
@@ -2043,17 +2269,17 @@ public final class TronProtos {
           internalGetValueMap() {
         return internalValueMap;
       }
-      private static com.google.protobuf.Internal.EnumLiteMap<CommandType>
-          internalValueMap =
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          CommandType> internalValueMap =
             new com.google.protobuf.Internal.EnumLiteMap<CommandType>() {
               public CommandType findValueByNumber(int number) {
-                return CommandType.valueOf(number);
+                return CommandType.forNumber(number);
               }
             };
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor
           getValueDescriptor() {
-        return getDescriptor().getValues().get(index);
+        return getDescriptor().getValues().get(ordinal());
       }
       public final com.google.protobuf.Descriptors.EnumDescriptor
           getDescriptorForType() {
@@ -2075,11 +2301,9 @@ public final class TronProtos {
         return VALUES[desc.getIndex()];
       }
 
-      private final int index;
       private final int value;
 
-      private CommandType(int index, int value) {
-        this.index = index;
+      private CommandType(int value) {
         this.value = value;
       }
 
@@ -2087,9 +2311,8 @@ public final class TronProtos {
     }
 
     private int bitField0_;
-    // required .tronol.protobuf.RoomCommand.CommandType type = 1;
     public static final int TYPE_FIELD_NUMBER = 1;
-    private ca.zihao.tronol.protobuf.TronProtos.RoomCommand.CommandType type_;
+    private int type_;
     /**
      * <code>required .tronol.protobuf.RoomCommand.CommandType type = 1;</code>
      */
@@ -2100,10 +2323,10 @@ public final class TronProtos {
      * <code>required .tronol.protobuf.RoomCommand.CommandType type = 1;</code>
      */
     public ca.zihao.tronol.protobuf.TronProtos.RoomCommand.CommandType getType() {
-      return type_;
+      ca.zihao.tronol.protobuf.TronProtos.RoomCommand.CommandType result = ca.zihao.tronol.protobuf.TronProtos.RoomCommand.CommandType.valueOf(type_);
+      return result == null ? ca.zihao.tronol.protobuf.TronProtos.RoomCommand.CommandType.CREATE : result;
     }
 
-    // optional int32 id = 2;
     public static final int ID_FIELD_NUMBER = 2;
     private int id_;
     /**
@@ -2119,9 +2342,8 @@ public final class TronProtos {
       return id_;
     }
 
-    // optional string name = 3;
     public static final int NAME_FIELD_NUMBER = 3;
-    private java.lang.Object name_;
+    private volatile java.lang.Object name_;
     /**
      * <code>optional string name = 3;</code>
      */
@@ -2162,7 +2384,6 @@ public final class TronProtos {
       }
     }
 
-    // optional int32 wins = 4;
     public static final int WINS_FIELD_NUMBER = 4;
     private int wins_;
     /**
@@ -2178,16 +2399,11 @@ public final class TronProtos {
       return wins_;
     }
 
-    private void initFields() {
-      type_ = ca.zihao.tronol.protobuf.TronProtos.RoomCommand.CommandType.CREATE;
-      id_ = 0;
-      name_ = "";
-      wins_ = 0;
-    }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasType()) {
         memoizedIsInitialized = 0;
@@ -2199,56 +2415,119 @@ public final class TronProtos {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeEnum(1, type_.getNumber());
+        output.writeEnum(1, type_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeInt32(2, id_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBytes(3, getNameBytes());
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         output.writeInt32(4, wins_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
-    private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, type_.getNumber());
+          .computeEnumSize(1, type_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(2, id_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, getNameBytes());
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(4, wins_);
       }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof ca.zihao.tronol.protobuf.TronProtos.RoomCommand)) {
+        return super.equals(obj);
+      }
+      ca.zihao.tronol.protobuf.TronProtos.RoomCommand other = (ca.zihao.tronol.protobuf.TronProtos.RoomCommand) obj;
+
+      boolean result = true;
+      result = result && (hasType() == other.hasType());
+      if (hasType()) {
+        result = result && type_ == other.type_;
+      }
+      result = result && (hasId() == other.hasId());
+      if (hasId()) {
+        result = result && (getId()
+            == other.getId());
+      }
+      result = result && (hasName() == other.hasName());
+      if (hasName()) {
+        result = result && getName()
+            .equals(other.getName());
+      }
+      result = result && (hasWins() == other.hasWins());
+      if (hasWins()) {
+        result = result && (getWins()
+            == other.getWins());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasType()) {
+        hash = (37 * hash) + TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + type_;
+      }
+      if (hasId()) {
+        hash = (37 * hash) + ID_FIELD_NUMBER;
+        hash = (53 * hash) + getId();
+      }
+      if (hasName()) {
+        hash = (37 * hash) + NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getName().hashCode();
+      }
+      if (hasWins()) {
+        hash = (37 * hash) + WINS_FIELD_NUMBER;
+        hash = (53 * hash) + getWins();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static ca.zihao.tronol.protobuf.TronProtos.RoomCommand parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ca.zihao.tronol.protobuf.TronProtos.RoomCommand parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static ca.zihao.tronol.protobuf.TronProtos.RoomCommand parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2272,46 +2551,57 @@ public final class TronProtos {
     }
     public static ca.zihao.tronol.protobuf.TronProtos.RoomCommand parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static ca.zihao.tronol.protobuf.TronProtos.RoomCommand parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static ca.zihao.tronol.protobuf.TronProtos.RoomCommand parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static ca.zihao.tronol.protobuf.TronProtos.RoomCommand parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static ca.zihao.tronol.protobuf.TronProtos.RoomCommand parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static ca.zihao.tronol.protobuf.TronProtos.RoomCommand parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(ca.zihao.tronol.protobuf.TronProtos.RoomCommand prototype) {
-      return newBuilder().mergeFrom(prototype);
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
     }
-    public Builder toBuilder() { return newBuilder(this); }
+    public static Builder newBuilder(ca.zihao.tronol.protobuf.TronProtos.RoomCommand prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -2319,14 +2609,15 @@ public final class TronProtos {
      * Protobuf type {@code tronol.protobuf.RoomCommand}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements ca.zihao.tronol.protobuf.TronProtos.RoomCommandOrBuilder {
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:tronol.protobuf.RoomCommand)
+        ca.zihao.tronol.protobuf.TronProtos.RoomCommandOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return ca.zihao.tronol.protobuf.TronProtos.internal_static_tronol_protobuf_RoomCommand_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return ca.zihao.tronol.protobuf.TronProtos.internal_static_tronol_protobuf_RoomCommand_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
@@ -2339,21 +2630,18 @@ public final class TronProtos {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
         }
       }
-      private static Builder create() {
-        return new Builder();
-      }
-
       public Builder clear() {
         super.clear();
-        type_ = ca.zihao.tronol.protobuf.TronProtos.RoomCommand.CommandType.CREATE;
+        type_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
         id_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -2362,10 +2650,6 @@ public final class TronProtos {
         wins_ = 0;
         bitField0_ = (bitField0_ & ~0x00000008);
         return this;
-      }
-
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
       }
 
       public com.google.protobuf.Descriptors.Descriptor
@@ -2410,6 +2694,32 @@ public final class TronProtos {
         return result;
       }
 
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ca.zihao.tronol.protobuf.TronProtos.RoomCommand) {
           return mergeFrom((ca.zihao.tronol.protobuf.TronProtos.RoomCommand)other);
@@ -2435,13 +2745,13 @@ public final class TronProtos {
         if (other.hasWins()) {
           setWins(other.getWins());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
         return this;
       }
 
       public final boolean isInitialized() {
         if (!hasType()) {
-          
           return false;
         }
         return true;
@@ -2456,7 +2766,7 @@ public final class TronProtos {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           parsedMessage = (ca.zihao.tronol.protobuf.TronProtos.RoomCommand) e.getUnfinishedMessage();
-          throw e;
+          throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
@@ -2466,8 +2776,7 @@ public final class TronProtos {
       }
       private int bitField0_;
 
-      // required .tronol.protobuf.RoomCommand.CommandType type = 1;
-      private ca.zihao.tronol.protobuf.TronProtos.RoomCommand.CommandType type_ = ca.zihao.tronol.protobuf.TronProtos.RoomCommand.CommandType.CREATE;
+      private int type_ = 0;
       /**
        * <code>required .tronol.protobuf.RoomCommand.CommandType type = 1;</code>
        */
@@ -2478,7 +2787,8 @@ public final class TronProtos {
        * <code>required .tronol.protobuf.RoomCommand.CommandType type = 1;</code>
        */
       public ca.zihao.tronol.protobuf.TronProtos.RoomCommand.CommandType getType() {
-        return type_;
+        ca.zihao.tronol.protobuf.TronProtos.RoomCommand.CommandType result = ca.zihao.tronol.protobuf.TronProtos.RoomCommand.CommandType.valueOf(type_);
+        return result == null ? ca.zihao.tronol.protobuf.TronProtos.RoomCommand.CommandType.CREATE : result;
       }
       /**
        * <code>required .tronol.protobuf.RoomCommand.CommandType type = 1;</code>
@@ -2488,7 +2798,7 @@ public final class TronProtos {
           throw new NullPointerException();
         }
         bitField0_ |= 0x00000001;
-        type_ = value;
+        type_ = value.getNumber();
         onChanged();
         return this;
       }
@@ -2497,12 +2807,11 @@ public final class TronProtos {
        */
       public Builder clearType() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        type_ = ca.zihao.tronol.protobuf.TronProtos.RoomCommand.CommandType.CREATE;
+        type_ = 0;
         onChanged();
         return this;
       }
 
-      // optional int32 id = 2;
       private int id_ ;
       /**
        * <code>optional int32 id = 2;</code>
@@ -2535,7 +2844,6 @@ public final class TronProtos {
         return this;
       }
 
-      // optional string name = 3;
       private java.lang.Object name_ = "";
       /**
        * <code>optional string name = 3;</code>
@@ -2549,9 +2857,12 @@ public final class TronProtos {
       public java.lang.String getName() {
         java.lang.Object ref = name_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          name_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            name_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -2609,7 +2920,6 @@ public final class TronProtos {
         return this;
       }
 
-      // optional int32 wins = 4;
       private int wins_ ;
       /**
        * <code>optional int32 wins = 4;</code>
@@ -2641,22 +2951,59 @@ public final class TronProtos {
         onChanged();
         return this;
       }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
 
       // @@protoc_insertion_point(builder_scope:tronol.protobuf.RoomCommand)
     }
 
+    // @@protoc_insertion_point(class_scope:tronol.protobuf.RoomCommand)
+    private static final ca.zihao.tronol.protobuf.TronProtos.RoomCommand DEFAULT_INSTANCE;
     static {
-      defaultInstance = new RoomCommand(true);
-      defaultInstance.initFields();
+      DEFAULT_INSTANCE = new ca.zihao.tronol.protobuf.TronProtos.RoomCommand();
     }
 
-    // @@protoc_insertion_point(class_scope:tronol.protobuf.RoomCommand)
+    public static ca.zihao.tronol.protobuf.TronProtos.RoomCommand getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<RoomCommand>
+        PARSER = new com.google.protobuf.AbstractParser<RoomCommand>() {
+      public RoomCommand parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new RoomCommand(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<RoomCommand> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RoomCommand> getParserForType() {
+      return PARSER;
+    }
+
+    public ca.zihao.tronol.protobuf.TronProtos.RoomCommand getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
-  public interface RoomResponseOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface RoomResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:tronol.protobuf.RoomResponse)
+      com.google.protobuf.MessageOrBuilder {
 
-    // required .tronol.protobuf.RoomResponse.ResponseType type = 1;
     /**
      * <code>required .tronol.protobuf.RoomResponse.ResponseType type = 1;</code>
      */
@@ -2666,7 +3013,6 @@ public final class TronProtos {
      */
     ca.zihao.tronol.protobuf.TronProtos.RoomResponse.ResponseType getType();
 
-    // optional int32 id = 2;
     /**
      * <code>optional int32 id = 2;</code>
      */
@@ -2676,7 +3022,6 @@ public final class TronProtos {
      */
     int getId();
 
-    // repeated .tronol.protobuf.RoomResponse.RoomInfo room = 3;
     /**
      * <code>repeated .tronol.protobuf.RoomResponse.RoomInfo room = 3;</code>
      */
@@ -2704,36 +3049,34 @@ public final class TronProtos {
   /**
    * Protobuf type {@code tronol.protobuf.RoomResponse}
    */
-  public static final class RoomResponse extends
-      com.google.protobuf.GeneratedMessage
-      implements RoomResponseOrBuilder {
+  public  static final class RoomResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:tronol.protobuf.RoomResponse)
+      RoomResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use RoomResponse.newBuilder() to construct.
-    private RoomResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    private RoomResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
-      this.unknownFields = builder.getUnknownFields();
     }
-    private RoomResponse(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
-    private static final RoomResponse defaultInstance;
-    public static RoomResponse getDefaultInstance() {
-      return defaultInstance;
+    private RoomResponse() {
+      type_ = 0;
+      id_ = 0;
+      room_ = java.util.Collections.emptyList();
     }
 
-    public RoomResponse getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-
-    private final com.google.protobuf.UnknownFieldSet unknownFields;
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
+    getUnknownFields() {
       return this.unknownFields;
     }
     private RoomResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -2746,8 +3089,8 @@ public final class TronProtos {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -2759,7 +3102,7 @@ public final class TronProtos {
                 unknownFields.mergeVarintField(1, rawValue);
               } else {
                 bitField0_ |= 0x00000001;
-                type_ = value;
+                type_ = rawValue;
               }
               break;
             }
@@ -2773,7 +3116,8 @@ public final class TronProtos {
                 room_ = new java.util.ArrayList<ca.zihao.tronol.protobuf.TronProtos.RoomResponse.RoomInfo>();
                 mutable_bitField0_ |= 0x00000004;
               }
-              room_.add(input.readMessage(ca.zihao.tronol.protobuf.TronProtos.RoomResponse.RoomInfo.PARSER, extensionRegistry));
+              room_.add(
+                  input.readMessage(ca.zihao.tronol.protobuf.TronProtos.RoomResponse.RoomInfo.PARSER, extensionRegistry));
               break;
             }
           }
@@ -2782,7 +3126,7 @@ public final class TronProtos {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
+            e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
           room_ = java.util.Collections.unmodifiableList(room_);
@@ -2796,26 +3140,11 @@ public final class TronProtos {
       return ca.zihao.tronol.protobuf.TronProtos.internal_static_tronol_protobuf_RoomResponse_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return ca.zihao.tronol.protobuf.TronProtos.internal_static_tronol_protobuf_RoomResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               ca.zihao.tronol.protobuf.TronProtos.RoomResponse.class, ca.zihao.tronol.protobuf.TronProtos.RoomResponse.Builder.class);
-    }
-
-    public static com.google.protobuf.Parser<RoomResponse> PARSER =
-        new com.google.protobuf.AbstractParser<RoomResponse>() {
-      public RoomResponse parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new RoomResponse(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<RoomResponse> getParserForType() {
-      return PARSER;
     }
 
     /**
@@ -2826,11 +3155,11 @@ public final class TronProtos {
       /**
        * <code>SUCCESS = 0;</code>
        */
-      SUCCESS(0, 0),
+      SUCCESS(0),
       /**
        * <code>INVALID_ROOM = 1;</code>
        */
-      INVALID_ROOM(1, 1),
+      INVALID_ROOM(1),
       ;
 
       /**
@@ -2843,9 +3172,19 @@ public final class TronProtos {
       public static final int INVALID_ROOM_VALUE = 1;
 
 
-      public final int getNumber() { return value; }
+      public final int getNumber() {
+        return value;
+      }
 
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
       public static ResponseType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ResponseType forNumber(int value) {
         switch (value) {
           case 0: return SUCCESS;
           case 1: return INVALID_ROOM;
@@ -2857,17 +3196,17 @@ public final class TronProtos {
           internalGetValueMap() {
         return internalValueMap;
       }
-      private static com.google.protobuf.Internal.EnumLiteMap<ResponseType>
-          internalValueMap =
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          ResponseType> internalValueMap =
             new com.google.protobuf.Internal.EnumLiteMap<ResponseType>() {
               public ResponseType findValueByNumber(int number) {
-                return ResponseType.valueOf(number);
+                return ResponseType.forNumber(number);
               }
             };
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor
           getValueDescriptor() {
-        return getDescriptor().getValues().get(index);
+        return getDescriptor().getValues().get(ordinal());
       }
       public final com.google.protobuf.Descriptors.EnumDescriptor
           getDescriptorForType() {
@@ -2889,21 +3228,19 @@ public final class TronProtos {
         return VALUES[desc.getIndex()];
       }
 
-      private final int index;
       private final int value;
 
-      private ResponseType(int index, int value) {
-        this.index = index;
+      private ResponseType(int value) {
         this.value = value;
       }
 
       // @@protoc_insertion_point(enum_scope:tronol.protobuf.RoomResponse.ResponseType)
     }
 
-    public interface RoomInfoOrBuilder
-        extends com.google.protobuf.MessageOrBuilder {
+    public interface RoomInfoOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:tronol.protobuf.RoomResponse.RoomInfo)
+        com.google.protobuf.MessageOrBuilder {
 
-      // required int32 id = 1;
       /**
        * <code>required int32 id = 1;</code>
        */
@@ -2913,7 +3250,6 @@ public final class TronProtos {
        */
       int getId();
 
-      // required string name = 2;
       /**
        * <code>required string name = 2;</code>
        */
@@ -2928,7 +3264,6 @@ public final class TronProtos {
       com.google.protobuf.ByteString
           getNameBytes();
 
-      // optional string host = 3;
       /**
        * <code>optional string host = 3;</code>
        */
@@ -2943,7 +3278,6 @@ public final class TronProtos {
       com.google.protobuf.ByteString
           getHostBytes();
 
-      // optional string status = 4;
       /**
        * <code>optional string status = 4;</code>
        */
@@ -2961,36 +3295,35 @@ public final class TronProtos {
     /**
      * Protobuf type {@code tronol.protobuf.RoomResponse.RoomInfo}
      */
-    public static final class RoomInfo extends
-        com.google.protobuf.GeneratedMessage
-        implements RoomInfoOrBuilder {
+    public  static final class RoomInfo extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:tronol.protobuf.RoomResponse.RoomInfo)
+        RoomInfoOrBuilder {
+    private static final long serialVersionUID = 0L;
       // Use RoomInfo.newBuilder() to construct.
-      private RoomInfo(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      private RoomInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
-        this.unknownFields = builder.getUnknownFields();
       }
-      private RoomInfo(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
-      private static final RoomInfo defaultInstance;
-      public static RoomInfo getDefaultInstance() {
-        return defaultInstance;
-      }
-
-      public RoomInfo getDefaultInstanceForType() {
-        return defaultInstance;
+      private RoomInfo() {
+        id_ = 0;
+        name_ = "";
+        host_ = "";
+        status_ = "";
       }
 
-      private final com.google.protobuf.UnknownFieldSet unknownFields;
       @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet
-          getUnknownFields() {
+      getUnknownFields() {
         return this.unknownFields;
       }
       private RoomInfo(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        initFields();
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -3003,8 +3336,8 @@ public final class TronProtos {
                 done = true;
                 break;
               default: {
-                if (!parseUnknownField(input, unknownFields,
-                                       extensionRegistry, tag)) {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -3015,18 +3348,21 @@ public final class TronProtos {
                 break;
               }
               case 18: {
+                com.google.protobuf.ByteString bs = input.readBytes();
                 bitField0_ |= 0x00000002;
-                name_ = input.readBytes();
+                name_ = bs;
                 break;
               }
               case 26: {
+                com.google.protobuf.ByteString bs = input.readBytes();
                 bitField0_ |= 0x00000004;
-                host_ = input.readBytes();
+                host_ = bs;
                 break;
               }
               case 34: {
+                com.google.protobuf.ByteString bs = input.readBytes();
                 bitField0_ |= 0x00000008;
-                status_ = input.readBytes();
+                status_ = bs;
                 break;
               }
             }
@@ -3035,7 +3371,7 @@ public final class TronProtos {
           throw e.setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(
-              e.getMessage()).setUnfinishedMessage(this);
+              e).setUnfinishedMessage(this);
         } finally {
           this.unknownFields = unknownFields.build();
           makeExtensionsImmutable();
@@ -3046,30 +3382,14 @@ public final class TronProtos {
         return ca.zihao.tronol.protobuf.TronProtos.internal_static_tronol_protobuf_RoomResponse_RoomInfo_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return ca.zihao.tronol.protobuf.TronProtos.internal_static_tronol_protobuf_RoomResponse_RoomInfo_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 ca.zihao.tronol.protobuf.TronProtos.RoomResponse.RoomInfo.class, ca.zihao.tronol.protobuf.TronProtos.RoomResponse.RoomInfo.Builder.class);
       }
 
-      public static com.google.protobuf.Parser<RoomInfo> PARSER =
-          new com.google.protobuf.AbstractParser<RoomInfo>() {
-        public RoomInfo parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RoomInfo(input, extensionRegistry);
-        }
-      };
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<RoomInfo> getParserForType() {
-        return PARSER;
-      }
-
       private int bitField0_;
-      // required int32 id = 1;
       public static final int ID_FIELD_NUMBER = 1;
       private int id_;
       /**
@@ -3085,9 +3405,8 @@ public final class TronProtos {
         return id_;
       }
 
-      // required string name = 2;
       public static final int NAME_FIELD_NUMBER = 2;
-      private java.lang.Object name_;
+      private volatile java.lang.Object name_;
       /**
        * <code>required string name = 2;</code>
        */
@@ -3128,9 +3447,8 @@ public final class TronProtos {
         }
       }
 
-      // optional string host = 3;
       public static final int HOST_FIELD_NUMBER = 3;
-      private java.lang.Object host_;
+      private volatile java.lang.Object host_;
       /**
        * <code>optional string host = 3;</code>
        */
@@ -3171,9 +3489,8 @@ public final class TronProtos {
         }
       }
 
-      // optional string status = 4;
       public static final int STATUS_FIELD_NUMBER = 4;
-      private java.lang.Object status_;
+      private volatile java.lang.Object status_;
       /**
        * <code>optional string status = 4;</code>
        */
@@ -3214,16 +3531,11 @@ public final class TronProtos {
         }
       }
 
-      private void initFields() {
-        id_ = 0;
-        name_ = "";
-        host_ = "";
-        status_ = "";
-      }
       private byte memoizedIsInitialized = -1;
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
-        if (isInitialized != -1) return isInitialized == 1;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
 
         if (!hasId()) {
           memoizedIsInitialized = 0;
@@ -3239,25 +3551,23 @@ public final class TronProtos {
 
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        getSerializedSize();
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
           output.writeInt32(1, id_);
         }
         if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          output.writeBytes(2, getNameBytes());
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
         }
         if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          output.writeBytes(3, getHostBytes());
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 3, host_);
         }
         if (((bitField0_ & 0x00000008) == 0x00000008)) {
-          output.writeBytes(4, getStatusBytes());
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 4, status_);
         }
-        getUnknownFields().writeTo(output);
+        unknownFields.writeTo(output);
       }
 
-      private int memoizedSerializedSize = -1;
       public int getSerializedSize() {
-        int size = memoizedSerializedSize;
+        int size = memoizedSize;
         if (size != -1) return size;
 
         size = 0;
@@ -3266,29 +3576,93 @@ public final class TronProtos {
             .computeInt32Size(1, id_);
         }
         if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeBytesSize(2, getNameBytes());
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
         }
         if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeBytesSize(3, getHostBytes());
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, host_);
         }
         if (((bitField0_ & 0x00000008) == 0x00000008)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeBytesSize(4, getStatusBytes());
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, status_);
         }
-        size += getUnknownFields().getSerializedSize();
-        memoizedSerializedSize = size;
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
         return size;
       }
 
-      private static final long serialVersionUID = 0L;
       @java.lang.Override
-      protected java.lang.Object writeReplace()
-          throws java.io.ObjectStreamException {
-        return super.writeReplace();
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof ca.zihao.tronol.protobuf.TronProtos.RoomResponse.RoomInfo)) {
+          return super.equals(obj);
+        }
+        ca.zihao.tronol.protobuf.TronProtos.RoomResponse.RoomInfo other = (ca.zihao.tronol.protobuf.TronProtos.RoomResponse.RoomInfo) obj;
+
+        boolean result = true;
+        result = result && (hasId() == other.hasId());
+        if (hasId()) {
+          result = result && (getId()
+              == other.getId());
+        }
+        result = result && (hasName() == other.hasName());
+        if (hasName()) {
+          result = result && getName()
+              .equals(other.getName());
+        }
+        result = result && (hasHost() == other.hasHost());
+        if (hasHost()) {
+          result = result && getHost()
+              .equals(other.getHost());
+        }
+        result = result && (hasStatus() == other.hasStatus());
+        if (hasStatus()) {
+          result = result && getStatus()
+              .equals(other.getStatus());
+        }
+        result = result && unknownFields.equals(other.unknownFields);
+        return result;
       }
 
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasId()) {
+          hash = (37 * hash) + ID_FIELD_NUMBER;
+          hash = (53 * hash) + getId();
+        }
+        if (hasName()) {
+          hash = (37 * hash) + NAME_FIELD_NUMBER;
+          hash = (53 * hash) + getName().hashCode();
+        }
+        if (hasHost()) {
+          hash = (37 * hash) + HOST_FIELD_NUMBER;
+          hash = (53 * hash) + getHost().hashCode();
+        }
+        if (hasStatus()) {
+          hash = (37 * hash) + STATUS_FIELD_NUMBER;
+          hash = (53 * hash) + getStatus().hashCode();
+        }
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static ca.zihao.tronol.protobuf.TronProtos.RoomResponse.RoomInfo parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static ca.zihao.tronol.protobuf.TronProtos.RoomResponse.RoomInfo parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
       public static ca.zihao.tronol.protobuf.TronProtos.RoomResponse.RoomInfo parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3312,46 +3686,57 @@ public final class TronProtos {
       }
       public static ca.zihao.tronol.protobuf.TronProtos.RoomResponse.RoomInfo parseFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return PARSER.parseFrom(input);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
       }
       public static ca.zihao.tronol.protobuf.TronProtos.RoomResponse.RoomInfo parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return PARSER.parseFrom(input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
       }
       public static ca.zihao.tronol.protobuf.TronProtos.RoomResponse.RoomInfo parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return PARSER.parseDelimitedFrom(input);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
       }
       public static ca.zihao.tronol.protobuf.TronProtos.RoomResponse.RoomInfo parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return PARSER.parseDelimitedFrom(input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
       }
       public static ca.zihao.tronol.protobuf.TronProtos.RoomResponse.RoomInfo parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
-        return PARSER.parseFrom(input);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
       }
       public static ca.zihao.tronol.protobuf.TronProtos.RoomResponse.RoomInfo parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return PARSER.parseFrom(input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
-      public static Builder newBuilder() { return Builder.create(); }
       public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder(ca.zihao.tronol.protobuf.TronProtos.RoomResponse.RoomInfo prototype) {
-        return newBuilder().mergeFrom(prototype);
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
       }
-      public Builder toBuilder() { return newBuilder(this); }
+      public static Builder newBuilder(ca.zihao.tronol.protobuf.TronProtos.RoomResponse.RoomInfo prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
 
       @java.lang.Override
       protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         Builder builder = new Builder(parent);
         return builder;
       }
@@ -3359,14 +3744,15 @@ public final class TronProtos {
        * Protobuf type {@code tronol.protobuf.RoomResponse.RoomInfo}
        */
       public static final class Builder extends
-          com.google.protobuf.GeneratedMessage.Builder<Builder>
-         implements ca.zihao.tronol.protobuf.TronProtos.RoomResponse.RoomInfoOrBuilder {
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:tronol.protobuf.RoomResponse.RoomInfo)
+          ca.zihao.tronol.protobuf.TronProtos.RoomResponse.RoomInfoOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
           return ca.zihao.tronol.protobuf.TronProtos.internal_static_tronol_protobuf_RoomResponse_RoomInfo_descriptor;
         }
 
-        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return ca.zihao.tronol.protobuf.TronProtos.internal_static_tronol_protobuf_RoomResponse_RoomInfo_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
@@ -3379,18 +3765,15 @@ public final class TronProtos {
         }
 
         private Builder(
-            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
           maybeForceBuilderInitialization();
         }
         private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
           }
         }
-        private static Builder create() {
-          return new Builder();
-        }
-
         public Builder clear() {
           super.clear();
           id_ = 0;
@@ -3402,10 +3785,6 @@ public final class TronProtos {
           status_ = "";
           bitField0_ = (bitField0_ & ~0x00000008);
           return this;
-        }
-
-        public Builder clone() {
-          return create().mergeFrom(buildPartial());
         }
 
         public com.google.protobuf.Descriptors.Descriptor
@@ -3450,6 +3829,32 @@ public final class TronProtos {
           return result;
         }
 
+        public Builder clone() {
+          return (Builder) super.clone();
+        }
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return (Builder) super.setField(field, value);
+        }
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return (Builder) super.clearField(field);
+        }
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return (Builder) super.clearOneof(oneof);
+        }
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return (Builder) super.setRepeatedField(field, index, value);
+        }
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return (Builder) super.addRepeatedField(field, value);
+        }
         public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof ca.zihao.tronol.protobuf.TronProtos.RoomResponse.RoomInfo) {
             return mergeFrom((ca.zihao.tronol.protobuf.TronProtos.RoomResponse.RoomInfo)other);
@@ -3479,17 +3884,16 @@ public final class TronProtos {
             status_ = other.status_;
             onChanged();
           }
-          this.mergeUnknownFields(other.getUnknownFields());
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
           return this;
         }
 
         public final boolean isInitialized() {
           if (!hasId()) {
-            
             return false;
           }
           if (!hasName()) {
-            
             return false;
           }
           return true;
@@ -3504,7 +3908,7 @@ public final class TronProtos {
             parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
             parsedMessage = (ca.zihao.tronol.protobuf.TronProtos.RoomResponse.RoomInfo) e.getUnfinishedMessage();
-            throw e;
+            throw e.unwrapIOException();
           } finally {
             if (parsedMessage != null) {
               mergeFrom(parsedMessage);
@@ -3514,7 +3918,6 @@ public final class TronProtos {
         }
         private int bitField0_;
 
-        // required int32 id = 1;
         private int id_ ;
         /**
          * <code>required int32 id = 1;</code>
@@ -3547,7 +3950,6 @@ public final class TronProtos {
           return this;
         }
 
-        // required string name = 2;
         private java.lang.Object name_ = "";
         /**
          * <code>required string name = 2;</code>
@@ -3561,9 +3963,12 @@ public final class TronProtos {
         public java.lang.String getName() {
           java.lang.Object ref = name_;
           if (!(ref instanceof java.lang.String)) {
-            java.lang.String s = ((com.google.protobuf.ByteString) ref)
-                .toStringUtf8();
-            name_ = s;
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (bs.isValidUtf8()) {
+              name_ = s;
+            }
             return s;
           } else {
             return (java.lang.String) ref;
@@ -3621,7 +4026,6 @@ public final class TronProtos {
           return this;
         }
 
-        // optional string host = 3;
         private java.lang.Object host_ = "";
         /**
          * <code>optional string host = 3;</code>
@@ -3635,9 +4039,12 @@ public final class TronProtos {
         public java.lang.String getHost() {
           java.lang.Object ref = host_;
           if (!(ref instanceof java.lang.String)) {
-            java.lang.String s = ((com.google.protobuf.ByteString) ref)
-                .toStringUtf8();
-            host_ = s;
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (bs.isValidUtf8()) {
+              host_ = s;
+            }
             return s;
           } else {
             return (java.lang.String) ref;
@@ -3695,7 +4102,6 @@ public final class TronProtos {
           return this;
         }
 
-        // optional string status = 4;
         private java.lang.Object status_ = "";
         /**
          * <code>optional string status = 4;</code>
@@ -3709,9 +4115,12 @@ public final class TronProtos {
         public java.lang.String getStatus() {
           java.lang.Object ref = status_;
           if (!(ref instanceof java.lang.String)) {
-            java.lang.String s = ((com.google.protobuf.ByteString) ref)
-                .toStringUtf8();
-            status_ = s;
+            com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            if (bs.isValidUtf8()) {
+              status_ = s;
+            }
             return s;
           } else {
             return (java.lang.String) ref;
@@ -3768,22 +4177,58 @@ public final class TronProtos {
           onChanged();
           return this;
         }
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
 
         // @@protoc_insertion_point(builder_scope:tronol.protobuf.RoomResponse.RoomInfo)
       }
 
+      // @@protoc_insertion_point(class_scope:tronol.protobuf.RoomResponse.RoomInfo)
+      private static final ca.zihao.tronol.protobuf.TronProtos.RoomResponse.RoomInfo DEFAULT_INSTANCE;
       static {
-        defaultInstance = new RoomInfo(true);
-        defaultInstance.initFields();
+        DEFAULT_INSTANCE = new ca.zihao.tronol.protobuf.TronProtos.RoomResponse.RoomInfo();
       }
 
-      // @@protoc_insertion_point(class_scope:tronol.protobuf.RoomResponse.RoomInfo)
+      public static ca.zihao.tronol.protobuf.TronProtos.RoomResponse.RoomInfo getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      @java.lang.Deprecated public static final com.google.protobuf.Parser<RoomInfo>
+          PARSER = new com.google.protobuf.AbstractParser<RoomInfo>() {
+        public RoomInfo parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new RoomInfo(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<RoomInfo> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<RoomInfo> getParserForType() {
+        return PARSER;
+      }
+
+      public ca.zihao.tronol.protobuf.TronProtos.RoomResponse.RoomInfo getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
     }
 
     private int bitField0_;
-    // required .tronol.protobuf.RoomResponse.ResponseType type = 1;
     public static final int TYPE_FIELD_NUMBER = 1;
-    private ca.zihao.tronol.protobuf.TronProtos.RoomResponse.ResponseType type_;
+    private int type_;
     /**
      * <code>required .tronol.protobuf.RoomResponse.ResponseType type = 1;</code>
      */
@@ -3794,10 +4239,10 @@ public final class TronProtos {
      * <code>required .tronol.protobuf.RoomResponse.ResponseType type = 1;</code>
      */
     public ca.zihao.tronol.protobuf.TronProtos.RoomResponse.ResponseType getType() {
-      return type_;
+      ca.zihao.tronol.protobuf.TronProtos.RoomResponse.ResponseType result = ca.zihao.tronol.protobuf.TronProtos.RoomResponse.ResponseType.valueOf(type_);
+      return result == null ? ca.zihao.tronol.protobuf.TronProtos.RoomResponse.ResponseType.SUCCESS : result;
     }
 
-    // optional int32 id = 2;
     public static final int ID_FIELD_NUMBER = 2;
     private int id_;
     /**
@@ -3813,7 +4258,6 @@ public final class TronProtos {
       return id_;
     }
 
-    // repeated .tronol.protobuf.RoomResponse.RoomInfo room = 3;
     public static final int ROOM_FIELD_NUMBER = 3;
     private java.util.List<ca.zihao.tronol.protobuf.TronProtos.RoomResponse.RoomInfo> room_;
     /**
@@ -3849,15 +4293,11 @@ public final class TronProtos {
       return room_.get(index);
     }
 
-    private void initFields() {
-      type_ = ca.zihao.tronol.protobuf.TronProtos.RoomResponse.ResponseType.SUCCESS;
-      id_ = 0;
-      room_ = java.util.Collections.emptyList();
-    }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasType()) {
         memoizedIsInitialized = 0;
@@ -3875,9 +4315,8 @@ public final class TronProtos {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeEnum(1, type_.getNumber());
+        output.writeEnum(1, type_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeInt32(2, id_);
@@ -3885,18 +4324,17 @@ public final class TronProtos {
       for (int i = 0; i < room_.size(); i++) {
         output.writeMessage(3, room_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
-    private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, type_.getNumber());
+          .computeEnumSize(1, type_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
@@ -3906,18 +4344,72 @@ public final class TronProtos {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, room_.get(i));
       }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof ca.zihao.tronol.protobuf.TronProtos.RoomResponse)) {
+        return super.equals(obj);
+      }
+      ca.zihao.tronol.protobuf.TronProtos.RoomResponse other = (ca.zihao.tronol.protobuf.TronProtos.RoomResponse) obj;
+
+      boolean result = true;
+      result = result && (hasType() == other.hasType());
+      if (hasType()) {
+        result = result && type_ == other.type_;
+      }
+      result = result && (hasId() == other.hasId());
+      if (hasId()) {
+        result = result && (getId()
+            == other.getId());
+      }
+      result = result && getRoomList()
+          .equals(other.getRoomList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasType()) {
+        hash = (37 * hash) + TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + type_;
+      }
+      if (hasId()) {
+        hash = (37 * hash) + ID_FIELD_NUMBER;
+        hash = (53 * hash) + getId();
+      }
+      if (getRoomCount() > 0) {
+        hash = (37 * hash) + ROOM_FIELD_NUMBER;
+        hash = (53 * hash) + getRoomList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static ca.zihao.tronol.protobuf.TronProtos.RoomResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ca.zihao.tronol.protobuf.TronProtos.RoomResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static ca.zihao.tronol.protobuf.TronProtos.RoomResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3941,46 +4433,57 @@ public final class TronProtos {
     }
     public static ca.zihao.tronol.protobuf.TronProtos.RoomResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static ca.zihao.tronol.protobuf.TronProtos.RoomResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static ca.zihao.tronol.protobuf.TronProtos.RoomResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static ca.zihao.tronol.protobuf.TronProtos.RoomResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static ca.zihao.tronol.protobuf.TronProtos.RoomResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static ca.zihao.tronol.protobuf.TronProtos.RoomResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(ca.zihao.tronol.protobuf.TronProtos.RoomResponse prototype) {
-      return newBuilder().mergeFrom(prototype);
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
     }
-    public Builder toBuilder() { return newBuilder(this); }
+    public static Builder newBuilder(ca.zihao.tronol.protobuf.TronProtos.RoomResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -3988,14 +4491,15 @@ public final class TronProtos {
      * Protobuf type {@code tronol.protobuf.RoomResponse}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements ca.zihao.tronol.protobuf.TronProtos.RoomResponseOrBuilder {
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:tronol.protobuf.RoomResponse)
+        ca.zihao.tronol.protobuf.TronProtos.RoomResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return ca.zihao.tronol.protobuf.TronProtos.internal_static_tronol_protobuf_RoomResponse_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return ca.zihao.tronol.protobuf.TronProtos.internal_static_tronol_protobuf_RoomResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
@@ -4008,22 +4512,19 @@ public final class TronProtos {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
           getRoomFieldBuilder();
         }
       }
-      private static Builder create() {
-        return new Builder();
-      }
-
       public Builder clear() {
         super.clear();
-        type_ = ca.zihao.tronol.protobuf.TronProtos.RoomResponse.ResponseType.SUCCESS;
+        type_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
         id_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -4034,10 +4535,6 @@ public final class TronProtos {
           roomBuilder_.clear();
         }
         return this;
-      }
-
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
       }
 
       public com.google.protobuf.Descriptors.Descriptor
@@ -4083,6 +4580,32 @@ public final class TronProtos {
         return result;
       }
 
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ca.zihao.tronol.protobuf.TronProtos.RoomResponse) {
           return mergeFrom((ca.zihao.tronol.protobuf.TronProtos.RoomResponse)other);
@@ -4119,25 +4642,24 @@ public final class TronProtos {
               room_ = other.room_;
               bitField0_ = (bitField0_ & ~0x00000004);
               roomBuilder_ = 
-                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getRoomFieldBuilder() : null;
             } else {
               roomBuilder_.addAllMessages(other.room_);
             }
           }
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
         return this;
       }
 
       public final boolean isInitialized() {
         if (!hasType()) {
-          
           return false;
         }
         for (int i = 0; i < getRoomCount(); i++) {
           if (!getRoom(i).isInitialized()) {
-            
             return false;
           }
         }
@@ -4153,7 +4675,7 @@ public final class TronProtos {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           parsedMessage = (ca.zihao.tronol.protobuf.TronProtos.RoomResponse) e.getUnfinishedMessage();
-          throw e;
+          throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
@@ -4163,8 +4685,7 @@ public final class TronProtos {
       }
       private int bitField0_;
 
-      // required .tronol.protobuf.RoomResponse.ResponseType type = 1;
-      private ca.zihao.tronol.protobuf.TronProtos.RoomResponse.ResponseType type_ = ca.zihao.tronol.protobuf.TronProtos.RoomResponse.ResponseType.SUCCESS;
+      private int type_ = 0;
       /**
        * <code>required .tronol.protobuf.RoomResponse.ResponseType type = 1;</code>
        */
@@ -4175,7 +4696,8 @@ public final class TronProtos {
        * <code>required .tronol.protobuf.RoomResponse.ResponseType type = 1;</code>
        */
       public ca.zihao.tronol.protobuf.TronProtos.RoomResponse.ResponseType getType() {
-        return type_;
+        ca.zihao.tronol.protobuf.TronProtos.RoomResponse.ResponseType result = ca.zihao.tronol.protobuf.TronProtos.RoomResponse.ResponseType.valueOf(type_);
+        return result == null ? ca.zihao.tronol.protobuf.TronProtos.RoomResponse.ResponseType.SUCCESS : result;
       }
       /**
        * <code>required .tronol.protobuf.RoomResponse.ResponseType type = 1;</code>
@@ -4185,7 +4707,7 @@ public final class TronProtos {
           throw new NullPointerException();
         }
         bitField0_ |= 0x00000001;
-        type_ = value;
+        type_ = value.getNumber();
         onChanged();
         return this;
       }
@@ -4194,12 +4716,11 @@ public final class TronProtos {
        */
       public Builder clearType() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        type_ = ca.zihao.tronol.protobuf.TronProtos.RoomResponse.ResponseType.SUCCESS;
+        type_ = 0;
         onChanged();
         return this;
       }
 
-      // optional int32 id = 2;
       private int id_ ;
       /**
        * <code>optional int32 id = 2;</code>
@@ -4232,7 +4753,6 @@ public final class TronProtos {
         return this;
       }
 
-      // repeated .tronol.protobuf.RoomResponse.RoomInfo room = 3;
       private java.util.List<ca.zihao.tronol.protobuf.TronProtos.RoomResponse.RoomInfo> room_ =
         java.util.Collections.emptyList();
       private void ensureRoomIsMutable() {
@@ -4242,7 +4762,7 @@ public final class TronProtos {
          }
       }
 
-      private com.google.protobuf.RepeatedFieldBuilder<
+      private com.google.protobuf.RepeatedFieldBuilderV3<
           ca.zihao.tronol.protobuf.TronProtos.RoomResponse.RoomInfo, ca.zihao.tronol.protobuf.TronProtos.RoomResponse.RoomInfo.Builder, ca.zihao.tronol.protobuf.TronProtos.RoomResponse.RoomInfoOrBuilder> roomBuilder_;
 
       /**
@@ -4374,7 +4894,8 @@ public final class TronProtos {
           java.lang.Iterable<? extends ca.zihao.tronol.protobuf.TronProtos.RoomResponse.RoomInfo> values) {
         if (roomBuilder_ == null) {
           ensureRoomIsMutable();
-          super.addAll(values, room_);
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, room_);
           onChanged();
         } else {
           roomBuilder_.addAllMessages(values);
@@ -4457,11 +4978,11 @@ public final class TronProtos {
            getRoomBuilderList() {
         return getRoomFieldBuilder().getBuilderList();
       }
-      private com.google.protobuf.RepeatedFieldBuilder<
+      private com.google.protobuf.RepeatedFieldBuilderV3<
           ca.zihao.tronol.protobuf.TronProtos.RoomResponse.RoomInfo, ca.zihao.tronol.protobuf.TronProtos.RoomResponse.RoomInfo.Builder, ca.zihao.tronol.protobuf.TronProtos.RoomResponse.RoomInfoOrBuilder> 
           getRoomFieldBuilder() {
         if (roomBuilder_ == null) {
-          roomBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+          roomBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               ca.zihao.tronol.protobuf.TronProtos.RoomResponse.RoomInfo, ca.zihao.tronol.protobuf.TronProtos.RoomResponse.RoomInfo.Builder, ca.zihao.tronol.protobuf.TronProtos.RoomResponse.RoomInfoOrBuilder>(
                   room_,
                   ((bitField0_ & 0x00000004) == 0x00000004),
@@ -4471,22 +4992,59 @@ public final class TronProtos {
         }
         return roomBuilder_;
       }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
 
       // @@protoc_insertion_point(builder_scope:tronol.protobuf.RoomResponse)
     }
 
+    // @@protoc_insertion_point(class_scope:tronol.protobuf.RoomResponse)
+    private static final ca.zihao.tronol.protobuf.TronProtos.RoomResponse DEFAULT_INSTANCE;
     static {
-      defaultInstance = new RoomResponse(true);
-      defaultInstance.initFields();
+      DEFAULT_INSTANCE = new ca.zihao.tronol.protobuf.TronProtos.RoomResponse();
     }
 
-    // @@protoc_insertion_point(class_scope:tronol.protobuf.RoomResponse)
+    public static ca.zihao.tronol.protobuf.TronProtos.RoomResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<RoomResponse>
+        PARSER = new com.google.protobuf.AbstractParser<RoomResponse>() {
+      public RoomResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new RoomResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<RoomResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<RoomResponse> getParserForType() {
+      return PARSER;
+    }
+
+    public ca.zihao.tronol.protobuf.TronProtos.RoomResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
-  public interface GameCommandOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface GameCommandOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:tronol.protobuf.GameCommand)
+      com.google.protobuf.MessageOrBuilder {
 
-    // required .tronol.protobuf.GameCommand.CommandType type = 1;
     /**
      * <code>required .tronol.protobuf.GameCommand.CommandType type = 1;</code>
      */
@@ -4496,7 +5054,6 @@ public final class TronProtos {
      */
     ca.zihao.tronol.protobuf.TronProtos.GameCommand.CommandType getType();
 
-    // optional int32 tick = 2;
     /**
      * <code>optional int32 tick = 2;</code>
      */
@@ -4506,7 +5063,6 @@ public final class TronProtos {
      */
     int getTick();
 
-    // repeated int32 dir = 3;
     /**
      * <code>repeated int32 dir = 3;</code>
      */
@@ -4523,36 +5079,34 @@ public final class TronProtos {
   /**
    * Protobuf type {@code tronol.protobuf.GameCommand}
    */
-  public static final class GameCommand extends
-      com.google.protobuf.GeneratedMessage
-      implements GameCommandOrBuilder {
+  public  static final class GameCommand extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:tronol.protobuf.GameCommand)
+      GameCommandOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use GameCommand.newBuilder() to construct.
-    private GameCommand(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    private GameCommand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
-      this.unknownFields = builder.getUnknownFields();
     }
-    private GameCommand(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
-    private static final GameCommand defaultInstance;
-    public static GameCommand getDefaultInstance() {
-      return defaultInstance;
+    private GameCommand() {
+      type_ = 0;
+      tick_ = 0;
+      dir_ = java.util.Collections.emptyList();
     }
 
-    public GameCommand getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-
-    private final com.google.protobuf.UnknownFieldSet unknownFields;
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
+    getUnknownFields() {
       return this.unknownFields;
     }
     private GameCommand(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -4565,8 +5119,8 @@ public final class TronProtos {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -4578,7 +5132,7 @@ public final class TronProtos {
                 unknownFields.mergeVarintField(1, rawValue);
               } else {
                 bitField0_ |= 0x00000001;
-                type_ = value;
+                type_ = rawValue;
               }
               break;
             }
@@ -4614,7 +5168,7 @@ public final class TronProtos {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
+            e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
           dir_ = java.util.Collections.unmodifiableList(dir_);
@@ -4628,26 +5182,11 @@ public final class TronProtos {
       return ca.zihao.tronol.protobuf.TronProtos.internal_static_tronol_protobuf_GameCommand_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return ca.zihao.tronol.protobuf.TronProtos.internal_static_tronol_protobuf_GameCommand_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               ca.zihao.tronol.protobuf.TronProtos.GameCommand.class, ca.zihao.tronol.protobuf.TronProtos.GameCommand.Builder.class);
-    }
-
-    public static com.google.protobuf.Parser<GameCommand> PARSER =
-        new com.google.protobuf.AbstractParser<GameCommand>() {
-      public GameCommand parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GameCommand(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<GameCommand> getParserForType() {
-      return PARSER;
     }
 
     /**
@@ -4658,19 +5197,19 @@ public final class TronProtos {
       /**
        * <code>ROOM = 0;</code>
        */
-      ROOM(0, 0),
+      ROOM(0),
       /**
        * <code>GAME = 1;</code>
        */
-      GAME(1, 1),
+      GAME(1),
       /**
        * <code>START = 2;</code>
        */
-      START(2, 2),
+      START(2),
       /**
        * <code>QUIT = 3;</code>
        */
-      QUIT(3, 3),
+      QUIT(3),
       ;
 
       /**
@@ -4691,9 +5230,19 @@ public final class TronProtos {
       public static final int QUIT_VALUE = 3;
 
 
-      public final int getNumber() { return value; }
+      public final int getNumber() {
+        return value;
+      }
 
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
       public static CommandType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static CommandType forNumber(int value) {
         switch (value) {
           case 0: return ROOM;
           case 1: return GAME;
@@ -4707,17 +5256,17 @@ public final class TronProtos {
           internalGetValueMap() {
         return internalValueMap;
       }
-      private static com.google.protobuf.Internal.EnumLiteMap<CommandType>
-          internalValueMap =
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          CommandType> internalValueMap =
             new com.google.protobuf.Internal.EnumLiteMap<CommandType>() {
               public CommandType findValueByNumber(int number) {
-                return CommandType.valueOf(number);
+                return CommandType.forNumber(number);
               }
             };
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor
           getValueDescriptor() {
-        return getDescriptor().getValues().get(index);
+        return getDescriptor().getValues().get(ordinal());
       }
       public final com.google.protobuf.Descriptors.EnumDescriptor
           getDescriptorForType() {
@@ -4739,11 +5288,9 @@ public final class TronProtos {
         return VALUES[desc.getIndex()];
       }
 
-      private final int index;
       private final int value;
 
-      private CommandType(int index, int value) {
-        this.index = index;
+      private CommandType(int value) {
         this.value = value;
       }
 
@@ -4751,9 +5298,8 @@ public final class TronProtos {
     }
 
     private int bitField0_;
-    // required .tronol.protobuf.GameCommand.CommandType type = 1;
     public static final int TYPE_FIELD_NUMBER = 1;
-    private ca.zihao.tronol.protobuf.TronProtos.GameCommand.CommandType type_;
+    private int type_;
     /**
      * <code>required .tronol.protobuf.GameCommand.CommandType type = 1;</code>
      */
@@ -4764,10 +5310,10 @@ public final class TronProtos {
      * <code>required .tronol.protobuf.GameCommand.CommandType type = 1;</code>
      */
     public ca.zihao.tronol.protobuf.TronProtos.GameCommand.CommandType getType() {
-      return type_;
+      ca.zihao.tronol.protobuf.TronProtos.GameCommand.CommandType result = ca.zihao.tronol.protobuf.TronProtos.GameCommand.CommandType.valueOf(type_);
+      return result == null ? ca.zihao.tronol.protobuf.TronProtos.GameCommand.CommandType.ROOM : result;
     }
 
-    // optional int32 tick = 2;
     public static final int TICK_FIELD_NUMBER = 2;
     private int tick_;
     /**
@@ -4783,7 +5329,6 @@ public final class TronProtos {
       return tick_;
     }
 
-    // repeated int32 dir = 3;
     public static final int DIR_FIELD_NUMBER = 3;
     private java.util.List<java.lang.Integer> dir_;
     /**
@@ -4806,15 +5351,11 @@ public final class TronProtos {
       return dir_.get(index);
     }
 
-    private void initFields() {
-      type_ = ca.zihao.tronol.protobuf.TronProtos.GameCommand.CommandType.ROOM;
-      tick_ = 0;
-      dir_ = java.util.Collections.emptyList();
-    }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasType()) {
         memoizedIsInitialized = 0;
@@ -4826,9 +5367,8 @@ public final class TronProtos {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeEnum(1, type_.getNumber());
+        output.writeEnum(1, type_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeInt32(2, tick_);
@@ -4836,18 +5376,17 @@ public final class TronProtos {
       for (int i = 0; i < dir_.size(); i++) {
         output.writeInt32(3, dir_.get(i));
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
-    private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, type_.getNumber());
+          .computeEnumSize(1, type_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
@@ -4862,18 +5401,72 @@ public final class TronProtos {
         size += dataSize;
         size += 1 * getDirList().size();
       }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof ca.zihao.tronol.protobuf.TronProtos.GameCommand)) {
+        return super.equals(obj);
+      }
+      ca.zihao.tronol.protobuf.TronProtos.GameCommand other = (ca.zihao.tronol.protobuf.TronProtos.GameCommand) obj;
+
+      boolean result = true;
+      result = result && (hasType() == other.hasType());
+      if (hasType()) {
+        result = result && type_ == other.type_;
+      }
+      result = result && (hasTick() == other.hasTick());
+      if (hasTick()) {
+        result = result && (getTick()
+            == other.getTick());
+      }
+      result = result && getDirList()
+          .equals(other.getDirList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasType()) {
+        hash = (37 * hash) + TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + type_;
+      }
+      if (hasTick()) {
+        hash = (37 * hash) + TICK_FIELD_NUMBER;
+        hash = (53 * hash) + getTick();
+      }
+      if (getDirCount() > 0) {
+        hash = (37 * hash) + DIR_FIELD_NUMBER;
+        hash = (53 * hash) + getDirList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static ca.zihao.tronol.protobuf.TronProtos.GameCommand parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ca.zihao.tronol.protobuf.TronProtos.GameCommand parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static ca.zihao.tronol.protobuf.TronProtos.GameCommand parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4897,46 +5490,57 @@ public final class TronProtos {
     }
     public static ca.zihao.tronol.protobuf.TronProtos.GameCommand parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static ca.zihao.tronol.protobuf.TronProtos.GameCommand parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static ca.zihao.tronol.protobuf.TronProtos.GameCommand parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static ca.zihao.tronol.protobuf.TronProtos.GameCommand parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static ca.zihao.tronol.protobuf.TronProtos.GameCommand parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static ca.zihao.tronol.protobuf.TronProtos.GameCommand parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(ca.zihao.tronol.protobuf.TronProtos.GameCommand prototype) {
-      return newBuilder().mergeFrom(prototype);
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
     }
-    public Builder toBuilder() { return newBuilder(this); }
+    public static Builder newBuilder(ca.zihao.tronol.protobuf.TronProtos.GameCommand prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -4944,14 +5548,15 @@ public final class TronProtos {
      * Protobuf type {@code tronol.protobuf.GameCommand}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements ca.zihao.tronol.protobuf.TronProtos.GameCommandOrBuilder {
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:tronol.protobuf.GameCommand)
+        ca.zihao.tronol.protobuf.TronProtos.GameCommandOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return ca.zihao.tronol.protobuf.TronProtos.internal_static_tronol_protobuf_GameCommand_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return ca.zihao.tronol.protobuf.TronProtos.internal_static_tronol_protobuf_GameCommand_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
@@ -4964,31 +5569,24 @@ public final class TronProtos {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
         }
       }
-      private static Builder create() {
-        return new Builder();
-      }
-
       public Builder clear() {
         super.clear();
-        type_ = ca.zihao.tronol.protobuf.TronProtos.GameCommand.CommandType.ROOM;
+        type_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
         tick_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
         dir_ = java.util.Collections.emptyList();
         bitField0_ = (bitField0_ & ~0x00000004);
         return this;
-      }
-
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
       }
 
       public com.google.protobuf.Descriptors.Descriptor
@@ -5030,6 +5628,32 @@ public final class TronProtos {
         return result;
       }
 
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ca.zihao.tronol.protobuf.TronProtos.GameCommand) {
           return mergeFrom((ca.zihao.tronol.protobuf.TronProtos.GameCommand)other);
@@ -5057,13 +5681,13 @@ public final class TronProtos {
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
         return this;
       }
 
       public final boolean isInitialized() {
         if (!hasType()) {
-          
           return false;
         }
         return true;
@@ -5078,7 +5702,7 @@ public final class TronProtos {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           parsedMessage = (ca.zihao.tronol.protobuf.TronProtos.GameCommand) e.getUnfinishedMessage();
-          throw e;
+          throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
@@ -5088,8 +5712,7 @@ public final class TronProtos {
       }
       private int bitField0_;
 
-      // required .tronol.protobuf.GameCommand.CommandType type = 1;
-      private ca.zihao.tronol.protobuf.TronProtos.GameCommand.CommandType type_ = ca.zihao.tronol.protobuf.TronProtos.GameCommand.CommandType.ROOM;
+      private int type_ = 0;
       /**
        * <code>required .tronol.protobuf.GameCommand.CommandType type = 1;</code>
        */
@@ -5100,7 +5723,8 @@ public final class TronProtos {
        * <code>required .tronol.protobuf.GameCommand.CommandType type = 1;</code>
        */
       public ca.zihao.tronol.protobuf.TronProtos.GameCommand.CommandType getType() {
-        return type_;
+        ca.zihao.tronol.protobuf.TronProtos.GameCommand.CommandType result = ca.zihao.tronol.protobuf.TronProtos.GameCommand.CommandType.valueOf(type_);
+        return result == null ? ca.zihao.tronol.protobuf.TronProtos.GameCommand.CommandType.ROOM : result;
       }
       /**
        * <code>required .tronol.protobuf.GameCommand.CommandType type = 1;</code>
@@ -5110,7 +5734,7 @@ public final class TronProtos {
           throw new NullPointerException();
         }
         bitField0_ |= 0x00000001;
-        type_ = value;
+        type_ = value.getNumber();
         onChanged();
         return this;
       }
@@ -5119,12 +5743,11 @@ public final class TronProtos {
        */
       public Builder clearType() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        type_ = ca.zihao.tronol.protobuf.TronProtos.GameCommand.CommandType.ROOM;
+        type_ = 0;
         onChanged();
         return this;
       }
 
-      // optional int32 tick = 2;
       private int tick_ ;
       /**
        * <code>optional int32 tick = 2;</code>
@@ -5157,7 +5780,6 @@ public final class TronProtos {
         return this;
       }
 
-      // repeated int32 dir = 3;
       private java.util.List<java.lang.Integer> dir_ = java.util.Collections.emptyList();
       private void ensureDirIsMutable() {
         if (!((bitField0_ & 0x00000004) == 0x00000004)) {
@@ -5209,7 +5831,8 @@ public final class TronProtos {
       public Builder addAllDir(
           java.lang.Iterable<? extends java.lang.Integer> values) {
         ensureDirIsMutable();
-        super.addAll(values, dir_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, dir_);
         onChanged();
         return this;
       }
@@ -5222,22 +5845,59 @@ public final class TronProtos {
         onChanged();
         return this;
       }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
 
       // @@protoc_insertion_point(builder_scope:tronol.protobuf.GameCommand)
     }
 
+    // @@protoc_insertion_point(class_scope:tronol.protobuf.GameCommand)
+    private static final ca.zihao.tronol.protobuf.TronProtos.GameCommand DEFAULT_INSTANCE;
     static {
-      defaultInstance = new GameCommand(true);
-      defaultInstance.initFields();
+      DEFAULT_INSTANCE = new ca.zihao.tronol.protobuf.TronProtos.GameCommand();
     }
 
-    // @@protoc_insertion_point(class_scope:tronol.protobuf.GameCommand)
+    public static ca.zihao.tronol.protobuf.TronProtos.GameCommand getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<GameCommand>
+        PARSER = new com.google.protobuf.AbstractParser<GameCommand>() {
+      public GameCommand parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GameCommand(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GameCommand> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GameCommand> getParserForType() {
+      return PARSER;
+    }
+
+    public ca.zihao.tronol.protobuf.TronProtos.GameCommand getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
-  public interface GameResponseOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface GameResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:tronol.protobuf.GameResponse)
+      com.google.protobuf.MessageOrBuilder {
 
-    // required .tronol.protobuf.GameResponse.ResponseType type = 1;
     /**
      * <code>required .tronol.protobuf.GameResponse.ResponseType type = 1;</code>
      */
@@ -5247,7 +5907,6 @@ public final class TronProtos {
      */
     ca.zihao.tronol.protobuf.TronProtos.GameResponse.ResponseType getType();
 
-    // repeated .tronol.protobuf.GameResponse.GameSet set_at = 2;
     /**
      * <code>repeated .tronol.protobuf.GameResponse.GameSet set_at = 2;</code>
      */
@@ -5272,12 +5931,11 @@ public final class TronProtos {
     ca.zihao.tronol.protobuf.TronProtos.GameResponse.GameSetOrBuilder getSetAtOrBuilder(
         int index);
 
-    // repeated string users = 3;
     /**
      * <code>repeated string users = 3;</code>
      */
     java.util.List<java.lang.String>
-    getUsersList();
+        getUsersList();
     /**
      * <code>repeated string users = 3;</code>
      */
@@ -5292,7 +5950,6 @@ public final class TronProtos {
     com.google.protobuf.ByteString
         getUsersBytes(int index);
 
-    // optional int32 tick = 4;
     /**
      * <code>optional int32 tick = 4;</code>
      */
@@ -5302,7 +5959,6 @@ public final class TronProtos {
      */
     int getTick();
 
-    // optional string winner = 5;
     /**
      * <code>optional string winner = 5;</code>
      */
@@ -5320,36 +5976,36 @@ public final class TronProtos {
   /**
    * Protobuf type {@code tronol.protobuf.GameResponse}
    */
-  public static final class GameResponse extends
-      com.google.protobuf.GeneratedMessage
-      implements GameResponseOrBuilder {
+  public  static final class GameResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:tronol.protobuf.GameResponse)
+      GameResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use GameResponse.newBuilder() to construct.
-    private GameResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    private GameResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
-      this.unknownFields = builder.getUnknownFields();
     }
-    private GameResponse(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
-    private static final GameResponse defaultInstance;
-    public static GameResponse getDefaultInstance() {
-      return defaultInstance;
-    }
-
-    public GameResponse getDefaultInstanceForType() {
-      return defaultInstance;
+    private GameResponse() {
+      type_ = 0;
+      setAt_ = java.util.Collections.emptyList();
+      users_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      tick_ = 0;
+      winner_ = "";
     }
 
-    private final com.google.protobuf.UnknownFieldSet unknownFields;
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
+    getUnknownFields() {
       return this.unknownFields;
     }
     private GameResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -5362,8 +6018,8 @@ public final class TronProtos {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -5375,7 +6031,7 @@ public final class TronProtos {
                 unknownFields.mergeVarintField(1, rawValue);
               } else {
                 bitField0_ |= 0x00000001;
-                type_ = value;
+                type_ = rawValue;
               }
               break;
             }
@@ -5384,15 +6040,17 @@ public final class TronProtos {
                 setAt_ = new java.util.ArrayList<ca.zihao.tronol.protobuf.TronProtos.GameResponse.GameSet>();
                 mutable_bitField0_ |= 0x00000002;
               }
-              setAt_.add(input.readMessage(ca.zihao.tronol.protobuf.TronProtos.GameResponse.GameSet.PARSER, extensionRegistry));
+              setAt_.add(
+                  input.readMessage(ca.zihao.tronol.protobuf.TronProtos.GameResponse.GameSet.PARSER, extensionRegistry));
               break;
             }
             case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
                 users_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000004;
               }
-              users_.add(input.readBytes());
+              users_.add(bs);
               break;
             }
             case 32: {
@@ -5401,8 +6059,9 @@ public final class TronProtos {
               break;
             }
             case 42: {
+              com.google.protobuf.ByteString bs = input.readBytes();
               bitField0_ |= 0x00000004;
-              winner_ = input.readBytes();
+              winner_ = bs;
               break;
             }
           }
@@ -5411,13 +6070,13 @@ public final class TronProtos {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
+            e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
           setAt_ = java.util.Collections.unmodifiableList(setAt_);
         }
         if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-          users_ = new com.google.protobuf.UnmodifiableLazyStringList(users_);
+          users_ = users_.getUnmodifiableView();
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -5428,26 +6087,11 @@ public final class TronProtos {
       return ca.zihao.tronol.protobuf.TronProtos.internal_static_tronol_protobuf_GameResponse_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return ca.zihao.tronol.protobuf.TronProtos.internal_static_tronol_protobuf_GameResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               ca.zihao.tronol.protobuf.TronProtos.GameResponse.class, ca.zihao.tronol.protobuf.TronProtos.GameResponse.Builder.class);
-    }
-
-    public static com.google.protobuf.Parser<GameResponse> PARSER =
-        new com.google.protobuf.AbstractParser<GameResponse>() {
-      public GameResponse parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GameResponse(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<GameResponse> getParserForType() {
-      return PARSER;
     }
 
     /**
@@ -5458,23 +6102,23 @@ public final class TronProtos {
       /**
        * <code>SUCCESS = 0;</code>
        */
-      SUCCESS(0, 0),
+      SUCCESS(0),
       /**
        * <code>ERROR = 1;</code>
        */
-      ERROR(1, 1),
+      ERROR(1),
       /**
        * <code>ROOM = 2;</code>
        */
-      ROOM(2, 2),
+      ROOM(2),
       /**
        * <code>GAME = 3;</code>
        */
-      GAME(3, 3),
+      GAME(3),
       /**
        * <code>OVER = 4;</code>
        */
-      OVER(4, 4),
+      OVER(4),
       ;
 
       /**
@@ -5499,9 +6143,19 @@ public final class TronProtos {
       public static final int OVER_VALUE = 4;
 
 
-      public final int getNumber() { return value; }
+      public final int getNumber() {
+        return value;
+      }
 
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
       public static ResponseType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ResponseType forNumber(int value) {
         switch (value) {
           case 0: return SUCCESS;
           case 1: return ERROR;
@@ -5516,17 +6170,17 @@ public final class TronProtos {
           internalGetValueMap() {
         return internalValueMap;
       }
-      private static com.google.protobuf.Internal.EnumLiteMap<ResponseType>
-          internalValueMap =
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          ResponseType> internalValueMap =
             new com.google.protobuf.Internal.EnumLiteMap<ResponseType>() {
               public ResponseType findValueByNumber(int number) {
-                return ResponseType.valueOf(number);
+                return ResponseType.forNumber(number);
               }
             };
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor
           getValueDescriptor() {
-        return getDescriptor().getValues().get(index);
+        return getDescriptor().getValues().get(ordinal());
       }
       public final com.google.protobuf.Descriptors.EnumDescriptor
           getDescriptorForType() {
@@ -5548,21 +6202,19 @@ public final class TronProtos {
         return VALUES[desc.getIndex()];
       }
 
-      private final int index;
       private final int value;
 
-      private ResponseType(int index, int value) {
-        this.index = index;
+      private ResponseType(int value) {
         this.value = value;
       }
 
       // @@protoc_insertion_point(enum_scope:tronol.protobuf.GameResponse.ResponseType)
     }
 
-    public interface GameSetOrBuilder
-        extends com.google.protobuf.MessageOrBuilder {
+    public interface GameSetOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:tronol.protobuf.GameResponse.GameSet)
+        com.google.protobuf.MessageOrBuilder {
 
-      // required int32 x = 1;
       /**
        * <code>required int32 x = 1;</code>
        */
@@ -5572,7 +6224,6 @@ public final class TronProtos {
        */
       int getX();
 
-      // required int32 y = 2;
       /**
        * <code>required int32 y = 2;</code>
        */
@@ -5582,7 +6233,6 @@ public final class TronProtos {
        */
       int getY();
 
-      // required int32 v = 3;
       /**
        * <code>required int32 v = 3;</code>
        */
@@ -5595,36 +6245,34 @@ public final class TronProtos {
     /**
      * Protobuf type {@code tronol.protobuf.GameResponse.GameSet}
      */
-    public static final class GameSet extends
-        com.google.protobuf.GeneratedMessage
-        implements GameSetOrBuilder {
+    public  static final class GameSet extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:tronol.protobuf.GameResponse.GameSet)
+        GameSetOrBuilder {
+    private static final long serialVersionUID = 0L;
       // Use GameSet.newBuilder() to construct.
-      private GameSet(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      private GameSet(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
-        this.unknownFields = builder.getUnknownFields();
       }
-      private GameSet(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
-      private static final GameSet defaultInstance;
-      public static GameSet getDefaultInstance() {
-        return defaultInstance;
+      private GameSet() {
+        x_ = 0;
+        y_ = 0;
+        v_ = 0;
       }
 
-      public GameSet getDefaultInstanceForType() {
-        return defaultInstance;
-      }
-
-      private final com.google.protobuf.UnknownFieldSet unknownFields;
       @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet
-          getUnknownFields() {
+      getUnknownFields() {
         return this.unknownFields;
       }
       private GameSet(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        initFields();
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -5637,8 +6285,8 @@ public final class TronProtos {
                 done = true;
                 break;
               default: {
-                if (!parseUnknownField(input, unknownFields,
-                                       extensionRegistry, tag)) {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
                   done = true;
                 }
                 break;
@@ -5664,7 +6312,7 @@ public final class TronProtos {
           throw e.setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
           throw new com.google.protobuf.InvalidProtocolBufferException(
-              e.getMessage()).setUnfinishedMessage(this);
+              e).setUnfinishedMessage(this);
         } finally {
           this.unknownFields = unknownFields.build();
           makeExtensionsImmutable();
@@ -5675,30 +6323,14 @@ public final class TronProtos {
         return ca.zihao.tronol.protobuf.TronProtos.internal_static_tronol_protobuf_GameResponse_GameSet_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return ca.zihao.tronol.protobuf.TronProtos.internal_static_tronol_protobuf_GameResponse_GameSet_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 ca.zihao.tronol.protobuf.TronProtos.GameResponse.GameSet.class, ca.zihao.tronol.protobuf.TronProtos.GameResponse.GameSet.Builder.class);
       }
 
-      public static com.google.protobuf.Parser<GameSet> PARSER =
-          new com.google.protobuf.AbstractParser<GameSet>() {
-        public GameSet parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GameSet(input, extensionRegistry);
-        }
-      };
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<GameSet> getParserForType() {
-        return PARSER;
-      }
-
       private int bitField0_;
-      // required int32 x = 1;
       public static final int X_FIELD_NUMBER = 1;
       private int x_;
       /**
@@ -5714,7 +6346,6 @@ public final class TronProtos {
         return x_;
       }
 
-      // required int32 y = 2;
       public static final int Y_FIELD_NUMBER = 2;
       private int y_;
       /**
@@ -5730,7 +6361,6 @@ public final class TronProtos {
         return y_;
       }
 
-      // required int32 v = 3;
       public static final int V_FIELD_NUMBER = 3;
       private int v_;
       /**
@@ -5746,15 +6376,11 @@ public final class TronProtos {
         return v_;
       }
 
-      private void initFields() {
-        x_ = 0;
-        y_ = 0;
-        v_ = 0;
-      }
       private byte memoizedIsInitialized = -1;
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
-        if (isInitialized != -1) return isInitialized == 1;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
 
         if (!hasX()) {
           memoizedIsInitialized = 0;
@@ -5774,7 +6400,6 @@ public final class TronProtos {
 
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        getSerializedSize();
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
           output.writeInt32(1, x_);
         }
@@ -5784,12 +6409,11 @@ public final class TronProtos {
         if (((bitField0_ & 0x00000004) == 0x00000004)) {
           output.writeInt32(3, v_);
         }
-        getUnknownFields().writeTo(output);
+        unknownFields.writeTo(output);
       }
 
-      private int memoizedSerializedSize = -1;
       public int getSerializedSize() {
-        int size = memoizedSerializedSize;
+        int size = memoizedSize;
         if (size != -1) return size;
 
         size = 0;
@@ -5805,18 +6429,76 @@ public final class TronProtos {
           size += com.google.protobuf.CodedOutputStream
             .computeInt32Size(3, v_);
         }
-        size += getUnknownFields().getSerializedSize();
-        memoizedSerializedSize = size;
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
         return size;
       }
 
-      private static final long serialVersionUID = 0L;
       @java.lang.Override
-      protected java.lang.Object writeReplace()
-          throws java.io.ObjectStreamException {
-        return super.writeReplace();
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof ca.zihao.tronol.protobuf.TronProtos.GameResponse.GameSet)) {
+          return super.equals(obj);
+        }
+        ca.zihao.tronol.protobuf.TronProtos.GameResponse.GameSet other = (ca.zihao.tronol.protobuf.TronProtos.GameResponse.GameSet) obj;
+
+        boolean result = true;
+        result = result && (hasX() == other.hasX());
+        if (hasX()) {
+          result = result && (getX()
+              == other.getX());
+        }
+        result = result && (hasY() == other.hasY());
+        if (hasY()) {
+          result = result && (getY()
+              == other.getY());
+        }
+        result = result && (hasV() == other.hasV());
+        if (hasV()) {
+          result = result && (getV()
+              == other.getV());
+        }
+        result = result && unknownFields.equals(other.unknownFields);
+        return result;
       }
 
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasX()) {
+          hash = (37 * hash) + X_FIELD_NUMBER;
+          hash = (53 * hash) + getX();
+        }
+        if (hasY()) {
+          hash = (37 * hash) + Y_FIELD_NUMBER;
+          hash = (53 * hash) + getY();
+        }
+        if (hasV()) {
+          hash = (37 * hash) + V_FIELD_NUMBER;
+          hash = (53 * hash) + getV();
+        }
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static ca.zihao.tronol.protobuf.TronProtos.GameResponse.GameSet parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static ca.zihao.tronol.protobuf.TronProtos.GameResponse.GameSet parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
       public static ca.zihao.tronol.protobuf.TronProtos.GameResponse.GameSet parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5840,46 +6522,57 @@ public final class TronProtos {
       }
       public static ca.zihao.tronol.protobuf.TronProtos.GameResponse.GameSet parseFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return PARSER.parseFrom(input);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
       }
       public static ca.zihao.tronol.protobuf.TronProtos.GameResponse.GameSet parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return PARSER.parseFrom(input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
       }
       public static ca.zihao.tronol.protobuf.TronProtos.GameResponse.GameSet parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
-        return PARSER.parseDelimitedFrom(input);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
       }
       public static ca.zihao.tronol.protobuf.TronProtos.GameResponse.GameSet parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return PARSER.parseDelimitedFrom(input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
       }
       public static ca.zihao.tronol.protobuf.TronProtos.GameResponse.GameSet parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
-        return PARSER.parseFrom(input);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
       }
       public static ca.zihao.tronol.protobuf.TronProtos.GameResponse.GameSet parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        return PARSER.parseFrom(input, extensionRegistry);
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
-      public static Builder newBuilder() { return Builder.create(); }
       public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder(ca.zihao.tronol.protobuf.TronProtos.GameResponse.GameSet prototype) {
-        return newBuilder().mergeFrom(prototype);
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
       }
-      public Builder toBuilder() { return newBuilder(this); }
+      public static Builder newBuilder(ca.zihao.tronol.protobuf.TronProtos.GameResponse.GameSet prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
 
       @java.lang.Override
       protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         Builder builder = new Builder(parent);
         return builder;
       }
@@ -5887,14 +6580,15 @@ public final class TronProtos {
        * Protobuf type {@code tronol.protobuf.GameResponse.GameSet}
        */
       public static final class Builder extends
-          com.google.protobuf.GeneratedMessage.Builder<Builder>
-         implements ca.zihao.tronol.protobuf.TronProtos.GameResponse.GameSetOrBuilder {
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:tronol.protobuf.GameResponse.GameSet)
+          ca.zihao.tronol.protobuf.TronProtos.GameResponse.GameSetOrBuilder {
         public static final com.google.protobuf.Descriptors.Descriptor
             getDescriptor() {
           return ca.zihao.tronol.protobuf.TronProtos.internal_static_tronol_protobuf_GameResponse_GameSet_descriptor;
         }
 
-        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
           return ca.zihao.tronol.protobuf.TronProtos.internal_static_tronol_protobuf_GameResponse_GameSet_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
@@ -5907,18 +6601,15 @@ public final class TronProtos {
         }
 
         private Builder(
-            com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
           maybeForceBuilderInitialization();
         }
         private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
           }
         }
-        private static Builder create() {
-          return new Builder();
-        }
-
         public Builder clear() {
           super.clear();
           x_ = 0;
@@ -5928,10 +6619,6 @@ public final class TronProtos {
           v_ = 0;
           bitField0_ = (bitField0_ & ~0x00000004);
           return this;
-        }
-
-        public Builder clone() {
-          return create().mergeFrom(buildPartial());
         }
 
         public com.google.protobuf.Descriptors.Descriptor
@@ -5972,6 +6659,32 @@ public final class TronProtos {
           return result;
         }
 
+        public Builder clone() {
+          return (Builder) super.clone();
+        }
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return (Builder) super.setField(field, value);
+        }
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return (Builder) super.clearField(field);
+        }
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return (Builder) super.clearOneof(oneof);
+        }
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return (Builder) super.setRepeatedField(field, index, value);
+        }
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return (Builder) super.addRepeatedField(field, value);
+        }
         public Builder mergeFrom(com.google.protobuf.Message other) {
           if (other instanceof ca.zihao.tronol.protobuf.TronProtos.GameResponse.GameSet) {
             return mergeFrom((ca.zihao.tronol.protobuf.TronProtos.GameResponse.GameSet)other);
@@ -5992,21 +6705,19 @@ public final class TronProtos {
           if (other.hasV()) {
             setV(other.getV());
           }
-          this.mergeUnknownFields(other.getUnknownFields());
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
           return this;
         }
 
         public final boolean isInitialized() {
           if (!hasX()) {
-            
             return false;
           }
           if (!hasY()) {
-            
             return false;
           }
           if (!hasV()) {
-            
             return false;
           }
           return true;
@@ -6021,7 +6732,7 @@ public final class TronProtos {
             parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
             parsedMessage = (ca.zihao.tronol.protobuf.TronProtos.GameResponse.GameSet) e.getUnfinishedMessage();
-            throw e;
+            throw e.unwrapIOException();
           } finally {
             if (parsedMessage != null) {
               mergeFrom(parsedMessage);
@@ -6031,7 +6742,6 @@ public final class TronProtos {
         }
         private int bitField0_;
 
-        // required int32 x = 1;
         private int x_ ;
         /**
          * <code>required int32 x = 1;</code>
@@ -6064,7 +6774,6 @@ public final class TronProtos {
           return this;
         }
 
-        // required int32 y = 2;
         private int y_ ;
         /**
          * <code>required int32 y = 2;</code>
@@ -6097,7 +6806,6 @@ public final class TronProtos {
           return this;
         }
 
-        // required int32 v = 3;
         private int v_ ;
         /**
          * <code>required int32 v = 3;</code>
@@ -6129,22 +6837,58 @@ public final class TronProtos {
           onChanged();
           return this;
         }
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
 
         // @@protoc_insertion_point(builder_scope:tronol.protobuf.GameResponse.GameSet)
       }
 
+      // @@protoc_insertion_point(class_scope:tronol.protobuf.GameResponse.GameSet)
+      private static final ca.zihao.tronol.protobuf.TronProtos.GameResponse.GameSet DEFAULT_INSTANCE;
       static {
-        defaultInstance = new GameSet(true);
-        defaultInstance.initFields();
+        DEFAULT_INSTANCE = new ca.zihao.tronol.protobuf.TronProtos.GameResponse.GameSet();
       }
 
-      // @@protoc_insertion_point(class_scope:tronol.protobuf.GameResponse.GameSet)
+      public static ca.zihao.tronol.protobuf.TronProtos.GameResponse.GameSet getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      @java.lang.Deprecated public static final com.google.protobuf.Parser<GameSet>
+          PARSER = new com.google.protobuf.AbstractParser<GameSet>() {
+        public GameSet parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new GameSet(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<GameSet> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<GameSet> getParserForType() {
+        return PARSER;
+      }
+
+      public ca.zihao.tronol.protobuf.TronProtos.GameResponse.GameSet getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
     }
 
     private int bitField0_;
-    // required .tronol.protobuf.GameResponse.ResponseType type = 1;
     public static final int TYPE_FIELD_NUMBER = 1;
-    private ca.zihao.tronol.protobuf.TronProtos.GameResponse.ResponseType type_;
+    private int type_;
     /**
      * <code>required .tronol.protobuf.GameResponse.ResponseType type = 1;</code>
      */
@@ -6155,10 +6899,10 @@ public final class TronProtos {
      * <code>required .tronol.protobuf.GameResponse.ResponseType type = 1;</code>
      */
     public ca.zihao.tronol.protobuf.TronProtos.GameResponse.ResponseType getType() {
-      return type_;
+      ca.zihao.tronol.protobuf.TronProtos.GameResponse.ResponseType result = ca.zihao.tronol.protobuf.TronProtos.GameResponse.ResponseType.valueOf(type_);
+      return result == null ? ca.zihao.tronol.protobuf.TronProtos.GameResponse.ResponseType.SUCCESS : result;
     }
 
-    // repeated .tronol.protobuf.GameResponse.GameSet set_at = 2;
     public static final int SET_AT_FIELD_NUMBER = 2;
     private java.util.List<ca.zihao.tronol.protobuf.TronProtos.GameResponse.GameSet> setAt_;
     /**
@@ -6194,13 +6938,12 @@ public final class TronProtos {
       return setAt_.get(index);
     }
 
-    // repeated string users = 3;
     public static final int USERS_FIELD_NUMBER = 3;
     private com.google.protobuf.LazyStringList users_;
     /**
      * <code>repeated string users = 3;</code>
      */
-    public java.util.List<java.lang.String>
+    public com.google.protobuf.ProtocolStringList
         getUsersList() {
       return users_;
     }
@@ -6224,7 +6967,6 @@ public final class TronProtos {
       return users_.getByteString(index);
     }
 
-    // optional int32 tick = 4;
     public static final int TICK_FIELD_NUMBER = 4;
     private int tick_;
     /**
@@ -6240,9 +6982,8 @@ public final class TronProtos {
       return tick_;
     }
 
-    // optional string winner = 5;
     public static final int WINNER_FIELD_NUMBER = 5;
-    private java.lang.Object winner_;
+    private volatile java.lang.Object winner_;
     /**
      * <code>optional string winner = 5;</code>
      */
@@ -6283,17 +7024,11 @@ public final class TronProtos {
       }
     }
 
-    private void initFields() {
-      type_ = ca.zihao.tronol.protobuf.TronProtos.GameResponse.ResponseType.SUCCESS;
-      setAt_ = java.util.Collections.emptyList();
-      users_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      tick_ = 0;
-      winner_ = "";
-    }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasType()) {
         memoizedIsInitialized = 0;
@@ -6311,34 +7046,32 @@ public final class TronProtos {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeEnum(1, type_.getNumber());
+        output.writeEnum(1, type_);
       }
       for (int i = 0; i < setAt_.size(); i++) {
         output.writeMessage(2, setAt_.get(i));
       }
       for (int i = 0; i < users_.size(); i++) {
-        output.writeBytes(3, users_.getByteString(i));
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, users_.getRaw(i));
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         output.writeInt32(4, tick_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeBytes(5, getWinnerBytes());
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, winner_);
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
-    private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, type_.getNumber());
+          .computeEnumSize(1, type_);
       }
       for (int i = 0; i < setAt_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
@@ -6347,8 +7080,7 @@ public final class TronProtos {
       {
         int dataSize = 0;
         for (int i = 0; i < users_.size(); i++) {
-          dataSize += com.google.protobuf.CodedOutputStream
-            .computeBytesSizeNoTag(users_.getByteString(i));
+          dataSize += computeStringSizeNoTag(users_.getRaw(i));
         }
         size += dataSize;
         size += 1 * getUsersList().size();
@@ -6358,21 +7090,89 @@ public final class TronProtos {
           .computeInt32Size(4, tick_);
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(5, getWinnerBytes());
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, winner_);
       }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof ca.zihao.tronol.protobuf.TronProtos.GameResponse)) {
+        return super.equals(obj);
+      }
+      ca.zihao.tronol.protobuf.TronProtos.GameResponse other = (ca.zihao.tronol.protobuf.TronProtos.GameResponse) obj;
+
+      boolean result = true;
+      result = result && (hasType() == other.hasType());
+      if (hasType()) {
+        result = result && type_ == other.type_;
+      }
+      result = result && getSetAtList()
+          .equals(other.getSetAtList());
+      result = result && getUsersList()
+          .equals(other.getUsersList());
+      result = result && (hasTick() == other.hasTick());
+      if (hasTick()) {
+        result = result && (getTick()
+            == other.getTick());
+      }
+      result = result && (hasWinner() == other.hasWinner());
+      if (hasWinner()) {
+        result = result && getWinner()
+            .equals(other.getWinner());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasType()) {
+        hash = (37 * hash) + TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + type_;
+      }
+      if (getSetAtCount() > 0) {
+        hash = (37 * hash) + SET_AT_FIELD_NUMBER;
+        hash = (53 * hash) + getSetAtList().hashCode();
+      }
+      if (getUsersCount() > 0) {
+        hash = (37 * hash) + USERS_FIELD_NUMBER;
+        hash = (53 * hash) + getUsersList().hashCode();
+      }
+      if (hasTick()) {
+        hash = (37 * hash) + TICK_FIELD_NUMBER;
+        hash = (53 * hash) + getTick();
+      }
+      if (hasWinner()) {
+        hash = (37 * hash) + WINNER_FIELD_NUMBER;
+        hash = (53 * hash) + getWinner().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static ca.zihao.tronol.protobuf.TronProtos.GameResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ca.zihao.tronol.protobuf.TronProtos.GameResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static ca.zihao.tronol.protobuf.TronProtos.GameResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6396,46 +7196,57 @@ public final class TronProtos {
     }
     public static ca.zihao.tronol.protobuf.TronProtos.GameResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static ca.zihao.tronol.protobuf.TronProtos.GameResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static ca.zihao.tronol.protobuf.TronProtos.GameResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static ca.zihao.tronol.protobuf.TronProtos.GameResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static ca.zihao.tronol.protobuf.TronProtos.GameResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static ca.zihao.tronol.protobuf.TronProtos.GameResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(ca.zihao.tronol.protobuf.TronProtos.GameResponse prototype) {
-      return newBuilder().mergeFrom(prototype);
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
     }
-    public Builder toBuilder() { return newBuilder(this); }
+    public static Builder newBuilder(ca.zihao.tronol.protobuf.TronProtos.GameResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -6443,14 +7254,15 @@ public final class TronProtos {
      * Protobuf type {@code tronol.protobuf.GameResponse}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements ca.zihao.tronol.protobuf.TronProtos.GameResponseOrBuilder {
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:tronol.protobuf.GameResponse)
+        ca.zihao.tronol.protobuf.TronProtos.GameResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return ca.zihao.tronol.protobuf.TronProtos.internal_static_tronol_protobuf_GameResponse_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return ca.zihao.tronol.protobuf.TronProtos.internal_static_tronol_protobuf_GameResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
@@ -6463,22 +7275,19 @@ public final class TronProtos {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
           getSetAtFieldBuilder();
         }
       }
-      private static Builder create() {
-        return new Builder();
-      }
-
       public Builder clear() {
         super.clear();
-        type_ = ca.zihao.tronol.protobuf.TronProtos.GameResponse.ResponseType.SUCCESS;
+        type_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
         if (setAtBuilder_ == null) {
           setAt_ = java.util.Collections.emptyList();
@@ -6493,10 +7302,6 @@ public final class TronProtos {
         winner_ = "";
         bitField0_ = (bitField0_ & ~0x00000010);
         return this;
-      }
-
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
       }
 
       public com.google.protobuf.Descriptors.Descriptor
@@ -6534,8 +7339,7 @@ public final class TronProtos {
           result.setAt_ = setAtBuilder_.build();
         }
         if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          users_ = new com.google.protobuf.UnmodifiableLazyStringList(
-              users_);
+          users_ = users_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.users_ = users_;
@@ -6552,6 +7356,32 @@ public final class TronProtos {
         return result;
       }
 
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ca.zihao.tronol.protobuf.TronProtos.GameResponse) {
           return mergeFrom((ca.zihao.tronol.protobuf.TronProtos.GameResponse)other);
@@ -6585,7 +7415,7 @@ public final class TronProtos {
               setAt_ = other.setAt_;
               bitField0_ = (bitField0_ & ~0x00000002);
               setAtBuilder_ = 
-                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getSetAtFieldBuilder() : null;
             } else {
               setAtBuilder_.addAllMessages(other.setAt_);
@@ -6610,18 +7440,17 @@ public final class TronProtos {
           winner_ = other.winner_;
           onChanged();
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
         return this;
       }
 
       public final boolean isInitialized() {
         if (!hasType()) {
-          
           return false;
         }
         for (int i = 0; i < getSetAtCount(); i++) {
           if (!getSetAt(i).isInitialized()) {
-            
             return false;
           }
         }
@@ -6637,7 +7466,7 @@ public final class TronProtos {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           parsedMessage = (ca.zihao.tronol.protobuf.TronProtos.GameResponse) e.getUnfinishedMessage();
-          throw e;
+          throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
@@ -6647,8 +7476,7 @@ public final class TronProtos {
       }
       private int bitField0_;
 
-      // required .tronol.protobuf.GameResponse.ResponseType type = 1;
-      private ca.zihao.tronol.protobuf.TronProtos.GameResponse.ResponseType type_ = ca.zihao.tronol.protobuf.TronProtos.GameResponse.ResponseType.SUCCESS;
+      private int type_ = 0;
       /**
        * <code>required .tronol.protobuf.GameResponse.ResponseType type = 1;</code>
        */
@@ -6659,7 +7487,8 @@ public final class TronProtos {
        * <code>required .tronol.protobuf.GameResponse.ResponseType type = 1;</code>
        */
       public ca.zihao.tronol.protobuf.TronProtos.GameResponse.ResponseType getType() {
-        return type_;
+        ca.zihao.tronol.protobuf.TronProtos.GameResponse.ResponseType result = ca.zihao.tronol.protobuf.TronProtos.GameResponse.ResponseType.valueOf(type_);
+        return result == null ? ca.zihao.tronol.protobuf.TronProtos.GameResponse.ResponseType.SUCCESS : result;
       }
       /**
        * <code>required .tronol.protobuf.GameResponse.ResponseType type = 1;</code>
@@ -6669,7 +7498,7 @@ public final class TronProtos {
           throw new NullPointerException();
         }
         bitField0_ |= 0x00000001;
-        type_ = value;
+        type_ = value.getNumber();
         onChanged();
         return this;
       }
@@ -6678,12 +7507,11 @@ public final class TronProtos {
        */
       public Builder clearType() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        type_ = ca.zihao.tronol.protobuf.TronProtos.GameResponse.ResponseType.SUCCESS;
+        type_ = 0;
         onChanged();
         return this;
       }
 
-      // repeated .tronol.protobuf.GameResponse.GameSet set_at = 2;
       private java.util.List<ca.zihao.tronol.protobuf.TronProtos.GameResponse.GameSet> setAt_ =
         java.util.Collections.emptyList();
       private void ensureSetAtIsMutable() {
@@ -6693,7 +7521,7 @@ public final class TronProtos {
          }
       }
 
-      private com.google.protobuf.RepeatedFieldBuilder<
+      private com.google.protobuf.RepeatedFieldBuilderV3<
           ca.zihao.tronol.protobuf.TronProtos.GameResponse.GameSet, ca.zihao.tronol.protobuf.TronProtos.GameResponse.GameSet.Builder, ca.zihao.tronol.protobuf.TronProtos.GameResponse.GameSetOrBuilder> setAtBuilder_;
 
       /**
@@ -6825,7 +7653,8 @@ public final class TronProtos {
           java.lang.Iterable<? extends ca.zihao.tronol.protobuf.TronProtos.GameResponse.GameSet> values) {
         if (setAtBuilder_ == null) {
           ensureSetAtIsMutable();
-          super.addAll(values, setAt_);
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, setAt_);
           onChanged();
         } else {
           setAtBuilder_.addAllMessages(values);
@@ -6908,11 +7737,11 @@ public final class TronProtos {
            getSetAtBuilderList() {
         return getSetAtFieldBuilder().getBuilderList();
       }
-      private com.google.protobuf.RepeatedFieldBuilder<
+      private com.google.protobuf.RepeatedFieldBuilderV3<
           ca.zihao.tronol.protobuf.TronProtos.GameResponse.GameSet, ca.zihao.tronol.protobuf.TronProtos.GameResponse.GameSet.Builder, ca.zihao.tronol.protobuf.TronProtos.GameResponse.GameSetOrBuilder> 
           getSetAtFieldBuilder() {
         if (setAtBuilder_ == null) {
-          setAtBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+          setAtBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               ca.zihao.tronol.protobuf.TronProtos.GameResponse.GameSet, ca.zihao.tronol.protobuf.TronProtos.GameResponse.GameSet.Builder, ca.zihao.tronol.protobuf.TronProtos.GameResponse.GameSetOrBuilder>(
                   setAt_,
                   ((bitField0_ & 0x00000002) == 0x00000002),
@@ -6923,7 +7752,6 @@ public final class TronProtos {
         return setAtBuilder_;
       }
 
-      // repeated string users = 3;
       private com.google.protobuf.LazyStringList users_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureUsersIsMutable() {
         if (!((bitField0_ & 0x00000004) == 0x00000004)) {
@@ -6934,9 +7762,9 @@ public final class TronProtos {
       /**
        * <code>repeated string users = 3;</code>
        */
-      public java.util.List<java.lang.String>
+      public com.google.protobuf.ProtocolStringList
           getUsersList() {
-        return java.util.Collections.unmodifiableList(users_);
+        return users_.getUnmodifiableView();
       }
       /**
        * <code>repeated string users = 3;</code>
@@ -6989,7 +7817,8 @@ public final class TronProtos {
       public Builder addAllUsers(
           java.lang.Iterable<java.lang.String> values) {
         ensureUsersIsMutable();
-        super.addAll(values, users_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, users_);
         onChanged();
         return this;
       }
@@ -7016,7 +7845,6 @@ public final class TronProtos {
         return this;
       }
 
-      // optional int32 tick = 4;
       private int tick_ ;
       /**
        * <code>optional int32 tick = 4;</code>
@@ -7049,7 +7877,6 @@ public final class TronProtos {
         return this;
       }
 
-      // optional string winner = 5;
       private java.lang.Object winner_ = "";
       /**
        * <code>optional string winner = 5;</code>
@@ -7063,9 +7890,12 @@ public final class TronProtos {
       public java.lang.String getWinner() {
         java.lang.Object ref = winner_;
         if (!(ref instanceof java.lang.String)) {
-          java.lang.String s = ((com.google.protobuf.ByteString) ref)
-              .toStringUtf8();
-          winner_ = s;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            winner_ = s;
+          }
           return s;
         } else {
           return (java.lang.String) ref;
@@ -7122,22 +7952,59 @@ public final class TronProtos {
         onChanged();
         return this;
       }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
 
       // @@protoc_insertion_point(builder_scope:tronol.protobuf.GameResponse)
     }
 
+    // @@protoc_insertion_point(class_scope:tronol.protobuf.GameResponse)
+    private static final ca.zihao.tronol.protobuf.TronProtos.GameResponse DEFAULT_INSTANCE;
     static {
-      defaultInstance = new GameResponse(true);
-      defaultInstance.initFields();
+      DEFAULT_INSTANCE = new ca.zihao.tronol.protobuf.TronProtos.GameResponse();
     }
 
-    // @@protoc_insertion_point(class_scope:tronol.protobuf.GameResponse)
+    public static ca.zihao.tronol.protobuf.TronProtos.GameResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<GameResponse>
+        PARSER = new com.google.protobuf.AbstractParser<GameResponse>() {
+      public GameResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new GameResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<GameResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<GameResponse> getParserForType() {
+      return PARSER;
+    }
+
+    public ca.zihao.tronol.protobuf.TronProtos.GameResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
-  public interface CommandOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface CommandOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:tronol.protobuf.Command)
+      com.google.protobuf.MessageOrBuilder {
 
-    // required .tronol.protobuf.Command.CommandType type = 1;
     /**
      * <code>required .tronol.protobuf.Command.CommandType type = 1;</code>
      */
@@ -7147,7 +8014,6 @@ public final class TronProtos {
      */
     ca.zihao.tronol.protobuf.TronProtos.Command.CommandType getType();
 
-    // optional .tronol.protobuf.AccountCommand account = 2;
     /**
      * <code>optional .tronol.protobuf.AccountCommand account = 2;</code>
      */
@@ -7161,7 +8027,6 @@ public final class TronProtos {
      */
     ca.zihao.tronol.protobuf.TronProtos.AccountCommandOrBuilder getAccountOrBuilder();
 
-    // optional .tronol.protobuf.RoomCommand room = 3;
     /**
      * <code>optional .tronol.protobuf.RoomCommand room = 3;</code>
      */
@@ -7175,7 +8040,6 @@ public final class TronProtos {
      */
     ca.zihao.tronol.protobuf.TronProtos.RoomCommandOrBuilder getRoomOrBuilder();
 
-    // optional .tronol.protobuf.GameCommand game = 4;
     /**
      * <code>optional .tronol.protobuf.GameCommand game = 4;</code>
      */
@@ -7192,36 +8056,32 @@ public final class TronProtos {
   /**
    * Protobuf type {@code tronol.protobuf.Command}
    */
-  public static final class Command extends
-      com.google.protobuf.GeneratedMessage
-      implements CommandOrBuilder {
+  public  static final class Command extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:tronol.protobuf.Command)
+      CommandOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Command.newBuilder() to construct.
-    private Command(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    private Command(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
-      this.unknownFields = builder.getUnknownFields();
     }
-    private Command(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
-    private static final Command defaultInstance;
-    public static Command getDefaultInstance() {
-      return defaultInstance;
+    private Command() {
+      type_ = 0;
     }
 
-    public Command getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-
-    private final com.google.protobuf.UnknownFieldSet unknownFields;
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
+    getUnknownFields() {
       return this.unknownFields;
     }
     private Command(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -7234,8 +8094,8 @@ public final class TronProtos {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -7247,7 +8107,7 @@ public final class TronProtos {
                 unknownFields.mergeVarintField(1, rawValue);
               } else {
                 bitField0_ |= 0x00000001;
-                type_ = value;
+                type_ = rawValue;
               }
               break;
             }
@@ -7296,7 +8156,7 @@ public final class TronProtos {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
+            e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -7307,26 +8167,11 @@ public final class TronProtos {
       return ca.zihao.tronol.protobuf.TronProtos.internal_static_tronol_protobuf_Command_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return ca.zihao.tronol.protobuf.TronProtos.internal_static_tronol_protobuf_Command_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               ca.zihao.tronol.protobuf.TronProtos.Command.class, ca.zihao.tronol.protobuf.TronProtos.Command.Builder.class);
-    }
-
-    public static com.google.protobuf.Parser<Command> PARSER =
-        new com.google.protobuf.AbstractParser<Command>() {
-      public Command parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Command(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Command> getParserForType() {
-      return PARSER;
     }
 
     /**
@@ -7337,15 +8182,15 @@ public final class TronProtos {
       /**
        * <code>ACCOUNT = 0;</code>
        */
-      ACCOUNT(0, 0),
+      ACCOUNT(0),
       /**
        * <code>ROOM = 1;</code>
        */
-      ROOM(1, 1),
+      ROOM(1),
       /**
        * <code>GAME = 2;</code>
        */
-      GAME(2, 2),
+      GAME(2),
       ;
 
       /**
@@ -7362,9 +8207,19 @@ public final class TronProtos {
       public static final int GAME_VALUE = 2;
 
 
-      public final int getNumber() { return value; }
+      public final int getNumber() {
+        return value;
+      }
 
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
       public static CommandType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static CommandType forNumber(int value) {
         switch (value) {
           case 0: return ACCOUNT;
           case 1: return ROOM;
@@ -7377,17 +8232,17 @@ public final class TronProtos {
           internalGetValueMap() {
         return internalValueMap;
       }
-      private static com.google.protobuf.Internal.EnumLiteMap<CommandType>
-          internalValueMap =
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          CommandType> internalValueMap =
             new com.google.protobuf.Internal.EnumLiteMap<CommandType>() {
               public CommandType findValueByNumber(int number) {
-                return CommandType.valueOf(number);
+                return CommandType.forNumber(number);
               }
             };
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor
           getValueDescriptor() {
-        return getDescriptor().getValues().get(index);
+        return getDescriptor().getValues().get(ordinal());
       }
       public final com.google.protobuf.Descriptors.EnumDescriptor
           getDescriptorForType() {
@@ -7409,11 +8264,9 @@ public final class TronProtos {
         return VALUES[desc.getIndex()];
       }
 
-      private final int index;
       private final int value;
 
-      private CommandType(int index, int value) {
-        this.index = index;
+      private CommandType(int value) {
         this.value = value;
       }
 
@@ -7421,9 +8274,8 @@ public final class TronProtos {
     }
 
     private int bitField0_;
-    // required .tronol.protobuf.Command.CommandType type = 1;
     public static final int TYPE_FIELD_NUMBER = 1;
-    private ca.zihao.tronol.protobuf.TronProtos.Command.CommandType type_;
+    private int type_;
     /**
      * <code>required .tronol.protobuf.Command.CommandType type = 1;</code>
      */
@@ -7434,10 +8286,10 @@ public final class TronProtos {
      * <code>required .tronol.protobuf.Command.CommandType type = 1;</code>
      */
     public ca.zihao.tronol.protobuf.TronProtos.Command.CommandType getType() {
-      return type_;
+      ca.zihao.tronol.protobuf.TronProtos.Command.CommandType result = ca.zihao.tronol.protobuf.TronProtos.Command.CommandType.valueOf(type_);
+      return result == null ? ca.zihao.tronol.protobuf.TronProtos.Command.CommandType.ACCOUNT : result;
     }
 
-    // optional .tronol.protobuf.AccountCommand account = 2;
     public static final int ACCOUNT_FIELD_NUMBER = 2;
     private ca.zihao.tronol.protobuf.TronProtos.AccountCommand account_;
     /**
@@ -7450,16 +8302,15 @@ public final class TronProtos {
      * <code>optional .tronol.protobuf.AccountCommand account = 2;</code>
      */
     public ca.zihao.tronol.protobuf.TronProtos.AccountCommand getAccount() {
-      return account_;
+      return account_ == null ? ca.zihao.tronol.protobuf.TronProtos.AccountCommand.getDefaultInstance() : account_;
     }
     /**
      * <code>optional .tronol.protobuf.AccountCommand account = 2;</code>
      */
     public ca.zihao.tronol.protobuf.TronProtos.AccountCommandOrBuilder getAccountOrBuilder() {
-      return account_;
+      return account_ == null ? ca.zihao.tronol.protobuf.TronProtos.AccountCommand.getDefaultInstance() : account_;
     }
 
-    // optional .tronol.protobuf.RoomCommand room = 3;
     public static final int ROOM_FIELD_NUMBER = 3;
     private ca.zihao.tronol.protobuf.TronProtos.RoomCommand room_;
     /**
@@ -7472,16 +8323,15 @@ public final class TronProtos {
      * <code>optional .tronol.protobuf.RoomCommand room = 3;</code>
      */
     public ca.zihao.tronol.protobuf.TronProtos.RoomCommand getRoom() {
-      return room_;
+      return room_ == null ? ca.zihao.tronol.protobuf.TronProtos.RoomCommand.getDefaultInstance() : room_;
     }
     /**
      * <code>optional .tronol.protobuf.RoomCommand room = 3;</code>
      */
     public ca.zihao.tronol.protobuf.TronProtos.RoomCommandOrBuilder getRoomOrBuilder() {
-      return room_;
+      return room_ == null ? ca.zihao.tronol.protobuf.TronProtos.RoomCommand.getDefaultInstance() : room_;
     }
 
-    // optional .tronol.protobuf.GameCommand game = 4;
     public static final int GAME_FIELD_NUMBER = 4;
     private ca.zihao.tronol.protobuf.TronProtos.GameCommand game_;
     /**
@@ -7494,25 +8344,20 @@ public final class TronProtos {
      * <code>optional .tronol.protobuf.GameCommand game = 4;</code>
      */
     public ca.zihao.tronol.protobuf.TronProtos.GameCommand getGame() {
-      return game_;
+      return game_ == null ? ca.zihao.tronol.protobuf.TronProtos.GameCommand.getDefaultInstance() : game_;
     }
     /**
      * <code>optional .tronol.protobuf.GameCommand game = 4;</code>
      */
     public ca.zihao.tronol.protobuf.TronProtos.GameCommandOrBuilder getGameOrBuilder() {
-      return game_;
+      return game_ == null ? ca.zihao.tronol.protobuf.TronProtos.GameCommand.getDefaultInstance() : game_;
     }
 
-    private void initFields() {
-      type_ = ca.zihao.tronol.protobuf.TronProtos.Command.CommandType.ACCOUNT;
-      account_ = ca.zihao.tronol.protobuf.TronProtos.AccountCommand.getDefaultInstance();
-      room_ = ca.zihao.tronol.protobuf.TronProtos.RoomCommand.getDefaultInstance();
-      game_ = ca.zihao.tronol.protobuf.TronProtos.GameCommand.getDefaultInstance();
-    }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasType()) {
         memoizedIsInitialized = 0;
@@ -7542,56 +8387,120 @@ public final class TronProtos {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeEnum(1, type_.getNumber());
+        output.writeEnum(1, type_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeMessage(2, account_);
+        output.writeMessage(2, getAccount());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeMessage(3, room_);
+        output.writeMessage(3, getRoom());
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeMessage(4, game_);
+        output.writeMessage(4, getGame());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
-    private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, type_.getNumber());
+          .computeEnumSize(1, type_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, account_);
+          .computeMessageSize(2, getAccount());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, room_);
+          .computeMessageSize(3, getRoom());
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, game_);
+          .computeMessageSize(4, getGame());
       }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof ca.zihao.tronol.protobuf.TronProtos.Command)) {
+        return super.equals(obj);
+      }
+      ca.zihao.tronol.protobuf.TronProtos.Command other = (ca.zihao.tronol.protobuf.TronProtos.Command) obj;
+
+      boolean result = true;
+      result = result && (hasType() == other.hasType());
+      if (hasType()) {
+        result = result && type_ == other.type_;
+      }
+      result = result && (hasAccount() == other.hasAccount());
+      if (hasAccount()) {
+        result = result && getAccount()
+            .equals(other.getAccount());
+      }
+      result = result && (hasRoom() == other.hasRoom());
+      if (hasRoom()) {
+        result = result && getRoom()
+            .equals(other.getRoom());
+      }
+      result = result && (hasGame() == other.hasGame());
+      if (hasGame()) {
+        result = result && getGame()
+            .equals(other.getGame());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasType()) {
+        hash = (37 * hash) + TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + type_;
+      }
+      if (hasAccount()) {
+        hash = (37 * hash) + ACCOUNT_FIELD_NUMBER;
+        hash = (53 * hash) + getAccount().hashCode();
+      }
+      if (hasRoom()) {
+        hash = (37 * hash) + ROOM_FIELD_NUMBER;
+        hash = (53 * hash) + getRoom().hashCode();
+      }
+      if (hasGame()) {
+        hash = (37 * hash) + GAME_FIELD_NUMBER;
+        hash = (53 * hash) + getGame().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static ca.zihao.tronol.protobuf.TronProtos.Command parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ca.zihao.tronol.protobuf.TronProtos.Command parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static ca.zihao.tronol.protobuf.TronProtos.Command parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -7615,46 +8524,57 @@ public final class TronProtos {
     }
     public static ca.zihao.tronol.protobuf.TronProtos.Command parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static ca.zihao.tronol.protobuf.TronProtos.Command parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static ca.zihao.tronol.protobuf.TronProtos.Command parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static ca.zihao.tronol.protobuf.TronProtos.Command parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static ca.zihao.tronol.protobuf.TronProtos.Command parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static ca.zihao.tronol.protobuf.TronProtos.Command parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(ca.zihao.tronol.protobuf.TronProtos.Command prototype) {
-      return newBuilder().mergeFrom(prototype);
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
     }
-    public Builder toBuilder() { return newBuilder(this); }
+    public static Builder newBuilder(ca.zihao.tronol.protobuf.TronProtos.Command prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -7662,14 +8582,15 @@ public final class TronProtos {
      * Protobuf type {@code tronol.protobuf.Command}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements ca.zihao.tronol.protobuf.TronProtos.CommandOrBuilder {
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:tronol.protobuf.Command)
+        ca.zihao.tronol.protobuf.TronProtos.CommandOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return ca.zihao.tronol.protobuf.TronProtos.internal_static_tronol_protobuf_Command_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return ca.zihao.tronol.protobuf.TronProtos.internal_static_tronol_protobuf_Command_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
@@ -7682,48 +8603,41 @@ public final class TronProtos {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
           getAccountFieldBuilder();
           getRoomFieldBuilder();
           getGameFieldBuilder();
         }
       }
-      private static Builder create() {
-        return new Builder();
-      }
-
       public Builder clear() {
         super.clear();
-        type_ = ca.zihao.tronol.protobuf.TronProtos.Command.CommandType.ACCOUNT;
+        type_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
         if (accountBuilder_ == null) {
-          account_ = ca.zihao.tronol.protobuf.TronProtos.AccountCommand.getDefaultInstance();
+          account_ = null;
         } else {
           accountBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000002);
         if (roomBuilder_ == null) {
-          room_ = ca.zihao.tronol.protobuf.TronProtos.RoomCommand.getDefaultInstance();
+          room_ = null;
         } else {
           roomBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000004);
         if (gameBuilder_ == null) {
-          game_ = ca.zihao.tronol.protobuf.TronProtos.GameCommand.getDefaultInstance();
+          game_ = null;
         } else {
           gameBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000008);
         return this;
-      }
-
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
       }
 
       public com.google.protobuf.Descriptors.Descriptor
@@ -7780,6 +8694,32 @@ public final class TronProtos {
         return result;
       }
 
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ca.zihao.tronol.protobuf.TronProtos.Command) {
           return mergeFrom((ca.zihao.tronol.protobuf.TronProtos.Command)other);
@@ -7803,30 +8743,27 @@ public final class TronProtos {
         if (other.hasGame()) {
           mergeGame(other.getGame());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
         return this;
       }
 
       public final boolean isInitialized() {
         if (!hasType()) {
-          
           return false;
         }
         if (hasAccount()) {
           if (!getAccount().isInitialized()) {
-            
             return false;
           }
         }
         if (hasRoom()) {
           if (!getRoom().isInitialized()) {
-            
             return false;
           }
         }
         if (hasGame()) {
           if (!getGame().isInitialized()) {
-            
             return false;
           }
         }
@@ -7842,7 +8779,7 @@ public final class TronProtos {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           parsedMessage = (ca.zihao.tronol.protobuf.TronProtos.Command) e.getUnfinishedMessage();
-          throw e;
+          throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
@@ -7852,8 +8789,7 @@ public final class TronProtos {
       }
       private int bitField0_;
 
-      // required .tronol.protobuf.Command.CommandType type = 1;
-      private ca.zihao.tronol.protobuf.TronProtos.Command.CommandType type_ = ca.zihao.tronol.protobuf.TronProtos.Command.CommandType.ACCOUNT;
+      private int type_ = 0;
       /**
        * <code>required .tronol.protobuf.Command.CommandType type = 1;</code>
        */
@@ -7864,7 +8800,8 @@ public final class TronProtos {
        * <code>required .tronol.protobuf.Command.CommandType type = 1;</code>
        */
       public ca.zihao.tronol.protobuf.TronProtos.Command.CommandType getType() {
-        return type_;
+        ca.zihao.tronol.protobuf.TronProtos.Command.CommandType result = ca.zihao.tronol.protobuf.TronProtos.Command.CommandType.valueOf(type_);
+        return result == null ? ca.zihao.tronol.protobuf.TronProtos.Command.CommandType.ACCOUNT : result;
       }
       /**
        * <code>required .tronol.protobuf.Command.CommandType type = 1;</code>
@@ -7874,7 +8811,7 @@ public final class TronProtos {
           throw new NullPointerException();
         }
         bitField0_ |= 0x00000001;
-        type_ = value;
+        type_ = value.getNumber();
         onChanged();
         return this;
       }
@@ -7883,14 +8820,13 @@ public final class TronProtos {
        */
       public Builder clearType() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        type_ = ca.zihao.tronol.protobuf.TronProtos.Command.CommandType.ACCOUNT;
+        type_ = 0;
         onChanged();
         return this;
       }
 
-      // optional .tronol.protobuf.AccountCommand account = 2;
-      private ca.zihao.tronol.protobuf.TronProtos.AccountCommand account_ = ca.zihao.tronol.protobuf.TronProtos.AccountCommand.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
+      private ca.zihao.tronol.protobuf.TronProtos.AccountCommand account_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
           ca.zihao.tronol.protobuf.TronProtos.AccountCommand, ca.zihao.tronol.protobuf.TronProtos.AccountCommand.Builder, ca.zihao.tronol.protobuf.TronProtos.AccountCommandOrBuilder> accountBuilder_;
       /**
        * <code>optional .tronol.protobuf.AccountCommand account = 2;</code>
@@ -7903,7 +8839,7 @@ public final class TronProtos {
        */
       public ca.zihao.tronol.protobuf.TronProtos.AccountCommand getAccount() {
         if (accountBuilder_ == null) {
-          return account_;
+          return account_ == null ? ca.zihao.tronol.protobuf.TronProtos.AccountCommand.getDefaultInstance() : account_;
         } else {
           return accountBuilder_.getMessage();
         }
@@ -7944,6 +8880,7 @@ public final class TronProtos {
       public Builder mergeAccount(ca.zihao.tronol.protobuf.TronProtos.AccountCommand value) {
         if (accountBuilder_ == null) {
           if (((bitField0_ & 0x00000002) == 0x00000002) &&
+              account_ != null &&
               account_ != ca.zihao.tronol.protobuf.TronProtos.AccountCommand.getDefaultInstance()) {
             account_ =
               ca.zihao.tronol.protobuf.TronProtos.AccountCommand.newBuilder(account_).mergeFrom(value).buildPartial();
@@ -7962,7 +8899,7 @@ public final class TronProtos {
        */
       public Builder clearAccount() {
         if (accountBuilder_ == null) {
-          account_ = ca.zihao.tronol.protobuf.TronProtos.AccountCommand.getDefaultInstance();
+          account_ = null;
           onChanged();
         } else {
           accountBuilder_.clear();
@@ -7985,19 +8922,20 @@ public final class TronProtos {
         if (accountBuilder_ != null) {
           return accountBuilder_.getMessageOrBuilder();
         } else {
-          return account_;
+          return account_ == null ?
+              ca.zihao.tronol.protobuf.TronProtos.AccountCommand.getDefaultInstance() : account_;
         }
       }
       /**
        * <code>optional .tronol.protobuf.AccountCommand account = 2;</code>
        */
-      private com.google.protobuf.SingleFieldBuilder<
+      private com.google.protobuf.SingleFieldBuilderV3<
           ca.zihao.tronol.protobuf.TronProtos.AccountCommand, ca.zihao.tronol.protobuf.TronProtos.AccountCommand.Builder, ca.zihao.tronol.protobuf.TronProtos.AccountCommandOrBuilder> 
           getAccountFieldBuilder() {
         if (accountBuilder_ == null) {
-          accountBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+          accountBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               ca.zihao.tronol.protobuf.TronProtos.AccountCommand, ca.zihao.tronol.protobuf.TronProtos.AccountCommand.Builder, ca.zihao.tronol.protobuf.TronProtos.AccountCommandOrBuilder>(
-                  account_,
+                  getAccount(),
                   getParentForChildren(),
                   isClean());
           account_ = null;
@@ -8005,9 +8943,8 @@ public final class TronProtos {
         return accountBuilder_;
       }
 
-      // optional .tronol.protobuf.RoomCommand room = 3;
-      private ca.zihao.tronol.protobuf.TronProtos.RoomCommand room_ = ca.zihao.tronol.protobuf.TronProtos.RoomCommand.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
+      private ca.zihao.tronol.protobuf.TronProtos.RoomCommand room_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
           ca.zihao.tronol.protobuf.TronProtos.RoomCommand, ca.zihao.tronol.protobuf.TronProtos.RoomCommand.Builder, ca.zihao.tronol.protobuf.TronProtos.RoomCommandOrBuilder> roomBuilder_;
       /**
        * <code>optional .tronol.protobuf.RoomCommand room = 3;</code>
@@ -8020,7 +8957,7 @@ public final class TronProtos {
        */
       public ca.zihao.tronol.protobuf.TronProtos.RoomCommand getRoom() {
         if (roomBuilder_ == null) {
-          return room_;
+          return room_ == null ? ca.zihao.tronol.protobuf.TronProtos.RoomCommand.getDefaultInstance() : room_;
         } else {
           return roomBuilder_.getMessage();
         }
@@ -8061,6 +8998,7 @@ public final class TronProtos {
       public Builder mergeRoom(ca.zihao.tronol.protobuf.TronProtos.RoomCommand value) {
         if (roomBuilder_ == null) {
           if (((bitField0_ & 0x00000004) == 0x00000004) &&
+              room_ != null &&
               room_ != ca.zihao.tronol.protobuf.TronProtos.RoomCommand.getDefaultInstance()) {
             room_ =
               ca.zihao.tronol.protobuf.TronProtos.RoomCommand.newBuilder(room_).mergeFrom(value).buildPartial();
@@ -8079,7 +9017,7 @@ public final class TronProtos {
        */
       public Builder clearRoom() {
         if (roomBuilder_ == null) {
-          room_ = ca.zihao.tronol.protobuf.TronProtos.RoomCommand.getDefaultInstance();
+          room_ = null;
           onChanged();
         } else {
           roomBuilder_.clear();
@@ -8102,19 +9040,20 @@ public final class TronProtos {
         if (roomBuilder_ != null) {
           return roomBuilder_.getMessageOrBuilder();
         } else {
-          return room_;
+          return room_ == null ?
+              ca.zihao.tronol.protobuf.TronProtos.RoomCommand.getDefaultInstance() : room_;
         }
       }
       /**
        * <code>optional .tronol.protobuf.RoomCommand room = 3;</code>
        */
-      private com.google.protobuf.SingleFieldBuilder<
+      private com.google.protobuf.SingleFieldBuilderV3<
           ca.zihao.tronol.protobuf.TronProtos.RoomCommand, ca.zihao.tronol.protobuf.TronProtos.RoomCommand.Builder, ca.zihao.tronol.protobuf.TronProtos.RoomCommandOrBuilder> 
           getRoomFieldBuilder() {
         if (roomBuilder_ == null) {
-          roomBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+          roomBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               ca.zihao.tronol.protobuf.TronProtos.RoomCommand, ca.zihao.tronol.protobuf.TronProtos.RoomCommand.Builder, ca.zihao.tronol.protobuf.TronProtos.RoomCommandOrBuilder>(
-                  room_,
+                  getRoom(),
                   getParentForChildren(),
                   isClean());
           room_ = null;
@@ -8122,9 +9061,8 @@ public final class TronProtos {
         return roomBuilder_;
       }
 
-      // optional .tronol.protobuf.GameCommand game = 4;
-      private ca.zihao.tronol.protobuf.TronProtos.GameCommand game_ = ca.zihao.tronol.protobuf.TronProtos.GameCommand.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
+      private ca.zihao.tronol.protobuf.TronProtos.GameCommand game_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
           ca.zihao.tronol.protobuf.TronProtos.GameCommand, ca.zihao.tronol.protobuf.TronProtos.GameCommand.Builder, ca.zihao.tronol.protobuf.TronProtos.GameCommandOrBuilder> gameBuilder_;
       /**
        * <code>optional .tronol.protobuf.GameCommand game = 4;</code>
@@ -8137,7 +9075,7 @@ public final class TronProtos {
        */
       public ca.zihao.tronol.protobuf.TronProtos.GameCommand getGame() {
         if (gameBuilder_ == null) {
-          return game_;
+          return game_ == null ? ca.zihao.tronol.protobuf.TronProtos.GameCommand.getDefaultInstance() : game_;
         } else {
           return gameBuilder_.getMessage();
         }
@@ -8178,6 +9116,7 @@ public final class TronProtos {
       public Builder mergeGame(ca.zihao.tronol.protobuf.TronProtos.GameCommand value) {
         if (gameBuilder_ == null) {
           if (((bitField0_ & 0x00000008) == 0x00000008) &&
+              game_ != null &&
               game_ != ca.zihao.tronol.protobuf.TronProtos.GameCommand.getDefaultInstance()) {
             game_ =
               ca.zihao.tronol.protobuf.TronProtos.GameCommand.newBuilder(game_).mergeFrom(value).buildPartial();
@@ -8196,7 +9135,7 @@ public final class TronProtos {
        */
       public Builder clearGame() {
         if (gameBuilder_ == null) {
-          game_ = ca.zihao.tronol.protobuf.TronProtos.GameCommand.getDefaultInstance();
+          game_ = null;
           onChanged();
         } else {
           gameBuilder_.clear();
@@ -8219,41 +9158,79 @@ public final class TronProtos {
         if (gameBuilder_ != null) {
           return gameBuilder_.getMessageOrBuilder();
         } else {
-          return game_;
+          return game_ == null ?
+              ca.zihao.tronol.protobuf.TronProtos.GameCommand.getDefaultInstance() : game_;
         }
       }
       /**
        * <code>optional .tronol.protobuf.GameCommand game = 4;</code>
        */
-      private com.google.protobuf.SingleFieldBuilder<
+      private com.google.protobuf.SingleFieldBuilderV3<
           ca.zihao.tronol.protobuf.TronProtos.GameCommand, ca.zihao.tronol.protobuf.TronProtos.GameCommand.Builder, ca.zihao.tronol.protobuf.TronProtos.GameCommandOrBuilder> 
           getGameFieldBuilder() {
         if (gameBuilder_ == null) {
-          gameBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+          gameBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               ca.zihao.tronol.protobuf.TronProtos.GameCommand, ca.zihao.tronol.protobuf.TronProtos.GameCommand.Builder, ca.zihao.tronol.protobuf.TronProtos.GameCommandOrBuilder>(
-                  game_,
+                  getGame(),
                   getParentForChildren(),
                   isClean());
           game_ = null;
         }
         return gameBuilder_;
       }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
 
       // @@protoc_insertion_point(builder_scope:tronol.protobuf.Command)
     }
 
+    // @@protoc_insertion_point(class_scope:tronol.protobuf.Command)
+    private static final ca.zihao.tronol.protobuf.TronProtos.Command DEFAULT_INSTANCE;
     static {
-      defaultInstance = new Command(true);
-      defaultInstance.initFields();
+      DEFAULT_INSTANCE = new ca.zihao.tronol.protobuf.TronProtos.Command();
     }
 
-    // @@protoc_insertion_point(class_scope:tronol.protobuf.Command)
+    public static ca.zihao.tronol.protobuf.TronProtos.Command getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<Command>
+        PARSER = new com.google.protobuf.AbstractParser<Command>() {
+      public Command parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Command(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Command> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Command> getParserForType() {
+      return PARSER;
+    }
+
+    public ca.zihao.tronol.protobuf.TronProtos.Command getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
-  public interface ResponseOrBuilder
-      extends com.google.protobuf.MessageOrBuilder {
+  public interface ResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:tronol.protobuf.Response)
+      com.google.protobuf.MessageOrBuilder {
 
-    // required .tronol.protobuf.Response.ResponseType type = 1;
     /**
      * <code>required .tronol.protobuf.Response.ResponseType type = 1;</code>
      */
@@ -8263,7 +9240,6 @@ public final class TronProtos {
      */
     ca.zihao.tronol.protobuf.TronProtos.Response.ResponseType getType();
 
-    // optional .tronol.protobuf.AccountResponse account = 2;
     /**
      * <code>optional .tronol.protobuf.AccountResponse account = 2;</code>
      */
@@ -8277,7 +9253,6 @@ public final class TronProtos {
      */
     ca.zihao.tronol.protobuf.TronProtos.AccountResponseOrBuilder getAccountOrBuilder();
 
-    // optional .tronol.protobuf.RoomResponse room = 3;
     /**
      * <code>optional .tronol.protobuf.RoomResponse room = 3;</code>
      */
@@ -8291,7 +9266,6 @@ public final class TronProtos {
      */
     ca.zihao.tronol.protobuf.TronProtos.RoomResponseOrBuilder getRoomOrBuilder();
 
-    // optional .tronol.protobuf.GameResponse game = 4;
     /**
      * <code>optional .tronol.protobuf.GameResponse game = 4;</code>
      */
@@ -8308,36 +9282,32 @@ public final class TronProtos {
   /**
    * Protobuf type {@code tronol.protobuf.Response}
    */
-  public static final class Response extends
-      com.google.protobuf.GeneratedMessage
-      implements ResponseOrBuilder {
+  public  static final class Response extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:tronol.protobuf.Response)
+      ResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Response.newBuilder() to construct.
-    private Response(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    private Response(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
-      this.unknownFields = builder.getUnknownFields();
     }
-    private Response(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
-    private static final Response defaultInstance;
-    public static Response getDefaultInstance() {
-      return defaultInstance;
+    private Response() {
+      type_ = 0;
     }
 
-    public Response getDefaultInstanceForType() {
-      return defaultInstance;
-    }
-
-    private final com.google.protobuf.UnknownFieldSet unknownFields;
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
-        getUnknownFields() {
+    getUnknownFields() {
       return this.unknownFields;
     }
     private Response(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      initFields();
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -8350,8 +9320,8 @@ public final class TronProtos {
               done = true;
               break;
             default: {
-              if (!parseUnknownField(input, unknownFields,
-                                     extensionRegistry, tag)) {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -8363,7 +9333,7 @@ public final class TronProtos {
                 unknownFields.mergeVarintField(1, rawValue);
               } else {
                 bitField0_ |= 0x00000001;
-                type_ = value;
+                type_ = rawValue;
               }
               break;
             }
@@ -8412,7 +9382,7 @@ public final class TronProtos {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(
-            e.getMessage()).setUnfinishedMessage(this);
+            e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -8423,26 +9393,11 @@ public final class TronProtos {
       return ca.zihao.tronol.protobuf.TronProtos.internal_static_tronol_protobuf_Response_descriptor;
     }
 
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return ca.zihao.tronol.protobuf.TronProtos.internal_static_tronol_protobuf_Response_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               ca.zihao.tronol.protobuf.TronProtos.Response.class, ca.zihao.tronol.protobuf.TronProtos.Response.Builder.class);
-    }
-
-    public static com.google.protobuf.Parser<Response> PARSER =
-        new com.google.protobuf.AbstractParser<Response>() {
-      public Response parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Response(input, extensionRegistry);
-      }
-    };
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Response> getParserForType() {
-      return PARSER;
     }
 
     /**
@@ -8453,15 +9408,15 @@ public final class TronProtos {
       /**
        * <code>ACCOUNT = 0;</code>
        */
-      ACCOUNT(0, 0),
+      ACCOUNT(0),
       /**
        * <code>ROOM = 1;</code>
        */
-      ROOM(1, 1),
+      ROOM(1),
       /**
        * <code>GAME = 2;</code>
        */
-      GAME(2, 2),
+      GAME(2),
       ;
 
       /**
@@ -8478,9 +9433,19 @@ public final class TronProtos {
       public static final int GAME_VALUE = 2;
 
 
-      public final int getNumber() { return value; }
+      public final int getNumber() {
+        return value;
+      }
 
+      /**
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
       public static ResponseType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ResponseType forNumber(int value) {
         switch (value) {
           case 0: return ACCOUNT;
           case 1: return ROOM;
@@ -8493,17 +9458,17 @@ public final class TronProtos {
           internalGetValueMap() {
         return internalValueMap;
       }
-      private static com.google.protobuf.Internal.EnumLiteMap<ResponseType>
-          internalValueMap =
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          ResponseType> internalValueMap =
             new com.google.protobuf.Internal.EnumLiteMap<ResponseType>() {
               public ResponseType findValueByNumber(int number) {
-                return ResponseType.valueOf(number);
+                return ResponseType.forNumber(number);
               }
             };
 
       public final com.google.protobuf.Descriptors.EnumValueDescriptor
           getValueDescriptor() {
-        return getDescriptor().getValues().get(index);
+        return getDescriptor().getValues().get(ordinal());
       }
       public final com.google.protobuf.Descriptors.EnumDescriptor
           getDescriptorForType() {
@@ -8525,11 +9490,9 @@ public final class TronProtos {
         return VALUES[desc.getIndex()];
       }
 
-      private final int index;
       private final int value;
 
-      private ResponseType(int index, int value) {
-        this.index = index;
+      private ResponseType(int value) {
         this.value = value;
       }
 
@@ -8537,9 +9500,8 @@ public final class TronProtos {
     }
 
     private int bitField0_;
-    // required .tronol.protobuf.Response.ResponseType type = 1;
     public static final int TYPE_FIELD_NUMBER = 1;
-    private ca.zihao.tronol.protobuf.TronProtos.Response.ResponseType type_;
+    private int type_;
     /**
      * <code>required .tronol.protobuf.Response.ResponseType type = 1;</code>
      */
@@ -8550,10 +9512,10 @@ public final class TronProtos {
      * <code>required .tronol.protobuf.Response.ResponseType type = 1;</code>
      */
     public ca.zihao.tronol.protobuf.TronProtos.Response.ResponseType getType() {
-      return type_;
+      ca.zihao.tronol.protobuf.TronProtos.Response.ResponseType result = ca.zihao.tronol.protobuf.TronProtos.Response.ResponseType.valueOf(type_);
+      return result == null ? ca.zihao.tronol.protobuf.TronProtos.Response.ResponseType.ACCOUNT : result;
     }
 
-    // optional .tronol.protobuf.AccountResponse account = 2;
     public static final int ACCOUNT_FIELD_NUMBER = 2;
     private ca.zihao.tronol.protobuf.TronProtos.AccountResponse account_;
     /**
@@ -8566,16 +9528,15 @@ public final class TronProtos {
      * <code>optional .tronol.protobuf.AccountResponse account = 2;</code>
      */
     public ca.zihao.tronol.protobuf.TronProtos.AccountResponse getAccount() {
-      return account_;
+      return account_ == null ? ca.zihao.tronol.protobuf.TronProtos.AccountResponse.getDefaultInstance() : account_;
     }
     /**
      * <code>optional .tronol.protobuf.AccountResponse account = 2;</code>
      */
     public ca.zihao.tronol.protobuf.TronProtos.AccountResponseOrBuilder getAccountOrBuilder() {
-      return account_;
+      return account_ == null ? ca.zihao.tronol.protobuf.TronProtos.AccountResponse.getDefaultInstance() : account_;
     }
 
-    // optional .tronol.protobuf.RoomResponse room = 3;
     public static final int ROOM_FIELD_NUMBER = 3;
     private ca.zihao.tronol.protobuf.TronProtos.RoomResponse room_;
     /**
@@ -8588,16 +9549,15 @@ public final class TronProtos {
      * <code>optional .tronol.protobuf.RoomResponse room = 3;</code>
      */
     public ca.zihao.tronol.protobuf.TronProtos.RoomResponse getRoom() {
-      return room_;
+      return room_ == null ? ca.zihao.tronol.protobuf.TronProtos.RoomResponse.getDefaultInstance() : room_;
     }
     /**
      * <code>optional .tronol.protobuf.RoomResponse room = 3;</code>
      */
     public ca.zihao.tronol.protobuf.TronProtos.RoomResponseOrBuilder getRoomOrBuilder() {
-      return room_;
+      return room_ == null ? ca.zihao.tronol.protobuf.TronProtos.RoomResponse.getDefaultInstance() : room_;
     }
 
-    // optional .tronol.protobuf.GameResponse game = 4;
     public static final int GAME_FIELD_NUMBER = 4;
     private ca.zihao.tronol.protobuf.TronProtos.GameResponse game_;
     /**
@@ -8610,25 +9570,20 @@ public final class TronProtos {
      * <code>optional .tronol.protobuf.GameResponse game = 4;</code>
      */
     public ca.zihao.tronol.protobuf.TronProtos.GameResponse getGame() {
-      return game_;
+      return game_ == null ? ca.zihao.tronol.protobuf.TronProtos.GameResponse.getDefaultInstance() : game_;
     }
     /**
      * <code>optional .tronol.protobuf.GameResponse game = 4;</code>
      */
     public ca.zihao.tronol.protobuf.TronProtos.GameResponseOrBuilder getGameOrBuilder() {
-      return game_;
+      return game_ == null ? ca.zihao.tronol.protobuf.TronProtos.GameResponse.getDefaultInstance() : game_;
     }
 
-    private void initFields() {
-      type_ = ca.zihao.tronol.protobuf.TronProtos.Response.ResponseType.ACCOUNT;
-      account_ = ca.zihao.tronol.protobuf.TronProtos.AccountResponse.getDefaultInstance();
-      room_ = ca.zihao.tronol.protobuf.TronProtos.RoomResponse.getDefaultInstance();
-      game_ = ca.zihao.tronol.protobuf.TronProtos.GameResponse.getDefaultInstance();
-    }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized != -1) return isInitialized == 1;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       if (!hasType()) {
         memoizedIsInitialized = 0;
@@ -8658,56 +9613,120 @@ public final class TronProtos {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      getSerializedSize();
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
-        output.writeEnum(1, type_.getNumber());
+        output.writeEnum(1, type_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
-        output.writeMessage(2, account_);
+        output.writeMessage(2, getAccount());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
-        output.writeMessage(3, room_);
+        output.writeMessage(3, getRoom());
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeMessage(4, game_);
+        output.writeMessage(4, getGame());
       }
-      getUnknownFields().writeTo(output);
+      unknownFields.writeTo(output);
     }
 
-    private int memoizedSerializedSize = -1;
     public int getSerializedSize() {
-      int size = memoizedSerializedSize;
+      int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
       if (((bitField0_ & 0x00000001) == 0x00000001)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, type_.getNumber());
+          .computeEnumSize(1, type_);
       }
       if (((bitField0_ & 0x00000002) == 0x00000002)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, account_);
+          .computeMessageSize(2, getAccount());
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, room_);
+          .computeMessageSize(3, getRoom());
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, game_);
+          .computeMessageSize(4, getGame());
       }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSerializedSize = size;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
-    protected java.lang.Object writeReplace()
-        throws java.io.ObjectStreamException {
-      return super.writeReplace();
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof ca.zihao.tronol.protobuf.TronProtos.Response)) {
+        return super.equals(obj);
+      }
+      ca.zihao.tronol.protobuf.TronProtos.Response other = (ca.zihao.tronol.protobuf.TronProtos.Response) obj;
+
+      boolean result = true;
+      result = result && (hasType() == other.hasType());
+      if (hasType()) {
+        result = result && type_ == other.type_;
+      }
+      result = result && (hasAccount() == other.hasAccount());
+      if (hasAccount()) {
+        result = result && getAccount()
+            .equals(other.getAccount());
+      }
+      result = result && (hasRoom() == other.hasRoom());
+      if (hasRoom()) {
+        result = result && getRoom()
+            .equals(other.getRoom());
+      }
+      result = result && (hasGame() == other.hasGame());
+      if (hasGame()) {
+        result = result && getGame()
+            .equals(other.getGame());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
     }
 
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasType()) {
+        hash = (37 * hash) + TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + type_;
+      }
+      if (hasAccount()) {
+        hash = (37 * hash) + ACCOUNT_FIELD_NUMBER;
+        hash = (53 * hash) + getAccount().hashCode();
+      }
+      if (hasRoom()) {
+        hash = (37 * hash) + ROOM_FIELD_NUMBER;
+        hash = (53 * hash) + getRoom().hashCode();
+      }
+      if (hasGame()) {
+        hash = (37 * hash) + GAME_FIELD_NUMBER;
+        hash = (53 * hash) + getGame().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static ca.zihao.tronol.protobuf.TronProtos.Response parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ca.zihao.tronol.protobuf.TronProtos.Response parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static ca.zihao.tronol.protobuf.TronProtos.Response parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -8731,46 +9750,57 @@ public final class TronProtos {
     }
     public static ca.zihao.tronol.protobuf.TronProtos.Response parseFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static ca.zihao.tronol.protobuf.TronProtos.Response parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
     public static ca.zihao.tronol.protobuf.TronProtos.Response parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
     }
     public static ca.zihao.tronol.protobuf.TronProtos.Response parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
     public static ca.zihao.tronol.protobuf.TronProtos.Response parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
-      return PARSER.parseFrom(input);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
     }
     public static ca.zihao.tronol.protobuf.TronProtos.Response parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return PARSER.parseFrom(input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(ca.zihao.tronol.protobuf.TronProtos.Response prototype) {
-      return newBuilder().mergeFrom(prototype);
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
     }
-    public Builder toBuilder() { return newBuilder(this); }
+    public static Builder newBuilder(ca.zihao.tronol.protobuf.TronProtos.Response prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
 
     @java.lang.Override
     protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -8778,14 +9808,15 @@ public final class TronProtos {
      * Protobuf type {@code tronol.protobuf.Response}
      */
     public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements ca.zihao.tronol.protobuf.TronProtos.ResponseOrBuilder {
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:tronol.protobuf.Response)
+        ca.zihao.tronol.protobuf.TronProtos.ResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return ca.zihao.tronol.protobuf.TronProtos.internal_static_tronol_protobuf_Response_descriptor;
       }
 
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return ca.zihao.tronol.protobuf.TronProtos.internal_static_tronol_protobuf_Response_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
@@ -8798,48 +9829,41 @@ public final class TronProtos {
       }
 
       private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
           getAccountFieldBuilder();
           getRoomFieldBuilder();
           getGameFieldBuilder();
         }
       }
-      private static Builder create() {
-        return new Builder();
-      }
-
       public Builder clear() {
         super.clear();
-        type_ = ca.zihao.tronol.protobuf.TronProtos.Response.ResponseType.ACCOUNT;
+        type_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
         if (accountBuilder_ == null) {
-          account_ = ca.zihao.tronol.protobuf.TronProtos.AccountResponse.getDefaultInstance();
+          account_ = null;
         } else {
           accountBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000002);
         if (roomBuilder_ == null) {
-          room_ = ca.zihao.tronol.protobuf.TronProtos.RoomResponse.getDefaultInstance();
+          room_ = null;
         } else {
           roomBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000004);
         if (gameBuilder_ == null) {
-          game_ = ca.zihao.tronol.protobuf.TronProtos.GameResponse.getDefaultInstance();
+          game_ = null;
         } else {
           gameBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000008);
         return this;
-      }
-
-      public Builder clone() {
-        return create().mergeFrom(buildPartial());
       }
 
       public com.google.protobuf.Descriptors.Descriptor
@@ -8896,6 +9920,32 @@ public final class TronProtos {
         return result;
       }
 
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof ca.zihao.tronol.protobuf.TronProtos.Response) {
           return mergeFrom((ca.zihao.tronol.protobuf.TronProtos.Response)other);
@@ -8919,30 +9969,27 @@ public final class TronProtos {
         if (other.hasGame()) {
           mergeGame(other.getGame());
         }
-        this.mergeUnknownFields(other.getUnknownFields());
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
         return this;
       }
 
       public final boolean isInitialized() {
         if (!hasType()) {
-          
           return false;
         }
         if (hasAccount()) {
           if (!getAccount().isInitialized()) {
-            
             return false;
           }
         }
         if (hasRoom()) {
           if (!getRoom().isInitialized()) {
-            
             return false;
           }
         }
         if (hasGame()) {
           if (!getGame().isInitialized()) {
-            
             return false;
           }
         }
@@ -8958,7 +10005,7 @@ public final class TronProtos {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           parsedMessage = (ca.zihao.tronol.protobuf.TronProtos.Response) e.getUnfinishedMessage();
-          throw e;
+          throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
             mergeFrom(parsedMessage);
@@ -8968,8 +10015,7 @@ public final class TronProtos {
       }
       private int bitField0_;
 
-      // required .tronol.protobuf.Response.ResponseType type = 1;
-      private ca.zihao.tronol.protobuf.TronProtos.Response.ResponseType type_ = ca.zihao.tronol.protobuf.TronProtos.Response.ResponseType.ACCOUNT;
+      private int type_ = 0;
       /**
        * <code>required .tronol.protobuf.Response.ResponseType type = 1;</code>
        */
@@ -8980,7 +10026,8 @@ public final class TronProtos {
        * <code>required .tronol.protobuf.Response.ResponseType type = 1;</code>
        */
       public ca.zihao.tronol.protobuf.TronProtos.Response.ResponseType getType() {
-        return type_;
+        ca.zihao.tronol.protobuf.TronProtos.Response.ResponseType result = ca.zihao.tronol.protobuf.TronProtos.Response.ResponseType.valueOf(type_);
+        return result == null ? ca.zihao.tronol.protobuf.TronProtos.Response.ResponseType.ACCOUNT : result;
       }
       /**
        * <code>required .tronol.protobuf.Response.ResponseType type = 1;</code>
@@ -8990,7 +10037,7 @@ public final class TronProtos {
           throw new NullPointerException();
         }
         bitField0_ |= 0x00000001;
-        type_ = value;
+        type_ = value.getNumber();
         onChanged();
         return this;
       }
@@ -8999,14 +10046,13 @@ public final class TronProtos {
        */
       public Builder clearType() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        type_ = ca.zihao.tronol.protobuf.TronProtos.Response.ResponseType.ACCOUNT;
+        type_ = 0;
         onChanged();
         return this;
       }
 
-      // optional .tronol.protobuf.AccountResponse account = 2;
-      private ca.zihao.tronol.protobuf.TronProtos.AccountResponse account_ = ca.zihao.tronol.protobuf.TronProtos.AccountResponse.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
+      private ca.zihao.tronol.protobuf.TronProtos.AccountResponse account_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
           ca.zihao.tronol.protobuf.TronProtos.AccountResponse, ca.zihao.tronol.protobuf.TronProtos.AccountResponse.Builder, ca.zihao.tronol.protobuf.TronProtos.AccountResponseOrBuilder> accountBuilder_;
       /**
        * <code>optional .tronol.protobuf.AccountResponse account = 2;</code>
@@ -9019,7 +10065,7 @@ public final class TronProtos {
        */
       public ca.zihao.tronol.protobuf.TronProtos.AccountResponse getAccount() {
         if (accountBuilder_ == null) {
-          return account_;
+          return account_ == null ? ca.zihao.tronol.protobuf.TronProtos.AccountResponse.getDefaultInstance() : account_;
         } else {
           return accountBuilder_.getMessage();
         }
@@ -9060,6 +10106,7 @@ public final class TronProtos {
       public Builder mergeAccount(ca.zihao.tronol.protobuf.TronProtos.AccountResponse value) {
         if (accountBuilder_ == null) {
           if (((bitField0_ & 0x00000002) == 0x00000002) &&
+              account_ != null &&
               account_ != ca.zihao.tronol.protobuf.TronProtos.AccountResponse.getDefaultInstance()) {
             account_ =
               ca.zihao.tronol.protobuf.TronProtos.AccountResponse.newBuilder(account_).mergeFrom(value).buildPartial();
@@ -9078,7 +10125,7 @@ public final class TronProtos {
        */
       public Builder clearAccount() {
         if (accountBuilder_ == null) {
-          account_ = ca.zihao.tronol.protobuf.TronProtos.AccountResponse.getDefaultInstance();
+          account_ = null;
           onChanged();
         } else {
           accountBuilder_.clear();
@@ -9101,19 +10148,20 @@ public final class TronProtos {
         if (accountBuilder_ != null) {
           return accountBuilder_.getMessageOrBuilder();
         } else {
-          return account_;
+          return account_ == null ?
+              ca.zihao.tronol.protobuf.TronProtos.AccountResponse.getDefaultInstance() : account_;
         }
       }
       /**
        * <code>optional .tronol.protobuf.AccountResponse account = 2;</code>
        */
-      private com.google.protobuf.SingleFieldBuilder<
+      private com.google.protobuf.SingleFieldBuilderV3<
           ca.zihao.tronol.protobuf.TronProtos.AccountResponse, ca.zihao.tronol.protobuf.TronProtos.AccountResponse.Builder, ca.zihao.tronol.protobuf.TronProtos.AccountResponseOrBuilder> 
           getAccountFieldBuilder() {
         if (accountBuilder_ == null) {
-          accountBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+          accountBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               ca.zihao.tronol.protobuf.TronProtos.AccountResponse, ca.zihao.tronol.protobuf.TronProtos.AccountResponse.Builder, ca.zihao.tronol.protobuf.TronProtos.AccountResponseOrBuilder>(
-                  account_,
+                  getAccount(),
                   getParentForChildren(),
                   isClean());
           account_ = null;
@@ -9121,9 +10169,8 @@ public final class TronProtos {
         return accountBuilder_;
       }
 
-      // optional .tronol.protobuf.RoomResponse room = 3;
-      private ca.zihao.tronol.protobuf.TronProtos.RoomResponse room_ = ca.zihao.tronol.protobuf.TronProtos.RoomResponse.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
+      private ca.zihao.tronol.protobuf.TronProtos.RoomResponse room_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
           ca.zihao.tronol.protobuf.TronProtos.RoomResponse, ca.zihao.tronol.protobuf.TronProtos.RoomResponse.Builder, ca.zihao.tronol.protobuf.TronProtos.RoomResponseOrBuilder> roomBuilder_;
       /**
        * <code>optional .tronol.protobuf.RoomResponse room = 3;</code>
@@ -9136,7 +10183,7 @@ public final class TronProtos {
        */
       public ca.zihao.tronol.protobuf.TronProtos.RoomResponse getRoom() {
         if (roomBuilder_ == null) {
-          return room_;
+          return room_ == null ? ca.zihao.tronol.protobuf.TronProtos.RoomResponse.getDefaultInstance() : room_;
         } else {
           return roomBuilder_.getMessage();
         }
@@ -9177,6 +10224,7 @@ public final class TronProtos {
       public Builder mergeRoom(ca.zihao.tronol.protobuf.TronProtos.RoomResponse value) {
         if (roomBuilder_ == null) {
           if (((bitField0_ & 0x00000004) == 0x00000004) &&
+              room_ != null &&
               room_ != ca.zihao.tronol.protobuf.TronProtos.RoomResponse.getDefaultInstance()) {
             room_ =
               ca.zihao.tronol.protobuf.TronProtos.RoomResponse.newBuilder(room_).mergeFrom(value).buildPartial();
@@ -9195,7 +10243,7 @@ public final class TronProtos {
        */
       public Builder clearRoom() {
         if (roomBuilder_ == null) {
-          room_ = ca.zihao.tronol.protobuf.TronProtos.RoomResponse.getDefaultInstance();
+          room_ = null;
           onChanged();
         } else {
           roomBuilder_.clear();
@@ -9218,19 +10266,20 @@ public final class TronProtos {
         if (roomBuilder_ != null) {
           return roomBuilder_.getMessageOrBuilder();
         } else {
-          return room_;
+          return room_ == null ?
+              ca.zihao.tronol.protobuf.TronProtos.RoomResponse.getDefaultInstance() : room_;
         }
       }
       /**
        * <code>optional .tronol.protobuf.RoomResponse room = 3;</code>
        */
-      private com.google.protobuf.SingleFieldBuilder<
+      private com.google.protobuf.SingleFieldBuilderV3<
           ca.zihao.tronol.protobuf.TronProtos.RoomResponse, ca.zihao.tronol.protobuf.TronProtos.RoomResponse.Builder, ca.zihao.tronol.protobuf.TronProtos.RoomResponseOrBuilder> 
           getRoomFieldBuilder() {
         if (roomBuilder_ == null) {
-          roomBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+          roomBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               ca.zihao.tronol.protobuf.TronProtos.RoomResponse, ca.zihao.tronol.protobuf.TronProtos.RoomResponse.Builder, ca.zihao.tronol.protobuf.TronProtos.RoomResponseOrBuilder>(
-                  room_,
+                  getRoom(),
                   getParentForChildren(),
                   isClean());
           room_ = null;
@@ -9238,9 +10287,8 @@ public final class TronProtos {
         return roomBuilder_;
       }
 
-      // optional .tronol.protobuf.GameResponse game = 4;
-      private ca.zihao.tronol.protobuf.TronProtos.GameResponse game_ = ca.zihao.tronol.protobuf.TronProtos.GameResponse.getDefaultInstance();
-      private com.google.protobuf.SingleFieldBuilder<
+      private ca.zihao.tronol.protobuf.TronProtos.GameResponse game_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
           ca.zihao.tronol.protobuf.TronProtos.GameResponse, ca.zihao.tronol.protobuf.TronProtos.GameResponse.Builder, ca.zihao.tronol.protobuf.TronProtos.GameResponseOrBuilder> gameBuilder_;
       /**
        * <code>optional .tronol.protobuf.GameResponse game = 4;</code>
@@ -9253,7 +10301,7 @@ public final class TronProtos {
        */
       public ca.zihao.tronol.protobuf.TronProtos.GameResponse getGame() {
         if (gameBuilder_ == null) {
-          return game_;
+          return game_ == null ? ca.zihao.tronol.protobuf.TronProtos.GameResponse.getDefaultInstance() : game_;
         } else {
           return gameBuilder_.getMessage();
         }
@@ -9294,6 +10342,7 @@ public final class TronProtos {
       public Builder mergeGame(ca.zihao.tronol.protobuf.TronProtos.GameResponse value) {
         if (gameBuilder_ == null) {
           if (((bitField0_ & 0x00000008) == 0x00000008) &&
+              game_ != null &&
               game_ != ca.zihao.tronol.protobuf.TronProtos.GameResponse.getDefaultInstance()) {
             game_ =
               ca.zihao.tronol.protobuf.TronProtos.GameResponse.newBuilder(game_).mergeFrom(value).buildPartial();
@@ -9312,7 +10361,7 @@ public final class TronProtos {
        */
       public Builder clearGame() {
         if (gameBuilder_ == null) {
-          game_ = ca.zihao.tronol.protobuf.TronProtos.GameResponse.getDefaultInstance();
+          game_ = null;
           onChanged();
         } else {
           gameBuilder_.clear();
@@ -9335,93 +10384,131 @@ public final class TronProtos {
         if (gameBuilder_ != null) {
           return gameBuilder_.getMessageOrBuilder();
         } else {
-          return game_;
+          return game_ == null ?
+              ca.zihao.tronol.protobuf.TronProtos.GameResponse.getDefaultInstance() : game_;
         }
       }
       /**
        * <code>optional .tronol.protobuf.GameResponse game = 4;</code>
        */
-      private com.google.protobuf.SingleFieldBuilder<
+      private com.google.protobuf.SingleFieldBuilderV3<
           ca.zihao.tronol.protobuf.TronProtos.GameResponse, ca.zihao.tronol.protobuf.TronProtos.GameResponse.Builder, ca.zihao.tronol.protobuf.TronProtos.GameResponseOrBuilder> 
           getGameFieldBuilder() {
         if (gameBuilder_ == null) {
-          gameBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+          gameBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               ca.zihao.tronol.protobuf.TronProtos.GameResponse, ca.zihao.tronol.protobuf.TronProtos.GameResponse.Builder, ca.zihao.tronol.protobuf.TronProtos.GameResponseOrBuilder>(
-                  game_,
+                  getGame(),
                   getParentForChildren(),
                   isClean());
           game_ = null;
         }
         return gameBuilder_;
       }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
 
       // @@protoc_insertion_point(builder_scope:tronol.protobuf.Response)
     }
 
+    // @@protoc_insertion_point(class_scope:tronol.protobuf.Response)
+    private static final ca.zihao.tronol.protobuf.TronProtos.Response DEFAULT_INSTANCE;
     static {
-      defaultInstance = new Response(true);
-      defaultInstance.initFields();
+      DEFAULT_INSTANCE = new ca.zihao.tronol.protobuf.TronProtos.Response();
     }
 
-    // @@protoc_insertion_point(class_scope:tronol.protobuf.Response)
+    public static ca.zihao.tronol.protobuf.TronProtos.Response getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<Response>
+        PARSER = new com.google.protobuf.AbstractParser<Response>() {
+      public Response parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Response(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Response> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Response> getParserForType() {
+      return PARSER;
+    }
+
+    public ca.zihao.tronol.protobuf.TronProtos.Response getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
   }
 
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tronol_protobuf_AccountCommand_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tronol_protobuf_AccountCommand_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tronol_protobuf_AccountResponse_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tronol_protobuf_AccountResponse_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tronol_protobuf_RoomCommand_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tronol_protobuf_RoomCommand_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tronol_protobuf_RoomResponse_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tronol_protobuf_RoomResponse_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tronol_protobuf_RoomResponse_RoomInfo_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tronol_protobuf_RoomResponse_RoomInfo_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tronol_protobuf_GameCommand_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tronol_protobuf_GameCommand_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tronol_protobuf_GameResponse_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tronol_protobuf_GameResponse_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tronol_protobuf_GameResponse_GameSet_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tronol_protobuf_GameResponse_GameSet_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tronol_protobuf_Command_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tronol_protobuf_Command_fieldAccessorTable;
-  private static com.google.protobuf.Descriptors.Descriptor
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_tronol_protobuf_Response_descriptor;
-  private static
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_tronol_protobuf_Response_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
     return descriptor;
   }
-  private static com.google.protobuf.Descriptors.FileDescriptor
+  private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
     java.lang.String[] descriptorData = {
@@ -9434,7 +10521,7 @@ public final class TronProtos {
       "sponse\022;\n\004type\030\001 \002(\0162-.tronol.protobuf.A" +
       "ccountResponse.ResponseType\022\r\n\005token\030\002 \001" +
       "(\t\"Z\n\014ResponseType\022\013\n\007SUCCESS\020\000\022\024\n\020INVAL" +
-      "ID_USERNAME\020\001\022\024\n\020INVALID_PASSWORD\020\002\022\021\n\rI",
+      "ID_USERNAME\020\001\022\024\n\020INVALID_PASSWORD\020\002\022\021\n\rI" +
       "NVALID_TOKEN\020\003\"\262\001\n\013RoomCommand\0226\n\004type\030\001" +
       " \002(\0162(.tronol.protobuf.RoomCommand.Comma" +
       "ndType\022\n\n\002id\030\002 \001(\005\022\014\n\004name\030\003 \001(\t\022\014\n\004wins" +
@@ -9444,7 +10531,7 @@ public final class TronProtos {
       "obuf.RoomResponse.ResponseType\022\n\n\002id\030\002 \001" +
       "(\005\0224\n\004room\030\003 \003(\0132&.tronol.protobuf.RoomR" +
       "esponse.RoomInfo\032B\n\010RoomInfo\022\n\n\002id\030\001 \002(\005" +
-      "\022\014\n\004name\030\002 \002(\t\022\014\n\004host\030\003 \001(\t\022\016\n\006status\030\004",
+      "\022\014\n\004name\030\002 \002(\t\022\014\n\004host\030\003 \001(\t\022\016\n\006status\030\004" +
       " \001(\t\"-\n\014ResponseType\022\013\n\007SUCCESS\020\000\022\020\n\014INV" +
       "ALID_ROOM\020\001\"\230\001\n\013GameCommand\0226\n\004type\030\001 \002(" +
       "\0162(.tronol.protobuf.GameCommand.CommandT" +
@@ -9454,7 +10541,7 @@ public final class TronProtos {
       "tronol.protobuf.GameResponse.ResponseTyp" +
       "e\0225\n\006set_at\030\002 \003(\0132%.tronol.protobuf.Game" +
       "Response.GameSet\022\r\n\005users\030\003 \003(\t\022\014\n\004tick\030" +
-      "\004 \001(\005\022\016\n\006winner\030\005 \001(\t\032*\n\007GameSet\022\t\n\001x\030\001 ",
+      "\004 \001(\005\022\016\n\006winner\030\005 \001(\t\032*\n\007GameSet\022\t\n\001x\030\001 " +
       "\002(\005\022\t\n\001y\030\002 \002(\005\022\t\n\001v\030\003 \002(\005\"D\n\014ResponseTyp" +
       "e\022\013\n\007SUCCESS\020\000\022\t\n\005ERROR\020\001\022\010\n\004ROOM\020\002\022\010\n\004G" +
       "AME\020\003\022\010\n\004OVER\020\004\"\367\001\n\007Command\0222\n\004type\030\001 \002(" +
@@ -9464,7 +10551,7 @@ public final class TronProtos {
       "f.RoomCommand\022*\n\004game\030\004 \001(\0132\034.tronol.pro" +
       "tobuf.GameCommand\".\n\013CommandType\022\013\n\007ACCO" +
       "UNT\020\000\022\010\n\004ROOM\020\001\022\010\n\004GAME\020\002\"\376\001\n\010Response\0224" +
-      "\n\004type\030\001 \002(\0162&.tronol.protobuf.Response.",
+      "\n\004type\030\001 \002(\0162&.tronol.protobuf.Response." +
       "ResponseType\0221\n\007account\030\002 \001(\0132 .tronol.p" +
       "rotobuf.AccountResponse\022+\n\004room\030\003 \001(\0132\035." +
       "tronol.protobuf.RoomResponse\022+\n\004game\030\004 \001" +
@@ -9474,77 +10561,77 @@ public final class TronProtos {
       "os"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-      new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
-        public com.google.protobuf.ExtensionRegistry assignDescriptors(
-            com.google.protobuf.Descriptors.FileDescriptor root) {
-          descriptor = root;
-          internal_static_tronol_protobuf_AccountCommand_descriptor =
-            getDescriptor().getMessageTypes().get(0);
-          internal_static_tronol_protobuf_AccountCommand_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_tronol_protobuf_AccountCommand_descriptor,
-              new java.lang.String[] { "Type", "Username", "Password", "Nickname", "Token", });
-          internal_static_tronol_protobuf_AccountResponse_descriptor =
-            getDescriptor().getMessageTypes().get(1);
-          internal_static_tronol_protobuf_AccountResponse_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_tronol_protobuf_AccountResponse_descriptor,
-              new java.lang.String[] { "Type", "Token", });
-          internal_static_tronol_protobuf_RoomCommand_descriptor =
-            getDescriptor().getMessageTypes().get(2);
-          internal_static_tronol_protobuf_RoomCommand_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_tronol_protobuf_RoomCommand_descriptor,
-              new java.lang.String[] { "Type", "Id", "Name", "Wins", });
-          internal_static_tronol_protobuf_RoomResponse_descriptor =
-            getDescriptor().getMessageTypes().get(3);
-          internal_static_tronol_protobuf_RoomResponse_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_tronol_protobuf_RoomResponse_descriptor,
-              new java.lang.String[] { "Type", "Id", "Room", });
-          internal_static_tronol_protobuf_RoomResponse_RoomInfo_descriptor =
-            internal_static_tronol_protobuf_RoomResponse_descriptor.getNestedTypes().get(0);
-          internal_static_tronol_protobuf_RoomResponse_RoomInfo_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_tronol_protobuf_RoomResponse_RoomInfo_descriptor,
-              new java.lang.String[] { "Id", "Name", "Host", "Status", });
-          internal_static_tronol_protobuf_GameCommand_descriptor =
-            getDescriptor().getMessageTypes().get(4);
-          internal_static_tronol_protobuf_GameCommand_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_tronol_protobuf_GameCommand_descriptor,
-              new java.lang.String[] { "Type", "Tick", "Dir", });
-          internal_static_tronol_protobuf_GameResponse_descriptor =
-            getDescriptor().getMessageTypes().get(5);
-          internal_static_tronol_protobuf_GameResponse_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_tronol_protobuf_GameResponse_descriptor,
-              new java.lang.String[] { "Type", "SetAt", "Users", "Tick", "Winner", });
-          internal_static_tronol_protobuf_GameResponse_GameSet_descriptor =
-            internal_static_tronol_protobuf_GameResponse_descriptor.getNestedTypes().get(0);
-          internal_static_tronol_protobuf_GameResponse_GameSet_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_tronol_protobuf_GameResponse_GameSet_descriptor,
-              new java.lang.String[] { "X", "Y", "V", });
-          internal_static_tronol_protobuf_Command_descriptor =
-            getDescriptor().getMessageTypes().get(6);
-          internal_static_tronol_protobuf_Command_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_tronol_protobuf_Command_descriptor,
-              new java.lang.String[] { "Type", "Account", "Room", "Game", });
-          internal_static_tronol_protobuf_Response_descriptor =
-            getDescriptor().getMessageTypes().get(7);
-          internal_static_tronol_protobuf_Response_fieldAccessorTable = new
-            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_tronol_protobuf_Response_descriptor,
-              new java.lang.String[] { "Type", "Account", "Room", "Game", });
-          return null;
-        }
-      };
+        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+          public com.google.protobuf.ExtensionRegistry assignDescriptors(
+              com.google.protobuf.Descriptors.FileDescriptor root) {
+            descriptor = root;
+            return null;
+          }
+        };
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
+    internal_static_tronol_protobuf_AccountCommand_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_tronol_protobuf_AccountCommand_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_tronol_protobuf_AccountCommand_descriptor,
+        new java.lang.String[] { "Type", "Username", "Password", "Nickname", "Token", });
+    internal_static_tronol_protobuf_AccountResponse_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_tronol_protobuf_AccountResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_tronol_protobuf_AccountResponse_descriptor,
+        new java.lang.String[] { "Type", "Token", });
+    internal_static_tronol_protobuf_RoomCommand_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_tronol_protobuf_RoomCommand_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_tronol_protobuf_RoomCommand_descriptor,
+        new java.lang.String[] { "Type", "Id", "Name", "Wins", });
+    internal_static_tronol_protobuf_RoomResponse_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_tronol_protobuf_RoomResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_tronol_protobuf_RoomResponse_descriptor,
+        new java.lang.String[] { "Type", "Id", "Room", });
+    internal_static_tronol_protobuf_RoomResponse_RoomInfo_descriptor =
+      internal_static_tronol_protobuf_RoomResponse_descriptor.getNestedTypes().get(0);
+    internal_static_tronol_protobuf_RoomResponse_RoomInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_tronol_protobuf_RoomResponse_RoomInfo_descriptor,
+        new java.lang.String[] { "Id", "Name", "Host", "Status", });
+    internal_static_tronol_protobuf_GameCommand_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_tronol_protobuf_GameCommand_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_tronol_protobuf_GameCommand_descriptor,
+        new java.lang.String[] { "Type", "Tick", "Dir", });
+    internal_static_tronol_protobuf_GameResponse_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_tronol_protobuf_GameResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_tronol_protobuf_GameResponse_descriptor,
+        new java.lang.String[] { "Type", "SetAt", "Users", "Tick", "Winner", });
+    internal_static_tronol_protobuf_GameResponse_GameSet_descriptor =
+      internal_static_tronol_protobuf_GameResponse_descriptor.getNestedTypes().get(0);
+    internal_static_tronol_protobuf_GameResponse_GameSet_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_tronol_protobuf_GameResponse_GameSet_descriptor,
+        new java.lang.String[] { "X", "Y", "V", });
+    internal_static_tronol_protobuf_Command_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_tronol_protobuf_Command_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_tronol_protobuf_Command_descriptor,
+        new java.lang.String[] { "Type", "Account", "Room", "Game", });
+    internal_static_tronol_protobuf_Response_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_tronol_protobuf_Response_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_tronol_protobuf_Response_descriptor,
+        new java.lang.String[] { "Type", "Account", "Room", "Game", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
