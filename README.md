@@ -3,6 +3,12 @@ tron-online
 
 tron lighting cycle online
 
+Demo
+----
+![login](https://raw.githubusercontent.com/zzh8829/TronOnline/master/images/login.png)
+![game](https://raw.githubusercontent.com/zzh8829/TronOnline/master/images/game.png)
+
+
 Requirement
 -----------
 Client:
