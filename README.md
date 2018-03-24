@@ -5,8 +5,8 @@ tron lighting cycle online
 
 Demo
 ----
-![login](https://raw.githubusercontent.com/zzh8829/TronOnline/master/images/login.png)
-![game](https://raw.githubusercontent.com/zzh8829/TronOnline/master/images/game.png)
+![login](https://raw.githubusercontent.com/zzh8829/TronOnline/master/login.png)
+![game](https://raw.githubusercontent.com/zzh8829/TronOnline/master/game.png)
 
 
 Requirement
