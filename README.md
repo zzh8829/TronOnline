@@ -38,7 +38,7 @@ mvn package
 Server:
 ```bash
 cd tron-server
-make
+make -j 4
 ```
 
 Database
@@ -46,3 +46,7 @@ Database
 ```bash
 sqlite3 tron-server/bin/tron.db < tron-server/db.sql
 ```
+
+## Running
+cd tron-server/bin && ./server
+cd tron-client/target && java -jar tron-client-1.0.jar
