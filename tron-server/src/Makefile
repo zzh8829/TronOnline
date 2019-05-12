@@ -36,114 +36,48 @@ $(TARGET):  $(OBJECTS)
 
 main.o: main.cpp tronol.h \
 		tron.pb.h \
-		/usr/local/include/google/protobuf/stubs/common.h \
-		/usr/local/include/google/protobuf/generated_message_util.h \
-		/usr/local/include/google/protobuf/message.h \
-		/usr/local/include/google/protobuf/message_lite.h \
-		/usr/local/include/google/protobuf/descriptor.h \
-		/usr/local/include/google/protobuf/repeated_field.h \
-		/usr/local/include/google/protobuf/stubs/type_traits.h \
-		/usr/local/include/google/protobuf/stubs/template_util.h \
-		/usr/local/include/google/protobuf/extension_set.h \
-		/usr/local/include/google/protobuf/generated_enum_reflection.h \
-		/usr/local/include/google/protobuf/unknown_field_set.h \
 		TronUtil.h \
 		TronServer.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp `pkg-config --cflags --libs protobuf`
 
 TronUtil.o: TronUtil.cpp TronUtil.h \
 		tronol.h \
-		tron.pb.h \
-		/usr/local/include/google/protobuf/stubs/common.h \
-		/usr/local/include/google/protobuf/generated_message_util.h \
-		/usr/local/include/google/protobuf/message.h \
-		/usr/local/include/google/protobuf/message_lite.h \
-		/usr/local/include/google/protobuf/descriptor.h \
-		/usr/local/include/google/protobuf/repeated_field.h \
-		/usr/local/include/google/protobuf/stubs/type_traits.h \
-		/usr/local/include/google/protobuf/stubs/template_util.h \
-		/usr/local/include/google/protobuf/extension_set.h \
-		/usr/local/include/google/protobuf/generated_enum_reflection.h \
-		/usr/local/include/google/protobuf/unknown_field_set.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o TronUtil.o TronUtil.cpp
+		tron.pb.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o TronUtil.o TronUtil.cpp `pkg-config --cflags --libs protobuf`
 
 TronServer.o: TronServer.cpp TronServer.h \
 		tronol.h \
 		tron.pb.h \
-		/usr/local/include/google/protobuf/stubs/common.h \
-		/usr/local/include/google/protobuf/generated_message_util.h \
-		/usr/local/include/google/protobuf/message.h \
-		/usr/local/include/google/protobuf/message_lite.h \
-		/usr/local/include/google/protobuf/descriptor.h \
-		/usr/local/include/google/protobuf/repeated_field.h \
-		/usr/local/include/google/protobuf/stubs/type_traits.h \
-		/usr/local/include/google/protobuf/stubs/template_util.h \
-		/usr/local/include/google/protobuf/extension_set.h \
-		/usr/local/include/google/protobuf/generated_enum_reflection.h \
-		/usr/local/include/google/protobuf/unknown_field_set.h \
 		TronUtil.h \
 		TronPlayer.h \
 		TronRoom.h \
 		TronGame.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o TronServer.o TronServer.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o TronServer.o TronServer.cpp `pkg-config --cflags --libs protobuf`
 
 TronRoom.o: TronRoom.cpp TronRoom.h \
 		tronol.h \
 		tron.pb.h \
-		/usr/local/include/google/protobuf/stubs/common.h \
-		/usr/local/include/google/protobuf/generated_message_util.h \
-		/usr/local/include/google/protobuf/message.h \
-		/usr/local/include/google/protobuf/message_lite.h \
-		/usr/local/include/google/protobuf/descriptor.h \
-		/usr/local/include/google/protobuf/repeated_field.h \
-		/usr/local/include/google/protobuf/stubs/type_traits.h \
-		/usr/local/include/google/protobuf/stubs/template_util.h \
-		/usr/local/include/google/protobuf/extension_set.h \
-		/usr/local/include/google/protobuf/generated_enum_reflection.h \
-		/usr/local/include/google/protobuf/unknown_field_set.h \
 		TronUtil.h \
 		TronServer.h \
 		TronGame.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o TronRoom.o TronRoom.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o TronRoom.o TronRoom.cpp `pkg-config --cflags --libs protobuf`
 
 TronPlayer.o: TronPlayer.cpp TronPlayer.h \
 		tronol.h \
 		tron.pb.h \
-		/usr/local/include/google/protobuf/stubs/common.h \
-		/usr/local/include/google/protobuf/generated_message_util.h \
-		/usr/local/include/google/protobuf/message.h \
-		/usr/local/include/google/protobuf/message_lite.h \
-		/usr/local/include/google/protobuf/descriptor.h \
-		/usr/local/include/google/protobuf/repeated_field.h \
-		/usr/local/include/google/protobuf/stubs/type_traits.h \
-		/usr/local/include/google/protobuf/stubs/template_util.h \
-		/usr/local/include/google/protobuf/extension_set.h \
-		/usr/local/include/google/protobuf/generated_enum_reflection.h \
-		/usr/local/include/google/protobuf/unknown_field_set.h \
 		TronUtil.h \
 		TronServer.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o TronPlayer.o TronPlayer.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o TronPlayer.o TronPlayer.cpp `pkg-config --cflags --libs protobuf`
 
 TronGame.o: TronGame.cpp TronGame.h \
 		tronol.h \
 		tron.pb.h \
-		/usr/local/include/google/protobuf/stubs/common.h \
-		/usr/local/include/google/protobuf/generated_message_util.h \
-		/usr/local/include/google/protobuf/message.h \
-		/usr/local/include/google/protobuf/message_lite.h \
-		/usr/local/include/google/protobuf/descriptor.h \
-		/usr/local/include/google/protobuf/repeated_field.h \
-		/usr/local/include/google/protobuf/stubs/type_traits.h \
-		/usr/local/include/google/protobuf/stubs/template_util.h \
-		/usr/local/include/google/protobuf/extension_set.h \
-		/usr/local/include/google/protobuf/generated_enum_reflection.h \
-		/usr/local/include/google/protobuf/unknown_field_set.h \
 		TronUtil.h \
 		TronServer.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o TronGame.o TronGame.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o TronGame.o TronGame.cpp `pkg-config --cflags --libs protobuf`
 
 tron.pb.o: tron.pb.cc tron.pb.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o tron.pb.o tron.pb.cc
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o tron.pb.o tron.pb.cc `pkg-config --cflags --libs protobuf`
 
 clean:
 	rm $(TARGET) *.o

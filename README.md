@@ -23,11 +23,10 @@ protobuf
 
 Compile
 -------
-Protobuf:
+Deps (mac)
 ```bash
-cd protobuf
-python genproto.py cpp
-python genproto.py java
+brew install protobuf pkg-config boost maven
+brew cask install java
 ```
 
 Client:
@@ -46,14 +45,4 @@ Database
 --------
 ```bash
 sqlite3 tron-server/bin/tron.db < tron-server/db.sql
-```
-
-Dependency
-----------
-for mac
-```bash
-python
-maven
-boost
-protobuf
 ```

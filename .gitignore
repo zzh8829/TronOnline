@@ -1,3 +1,7 @@
+# Output
+/tron-server/bin
+
+# Protobuf
 /tron-client/**/protobuf
 /tron-server/**/*.pb.h
 /tron-server/**/*.pb.cc
