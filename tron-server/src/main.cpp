@@ -8,10 +8,10 @@ int main(int argc, char* argv[])
 {
 	try {
 		TronServer server(PORT);
-        server.initialize();
+        	server.initialize();
 		server.run();
 	} catch (exception& e) {
-        cerr << "Main Exception: " << e.what() << endl;
+        	cerr << "Main Exception: " << e.what() << endl;
 	}
 	return 0;
 }

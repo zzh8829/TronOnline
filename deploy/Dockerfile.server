@@ -1,0 +1,18 @@
+FROM ubuntu:bionic
+
+RUN apt-get update && apt-get install -yyq \
+	libprotoc-dev protobuf-compiler \
+	libsqlite3-dev sqlite3 \
+	libboost-all-dev
+
+WORKDIR /app/tron-server
+
+COPY . .
+
+RUN cd tron-server && make -j 4
+RUN cd tron-server && sqlite3 bin/tron.db < db.sql
+
+CMD cd tron-server/bin && ./server
+
+EXPOSE 10001
+

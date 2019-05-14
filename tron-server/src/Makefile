@@ -5,7 +5,7 @@ CXXFLAGS      = -m64 -pipe -O3 -pthread -std=c++11 -Wall -W -fPIE $(DEFINES)
 INCPATH       = -I. -I/usr/local/include
 LINK          = g++
 LFLAGS        =
-LIBS          = $(SUBLIBS) -lboost_system -lboost_thread-mt -lsqlite3 -pthread -L/usr/local/lib -lprotobuf -lpthread
+LIBS          = $(SUBLIBS) -lboost_system -lboost_thread -lsqlite3 -pthread -L/usr/local/lib -lprotobuf -lpthread
 
 OBJECTS_DIR   = ./build
 

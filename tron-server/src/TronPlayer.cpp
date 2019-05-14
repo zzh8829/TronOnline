@@ -76,6 +76,5 @@ void TronPlayer::disconnect()
         room_->leave(this);
     server_.room_mutex_.unlock();
 
-	delete &socket_;
 	delete this;
 }

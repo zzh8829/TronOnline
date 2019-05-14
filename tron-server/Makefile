@@ -3,7 +3,7 @@ all: protobuf
 	cd src && make
 
 protobuf:
-	cd ../protobuf && python genproto.py cpp
+	cd ../protobuf && python3 genproto.py cpp
 
 clean:
 	cd src && make clean

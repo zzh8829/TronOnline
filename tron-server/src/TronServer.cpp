@@ -293,7 +293,7 @@ void TronServer::handle_game(TronPlayer *player, const pb::GameCommand &cmd)
 void TronServer::update()
 {
     boost::posix_time::time_duration MS_PER_TICK =
-        boost::posix_time::microseconds(50000);
+        boost::posix_time::microseconds(100000);
     boost::posix_time::ptime zero = boost::posix_time::microsec_clock::local_time();
 
     while (true)
