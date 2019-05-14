@@ -45,7 +45,8 @@ public class MainWindow extends JFrame {
 
         setVisible(true);
 
-        if(!Main.client.connect("localhost", 10001)) {
+        String host = System.getenv().getOrDefault("TRON_HOST", "localhost");
+        if(!Main.client.connect(host, 10001)) {
             JOptionPane.showMessageDialog(null,"Unable to connect to server","Error",JOptionPane.ERROR_MESSAGE);
             System.exit(1);
         }

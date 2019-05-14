@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tron-online
+  labels:
+    app: tron-online
+spec:
+  replicas: 1
+  revisionHistoryLimit: 1
+  selector:
+    matchLabels:
+      app: tron-online
+  template:
+    metadata:
+      labels:
+        app: tron-online
+    spec:
+      containers:
+      - name: tron-online
+        image: zihao/tron-online:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 10001
+        resources:
+          requests:
+            cpu: 10m
+            memory: 10Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: tron-online
+  labels:
+    app: tron-online
+spec:
+  ports:
+  - port: 10001
+    targetPort: 10001
+  selector:
+    app: tron-online
