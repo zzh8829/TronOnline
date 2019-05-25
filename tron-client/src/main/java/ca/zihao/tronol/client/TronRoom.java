@@ -27,7 +27,7 @@ public class TronRoom {
     }
 
     public String toString() {
-        return String.format("| %-2d | %-40s | %-15s | %-4s |",id,name,host,status);
+        return String.format("| %-2d | %-30s | %-15s | %-4s |",id,name,host,status);
     }
 }
 

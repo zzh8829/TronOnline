@@ -15,7 +15,9 @@ public class TronUtil {
 
     static byte[] ReadData(DataInputStream in) throws Exception{
         synchronized (in) {
-            byte[] data = new byte[in.readInt()];
+            int b = in.readInt();
+            // System.out.println(b);
+            byte[] data = new byte[b];
             in.readFully(data);
             return data;
         }

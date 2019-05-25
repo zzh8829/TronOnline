@@ -1,0 +1,28 @@
+FROM golang:1.12 as builder
+
+RUN apt update && apt install -yqq protobuf-compiler rsync
+RUN go get -u github.com/golang/protobuf/protoc-gen-go
+
+ADD https://github.com/golang/dep/releases/download/v0.4.1/dep-linux-amd64 /usr/bin/dep
+RUN chmod +x /usr/bin/dep
+
+
+WORKDIR /go/src/github.com/zzh8829/tron-server-go/
+COPY ./tron-server-go/Gopkg.toml ./tron-server-go/Gopkg.lock ./
+RUN dep ensure --vendor-only
+
+WORKDIR /app/tron
+COPY . .
+RUN cd ./tron-server-go && make docker
+
+FROM alpine:latest
+
+RUN apk --no-cache add ca-certificates
+
+WORKDIR /app/tron
+
+COPY --from=builder /app/tron/tron-server-go/tron-server-go .
+
+EXPOSE 10001
+
+CMD ["./tron-server-go"]

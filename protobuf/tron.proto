@@ -1,4 +1,4 @@
-syntax = "proto2";
+syntax = "proto3";
 
 package tronol.protobuf;
 
@@ -12,11 +12,11 @@ message AccountCommand {
 		EDIT = 2;
 	}
 
-	required CommandType type = 1;
-	required string username = 2;
-	optional string password = 3;
-	optional string nickname = 4;
-	optional string token = 5;
+	CommandType type = 1;
+	string username = 2;
+	string password = 3;
+	string nickname = 4;
+	string token = 5;
 }
 
 message AccountResponse {
@@ -27,8 +27,8 @@ message AccountResponse {
 		INVALID_TOKEN = 3;
 	}
 
-	required ResponseType type = 1;
-	optional string token = 2;
+	ResponseType type = 1;
+	string token = 2;
 }
 
 message RoomCommand {
@@ -40,10 +40,10 @@ message RoomCommand {
 		LEAVE = 4;
 	}
 
-	required CommandType type = 1;
-	optional int32 id = 2;
-	optional string name = 3;
-	optional int32 wins = 4;
+	CommandType type = 1;
+	int32 id = 2;
+	string name = 3;
+	int32 wins = 4;
 }
 
 message RoomResponse {
@@ -54,14 +54,14 @@ message RoomResponse {
 
 	message RoomInfo {
 
-		required int32 id = 1;
-		required string name = 2;
-		optional string host = 3;
-		optional string status = 4;
+		int32 id = 1;
+		string name = 2;
+		string host = 3;
+		string status = 4;
 	}
 
-	required ResponseType type = 1;
-	optional int32 id = 2;
+	ResponseType type = 1;
+	int32 id = 2;
 	repeated RoomInfo room = 3;
 }
 
@@ -73,8 +73,8 @@ message GameCommand {
 		QUIT = 3;
 	}
 
-	required CommandType type = 1;
-	optional int32 tick = 2;
+	CommandType type = 1;
+	int32 tick = 2;
 	repeated int32 dir = 3;
 }
 
@@ -88,16 +88,16 @@ message GameResponse {
 	}
 
 	message GameSet {
-		required int32 x = 1;
-		required int32 y = 2;
-		required int32 v = 3;
+		int32 x = 1;
+		int32 y = 2;
+		int32 v = 3;
 	}
 
-	required ResponseType type = 1;
+	ResponseType type = 1;
 	repeated GameSet set_at = 2;
 	repeated string users = 3;
-	optional int32 tick = 4;
-	optional string winner = 5;
+	int32 tick = 4;
+	string winner = 5;
 }
 
 message Command {
@@ -107,10 +107,10 @@ message Command {
 		GAME = 2;
 	}
 
-	required CommandType type = 1;
-	optional AccountCommand account = 2;
-	optional RoomCommand room = 3;
-	optional GameCommand game = 4;
+	CommandType type = 1;
+	AccountCommand account = 2;
+	RoomCommand room = 3;
+	GameCommand game = 4;
 }
 
 message Response {
@@ -120,9 +120,9 @@ message Response {
 		GAME = 2;
 	}
 
-	required ResponseType type = 1;
-	optional AccountResponse account = 2;
-	optional RoomResponse room = 3;
-	optional GameResponse game = 4;
+	ResponseType type = 1;
+	AccountResponse account = 2;
+	RoomResponse room = 3;
+	GameResponse game = 4;
 }
 

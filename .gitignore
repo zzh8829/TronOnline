@@ -5,9 +5,10 @@
 /tron-client/**/protobuf
 /tron-server/**/*.pb.h
 /tron-server/**/*.pb.cc
+/tron-server-go/**/*.pb.go
 
-# Created by https://www.gitignore.io/api/c++,java,python
-# Edit at https://www.gitignore.io/?templates=c++,java,python
+# Created by https://www.gitignore.io/api/go,c++,java,python
+# Edit at https://www.gitignore.io/?templates=go,c++,java,python
 
 ### C++ ###
 # Prerequisites
@@ -42,6 +43,19 @@
 *.exe
 *.out
 *.app
+
+### Go ###
+# Binaries for programs and plugins
+*.exe~
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+
+### Go Patch ###
+/vendor/
+/Godeps/
 
 ### Java ###
 # Compiled class file
@@ -191,4 +205,4 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# End of https://www.gitignore.io/api/c++,java,python
+# End of https://www.gitignore.io/api/go,c++,java,python
